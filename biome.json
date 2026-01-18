@@ -1,0 +1,84 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": {
+					"level": "on",
+					"options": {
+						"groups": [
+							":PACKAGE:",
+							":BLANK_LINE:",
+							[":NODE:", ":BUN:"],
+							":BLANK_LINE:",
+							":ALIAS:",
+							":BLANK_LINE:",
+							":PATH:"
+						]
+					}
+				},
+				"useSortedAttributes": "on",
+				"useSortedKeys": "on"
+			}
+		},
+		"enabled": true,
+		"includes": ["src/**/*.{js,jsx,ts,tsx}"]
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
+	"files": {
+		"ignoreUnknown": true,
+		"includes": [
+			"index.html",
+			"**/.vscode/**/*",
+			"**/vite.config.ts",
+			"**/src/**/*.{js,jsx,ts,tsx}",
+			"!src/routeTree.gen.ts"
+		]
+	},
+	"formatter": {
+		"attributePosition": "auto",
+		"bracketSameLine": false,
+		"bracketSpacing": true,
+		"enabled": true,
+		"expand": "auto",
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineEnding": "lf",
+		"lineWidth": 120,
+		"useEditorconfig": true
+	},
+	"html": { "formatter": { "selfCloseVoidElements": "always" } },
+	"javascript": {
+		"formatter": {
+			"arrowParentheses": "always",
+			"attributePosition": "auto",
+			"bracketSameLine": false,
+			"jsxQuoteStyle": "single",
+			"quoteProperties": "asNeeded",
+			"quoteStyle": "single",
+			"semicolons": "asNeeded",
+			"trailingCommas": "es5"
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"correctness": {
+				"noUnusedImports": "error",
+				"noUnusedVariables": "error",
+				"useExhaustiveDependencies": "off"
+			},
+			"recommended": false,
+			"style": {
+				"useBlockStatements": "off",
+				"useImportType": "on"
+			}
+		}
+	},
+	"vcs": { "clientKind": "git", "enabled": true, "useIgnoreFile": true }
+}

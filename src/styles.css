@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+
+@theme {
+  --font-sans: Poppins, system-ui, sans-serif;
+  --font-title: Montserrat Alternates, system-ui, sans-serif;
+  --color-off-white-1: #FAFAFA;
+  --color-off-white-2: #F2F2F2;
+  --color-warm-white: #FFFDF7;
+  --color-soft-white: #FDFDFD;
+  --color-ui-white: #F9FAFB;
+  --color-primary: #3f4995;
+  --color-background: #09090b;
+}
+
+.swiper-button-next > svg,
+.swiper-button-prev > svg {
+  width: 1rem !important;
+  height: 1rem !important;
+  color: white !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 0 !important;
+  margin-top: 0 !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
