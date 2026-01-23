@@ -21,25 +21,25 @@ export const CardContent = <T extends ElementType = 'div'>({
 	return (
 		<Component
 			className={twMerge(
-				'block group',
-				isLink && 'hover:scale-105 transition-all duration-300 hover:border-primary/80'
+				'group block',
+				isLink && 'transition-all duration-300 hover:scale-105 hover:border-primary/80'
 			)}
 			{...props}
 		>
-			<div className='rounded-lg border shadow-md h-full backdrop:blur-sm border-slate-300 overflow-hidden relative font-sans'>
-				<div className='p-6 relative'>
+			<div className='relative h-full overflow-hidden rounded-lg border border-slate-300 font-sans shadow-md backdrop:blur-sm'>
+				<div className='relative p-6'>
 					<div className='flex items-start gap-4'>
-						<div className='p-3 rounded-xl bg-primary/5 text-primary'>{icon}</div>
-						<div className='flex-1 min-w-0'>
+						<div className='rounded-xl bg-primary/5 p-3 text-primary'>{icon}</div>
+						<div className='min-w-0 flex-1'>
 							<h3
 								className={twMerge(
-									'font-semibold text-foreground truncate',
-									isLink && 'group-hover:text-primary transition-colors duration-300'
+									'truncate font-semibold text-foreground',
+									isLink && 'transition-colors duration-300 group-hover:text-primary'
 								)}
 							>
 								{title}
 							</h3>
-							{description && <p className='text-sm text-muted-foreground mt-1 line-clamp-2'>{description}</p>}
+							{description && <p className='mt-1 line-clamp-2 text-muted-foreground text-sm'>{description}</p>}
 							{children}
 						</div>
 					</div>

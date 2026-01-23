@@ -1,3 +1,5 @@
+import { Mail, MapPin, Phone } from 'lucide-react'
+
 export const heroMock = [
 	{
 		image: {
@@ -22,5 +24,20 @@ export const heroMock = [
 		},
 		subTitle: 'Atendimento personalizado e as melhores opções para você, sua família e patrimônio.',
 		title: 'Soluções feitas para a sua realidade',
+	},
+]
+
+export const info = [
+	{
+		icon: <Phone />,
+		text: '(81) 3533-1163',
+	},
+	{
+		icon: <Mail />,
+		text: 'contato@flavioseguros.com.br',
+	},
+	{
+		icon: <MapPin />,
+		text: 'Rua Isaltino Pogg, 130 - Prado - Gravatá - PE',
 	},
 ]

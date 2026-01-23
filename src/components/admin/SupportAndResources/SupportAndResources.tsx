@@ -8,7 +8,7 @@ import { SectionTitle } from '../SectionTitle'
 export const SupportAndResources = () => {
 	return (
 		<section className='space-y-6'>
-			<SectionTitle icon={<Headphones className='w-5 h-5' />} title='Suporte & Recursos' />
+			<SectionTitle icon={<Headphones className='size-5' />} title='Suporte & Recursos' />
 			<div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
 				{supportAndResources.map((item) => (
 					<CardContent

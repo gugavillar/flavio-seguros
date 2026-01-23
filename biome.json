@@ -73,6 +73,9 @@
 				"noUnusedVariables": "error",
 				"useExhaustiveDependencies": "off"
 			},
+			"nursery": {
+				"useSortedClasses": "error"
+			},
 			"recommended": false,
 			"style": {
 				"useBlockStatements": "off",

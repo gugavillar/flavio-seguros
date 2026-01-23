@@ -8,7 +8,7 @@ import { SectionTitle } from '../SectionTitle'
 export const PrincipalServices = () => {
 	return (
 		<section className='space-y-6'>
-			<SectionTitle icon={<BriefcaseBusiness className='w-5 h-5' />} title='Serviços Principais' />
+			<SectionTitle icon={<BriefcaseBusiness className='size-5' />} title='Serviços Principais' />
 			<div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
 				{principalServices.map((service) => (
 					<CardContent

@@ -8,8 +8,8 @@ export const Route = createFileRoute('/(admin)/(layout)/_layout/admin')({
 
 function AdminPage() {
 	return (
-		<main className='text-black font-title'>
-			<section className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20'>
+		<main className='font-title text-black'>
+			<section className='mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20'>
 				<Header />
 				<div className='space-y-12 sm:space-y-16'>
 					<PrincipalServices />
