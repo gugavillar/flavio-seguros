@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import { Hero } from '@/components/public'
+import { Faq, Hero } from '@/components/public'
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/')({
 	component: IndexPage,
@@ -9,6 +9,7 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/')({
 function IndexPage() {
 	return (
 		<>
+			<Faq />
 			<Hero />
 		</>
 	)

@@ -47,7 +47,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<body>
+			<body className='bg-off-white-2'>
 				{children}
 				<Scripts />
 			</body>

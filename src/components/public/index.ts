@@ -1,5 +1,7 @@
+export * from './AccordionContentText'
 export * from './Anchor'
 export * from './Button'
+export * from './Faq'
 export * from './Footer'
 export * from './Hero'
 export * from './Navbar'

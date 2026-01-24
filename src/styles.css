@@ -3,8 +3,11 @@
 @plugin "@tailwindcss/forms";
 
 @theme {
+  /* Fonts */
   --font-sans: Poppins, system-ui, sans-serif;
   --font-title: Montserrat Alternates, system-ui, sans-serif;
+
+  /* Colors */
   --color-off-white-1: #FAFAFA;
   --color-off-white-2: #F2F2F2;
   --color-warm-white: #FFFDF7;
@@ -12,13 +15,108 @@
   --color-ui-white: #F9FAFB;
   --color-primary: #3f4995;
   --color-background: #09090b;
+
+  /* Motion */
+  --ease-out-smooth: cubic-bezier(0.87, 0, 0.13, 1);
+  --duration-fast: 300ms;
+  --duration-base: 500ms;
+  --duration-slow: 800ms;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(
+    135deg,
+    #4a54a8 0%,
+    #323b7a 100%
+  );
 }
 
-@layer utilities {
-  .bg-primary-gradient {
-    background: linear-gradient(135deg, #4a54a8 0%, #323b7a 100%);
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Radix Accordion */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@utility bg-primary-gradient {
+  background: var(--gradient-primary);
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@utility animate-fade-up {
+  animation: fade-up var(--duration-base) ease-out forwards;
+}
+
+@utility animate-fade-in {
+  animation: fade-in var(--duration-slow) ease-out forwards;
+}
+
+@utility animate-scale-in {
+  animation: scale-in var(--duration-fast) ease-out forwards;
+}
+
+@utility animate-accordion-down {
+  animation: accordion-down var(--duration-fast) var(--ease-out-smooth);
+}
+
+@utility animate-accordion-up {
+  animation: accordion-up var(--duration-fast) var(--ease-out-smooth);
+}
+
 
 .swiper-button-next > svg,
 .swiper-button-prev > svg {

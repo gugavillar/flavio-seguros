@@ -20,10 +20,10 @@ const LinkList = ({ title, links }: { title: string; links: Array<ComponentProps
 	return (
 		<div>
 			<h4 className='mb-4 font-semibold'>{title}</h4>
-			<ul className='space-y-3 text-gray-300/80'>
-				{links.map((link) => (
-					<li key={link.href}>
-						<Anchor {...link} className='text-gray-300/80 transition-colors hover:text-white' />
+			<ul className='space-y-3 text-gray-400'>
+				{links.map((link, index) => (
+					<li key={index}>
+						<Anchor {...link} className='transition-colors hover:text-white' />
 					</li>
 				))}
 			</ul>
@@ -38,12 +38,12 @@ export const Footer = () => {
 				<div className='mb-12 grid gap-12 md:grid-cols-4'>
 					<div className='space-y-4'>
 						<AvatarLogo />
-						<p className='text-gray-300/80 text-sm leading-relaxed'>
+						<p className='text-gray-400 text-sm leading-relaxed'>
 							Há mais de 15 anos protegendo famílias brasileiras com as melhores soluções em seguros.
 						</p>
 						<div className='flex gap-4'>
-							{social.map((item) => (
-								<SocialLink {...item} />
+							{social.map((item, index) => (
+								<SocialLink {...item} key={index} />
 							))}
 						</div>
 					</div>
