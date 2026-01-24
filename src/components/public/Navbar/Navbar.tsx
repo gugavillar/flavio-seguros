@@ -1,5 +1,6 @@
 import { AvatarLogo } from '@/components/core'
 import { Anchor, Button } from '@/components/public'
+import { signIn } from '@/lib/authClient'
 
 export const Navbar = () => {
 	return (
@@ -15,6 +16,7 @@ export const Navbar = () => {
 					</div>
 					<div className='hidden md:block'>
 						<Button>Fale conosco</Button>
+						<Button onClick={() => signIn.social({ callbackURL: '/admin', provider: 'google' })}>Administrativo</Button>
 					</div>
 				</nav>
 			</div>

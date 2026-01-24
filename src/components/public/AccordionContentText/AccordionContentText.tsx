@@ -10,7 +10,7 @@ export const AccordionContentText = () => {
 					key={index}
 					value={`item-${index}`}
 				>
-					<AccordionTrigger className='py-6 text-left font-semibold text-card-foreground hover:text-primary hover:no-underline data-[state=open]:text-primary'>
+					<AccordionTrigger className='cursor-pointer py-6 text-left font-semibold text-black/80 hover:text-primary hover:no-underline data-[state=open]:text-primary'>
 						{faq.question}
 					</AccordionTrigger>
 					<AccordionContent className='pb-6 text-gray-400 leading-relaxed'>{faq.answer}</AccordionContent>
