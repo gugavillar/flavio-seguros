@@ -1,0 +1,63 @@
+import { CheckCircle2, Shield } from 'lucide-react'
+import { Fragment } from 'react'
+
+import { listItems, stats } from '@/__mocks__/heroTop'
+import { FloatCard, PageContainer } from '@/components/core'
+
+import { Button } from '../Button'
+
+export const HeroTop = () => {
+	return (
+		<PageContainer className='relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-24'>
+			<div className='grid items-center gap-12 lg:grid-cols-2 lg:gap-16'>
+				<div className='animate-fade-up space-y-8'>
+					<h1 className='font-bold font-title text-4xl text-black/80 leading-tight md:text-5xl lg:text-6xl'>
+						Proteja o que <span className='text-primary'>realmente importa</span>
+					</h1>
+					<p className='max-w-lg text-gray-400 text-lg leading-relaxed'>
+						Há mais de 15 anos ajudando famílias brasileiras a encontrar o seguro ideal. Oferecemos soluções
+						personalizadas com as melhores seguradoras do mercado.
+					</p>
+
+					<ul className='space-y-3'>
+						{listItems.map((item, index) => (
+							<li className='flex items-center gap-3 text-gray-700' key={index}>
+								<CheckCircle2 className='text-primary' />
+								<span className='text-lg'>{item}</span>
+							</li>
+						))}
+					</ul>
+					<div className='flex flex-col gap-4 sm:flex-row'>
+						<Button>Solicitar cotação grátis</Button>
+						<Button className='border border-primary bg-transparent text-primary hover:bg-primary/10'>
+							Conhecer seguros
+						</Button>
+					</div>
+					<div className='flex items-center gap-8 pt-4'>
+						{stats.map((item, index) => (
+							<Fragment key={index}>
+								<div className='text-center'>
+									<p className='font-bold text-2xl text-black/80'>{item.title}</p>
+									<p className='text-gray-400 text-sm'>{item.subtitle}</p>
+								</div>
+								<div className='h-12 w-px bg-gray-200 last:hidden' />
+							</Fragment>
+						))}
+					</div>
+				</div>
+				<div className='relative animate-fade-up'>
+					<div className='relative overflow-hidden rounded-2xl shadow-2xl'>
+						<div className='absolute inset-0 bg-linear-to-t from-black/40 to-transparent' />
+						<img alt='Família com bebe nos braços' src='/logos/Family.webp' />
+					</div>
+					<FloatCard
+						className='-bottom-6 -left-6 animate-float'
+						description='Proteção garantida'
+						icon={<Shield className='text-white' />}
+						title='100% Seguro'
+					/>
+				</div>
+			</div>
+		</PageContainer>
+	)
+}

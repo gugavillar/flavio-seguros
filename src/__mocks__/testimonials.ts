@@ -20,4 +20,18 @@ export const testimonials = [
 		name: 'Ana Oliveira',
 		rating: 5,
 	},
+	{
+		content:
+			'Excelente atendimento! Encontraram o seguro perfeito para minha empresa com um ótimo custo-benefício. Recomendo demais!',
+		description: 'Empresária',
+		name: 'Maria Santos',
+		rating: 5,
+	},
+	{
+		content:
+			'Excelente atendimento! Encontraram o seguro perfeito para minha empresa com um ótimo custo-benefício. Recomendo demais!',
+		description: 'Empresária',
+		name: 'Maria Santos',
+		rating: 5,
+	},
 ]

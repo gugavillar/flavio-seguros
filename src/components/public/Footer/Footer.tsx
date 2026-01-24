@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from 'react'
 
-import { company, insurances, social, support } from '@/__mocks__/footer'
+import { company, services, social, support } from '@/__mocks__/footer'
 import { AvatarLogo } from '@/components/core'
 
 import { Anchor } from '../Anchor'
@@ -47,7 +47,7 @@ export const Footer = () => {
 							))}
 						</div>
 					</div>
-					<LinkList {...insurances} />
+					<LinkList {...services} />
 					<LinkList {...company} />
 					<LinkList {...support} />
 				</div>

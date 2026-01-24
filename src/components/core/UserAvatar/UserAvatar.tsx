@@ -23,7 +23,7 @@ export const UserAvatar = ({ name, description, image }: UserAvatarProps) => {
 					src={image ?? ''}
 				/>
 			) : (
-				<div className='inline-flex size-11 items-center justify-center rounded-full bg-primary font-semibold text-white'>
+				<div className='inline-flex size-11 items-center justify-center rounded-full bg-primary-gradient font-semibold text-white'>
 					{firstLetter}
 				</div>
 			)}

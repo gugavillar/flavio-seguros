@@ -89,6 +89,12 @@
   }
 }
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @utility bg-primary-gradient {
   background: var(--gradient-primary);
 }
@@ -117,6 +123,9 @@
   animation: accordion-up var(--duration-fast) var(--ease-out-smooth);
 }
 
+.swiper-pagination-bullet-active {
+  background: var(--color-primary);
+}
 
 .swiper-button-next > svg,
 .swiper-button-prev > svg {

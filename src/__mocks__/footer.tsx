@@ -19,7 +19,7 @@ export const social = [
 	},
 ]
 
-export const insurances = {
+export const services = {
 	links: [
 		{
 			children: 'Seguro de automóvel',
