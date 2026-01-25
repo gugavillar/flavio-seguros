@@ -21,7 +21,6 @@ export const Navbar = () => {
 					</div>
 					<div className='hidden md:block'>
 						<Button>Fale conosco</Button>
-						{/* <Button onClick={() => signIn.social({ callbackURL: '/admin', provider: 'google' })}>Administrativo</Button> */}
 					</div>
 					<button className='p-2 text-gray-400 md:hidden' onClick={handleToggle}>
 						{isOpen ? <X className='size-6' /> : <Menu className='size-6' />}
