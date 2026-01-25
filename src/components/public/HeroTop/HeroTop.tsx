@@ -1,7 +1,9 @@
 import { CheckCircle2, Shield } from 'lucide-react'
 import { Fragment } from 'react'
+import { Autoplay } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { listItems, stats } from '@/__mocks__/heroTop'
+import { images, listItems, stats } from '@/__mocks__/heroTop'
 import { FloatCard, PageContainer } from '@/components/core'
 
 import { Button } from '../Button'
@@ -45,13 +47,28 @@ export const HeroTop = () => {
 						))}
 					</div>
 				</div>
-				<div className='relative animate-fade-up'>
-					<div className='relative overflow-hidden rounded-2xl shadow-2xl'>
-						<div className='absolute inset-0 bg-linear-to-t from-black/40 to-transparent' />
-						<img alt='Família com bebe nos braços' src='/logos/Family.webp' />
-					</div>
+				<div className='relative min-w-0 animate-fade-up'>
+					<Swiper
+						autoplay={{
+							delay: 4000,
+							disableOnInteraction: false,
+						}}
+						loop
+						modules={[Autoplay]}
+						slidesPerView={1}
+						speed={4000}
+					>
+						{images.map((image, index) => (
+							<SwiperSlide key={index}>
+								<div className='relative overflow-hidden rounded-2xl shadow-2xl'>
+									<div className='absolute inset-0 bg-linear-to-t from-black/40 to-transparent' />
+									<img alt={image.alt} src={image.src} />
+								</div>
+							</SwiperSlide>
+						))}
+					</Swiper>
 					<FloatCard
-						className='-bottom-6 -left-6 animate-float'
+						className='-bottom-6 -left-6 z-10 animate-float'
 						description='Proteção garantida'
 						icon={<Shield className='text-white' />}
 						title='100% Seguro'
