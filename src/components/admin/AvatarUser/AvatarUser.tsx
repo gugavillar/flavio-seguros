@@ -22,11 +22,8 @@ export const AvatarUser = () => {
 			<UserAvatar description={data.user.email} image={data.user.image} name={data.user.name} />
 			{isOpen && (
 				<div className='absolute top-full right-0 mt-2 w-48 rounded-md bg-white py-1 shadow-lg' ref={ref}>
-					<a className='block px-4 py-2 text-gray-700 text-sm hover:bg-gray-100' href='#'>
-						Usuários
-					</a>
 					<button
-						className='inline-flex w-full px-4 py-2 text-gray-700 text-sm hover:bg-gray-100'
+						className='inline-flex w-full cursor-pointer px-4 py-2 text-gray-700 text-sm hover:bg-gray-100'
 						onClick={() => signOut({}, { onSuccess: () => navigate({ to: '/' }) })}
 					>
 						Sair
