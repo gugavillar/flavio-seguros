@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { ArrowLeft } from 'lucide-react'
 import { z } from 'zod'
 
 import { AvatarLogo, GoogleIcon, NavLink } from '@/components/core'
@@ -21,21 +22,27 @@ function LoginPage() {
 	const { error } = Route.useSearch()
 	return (
 		<div className='h-dvh w-dvw'>
-			<div className='flex size-full items-center justify-center px-4'>
-				<div className='container mx-auto max-w-xl rounded-lg bg-gray-300'>
-					<div className='flex flex-col items-center justify-center space-y-4 py-4'>
+			<div className='flex size-full items-center justify-center bg-[url(/images/Login.webp)] bg-cover px-4'>
+				<div className='container mx-auto max-w-lg rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm'>
+					<div className='flex h-full flex-col items-center justify-between py-4'>
 						<AvatarLogo />
-						<div className='text-center'>
-							<p className='text-xl'>Bem vindo!</p>
-							<p className='text-sm'>Para continuar, entre com sua conta Google</p>
+						<div className='mt-8 space-y-6 px-4 text-center sm:px-10'>
+							<div>
+								<p className='text-xl'>Área administrativa</p>
+								<p className='text-sm'>O acesso é restrito a usuários autorizados</p>
+								<p className='text-sm'>Entre com sua conta Google utilizando um e-mail previamente liberado.</p>
+							</div>
+							<Button onClick={() => signIn.social({ callbackURL: '/admin', provider: 'google' })}>
+								<GoogleIcon />
+								Entrar com Google
+							</Button>
 						</div>
-						<Button onClick={() => signIn.social({ callbackURL: '/admin', provider: 'google' })}>
-							<GoogleIcon />
-							Entrar com Google
-						</Button>
-						<NavLink to='/'>Volta para o site</NavLink>
+						<NavLink className='mt-8 flex items-center gap-2 text-primary text-sm underline underline-offset-3' to='/'>
+							<ArrowLeft />
+							Voltar para o site
+						</NavLink>
 					</div>
-					{error && <p className='pb-4 text-center text-red-400'>{errorMessageMap[error] ?? 'Erro desconhecido'}</p>}
+					{error && <p className='pb-4 text-center text-red-600'>{errorMessageMap[error] ?? 'Erro desconhecido'}</p>}
 				</div>
 			</div>
 		</div>
