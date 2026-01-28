@@ -4,11 +4,10 @@ WORKDIR /app
 RUN corepack enable
 
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --prod --frozen-lockfile
 
 COPY . .
 RUN pnpm build
-RUN pnpm prune --prod
 
 FROM gcr.io/distroless/nodejs20-debian12
 WORKDIR /app
