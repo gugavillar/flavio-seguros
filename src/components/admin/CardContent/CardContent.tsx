@@ -21,12 +21,12 @@ export const CardContent = <T extends ElementType = 'div'>({
 	return (
 		<Component
 			className={twMerge(
-				'group block',
-				isLink && 'transition-all duration-300 hover:scale-105 hover:border-primary/80'
+				'group block rounded-lg border border-slate-300 shadow-lg transition-all duration-300 ease-out backdrop:blur-sm',
+				isLink && 'hover:scale-105 hover:border-primary'
 			)}
 			{...props}
 		>
-			<div className='relative h-full overflow-hidden rounded-lg border border-slate-300 font-sans shadow-md backdrop:blur-sm'>
+			<div className='relative h-full overflow-hidden font-sans'>
 				<div className='relative p-6'>
 					<div className='flex items-start gap-4'>
 						<div className='rounded-xl bg-primary/5 p-3 text-primary'>{icon}</div>

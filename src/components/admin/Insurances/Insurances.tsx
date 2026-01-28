@@ -1,5 +1,5 @@
 import { useDebounce } from '@uidotdev/usehooks'
-import { Shield } from 'lucide-react'
+import { ChevronRight, Shield } from 'lucide-react'
 import { useState } from 'react'
 
 import { insurances } from '@/__mocks__/insurances'
@@ -32,16 +32,17 @@ export const Insurances = () => {
 						key={name}
 						title={name}
 					>
-						<div className='flex items-center gap-8'>
+						<div className='mt-1 space-y-1 border-slate-300 border-t pt-2'>
 							{urls.map((url, index) => (
 								<a
-									className='inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-primary/25 px-4 py-1 font-medium text-primary text-sm transition-all duration-300 hover:scale-105 hover:bg-primary hover:text-white focus:bg-primary focus:outline-hidden disabled:pointer-events-none disabled:opacity-50'
+									className='-mx-3 flex items-center justify-between rounded-lg px-3 py-2 transition-colors duration-200 hover:bg-primary/10'
 									href={url}
 									key={url}
 									rel='noopener noreferrer'
 									target='_blank'
 								>
-									Site {index + 1}
+									{urls?.length > 1 ? `Site ${index + 1}` : 'Site'}
+									<ChevronRight className='size-5' />
 								</a>
 							))}
 						</div>

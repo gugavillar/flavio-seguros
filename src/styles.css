@@ -126,19 +126,3 @@
 .swiper-pagination-bullet-active {
   background: var(--color-primary);
 }
-
-.swiper-button-next > svg,
-.swiper-button-prev > svg {
-  width: 1rem !important;
-  height: 1rem !important;
-  color: white !important;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  top: 0 !important;
-  margin-top: 0 !important;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
