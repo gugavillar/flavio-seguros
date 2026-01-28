@@ -38,7 +38,7 @@ export const AboutUs = () => {
 				<div className='order-1 space-y-8 max-sm:text-center lg:order-2'>
 					<HeaderSection
 						badgeLabel='Por que nos escolher?'
-						description='Com mais de 15 anos de experiência no mercado de seguros, nossa missão é proteger o que você mais ama. Oferecemos soluções completas com transparência e compromisso.'
+						description='Com mais de 20 anos de experiência no mercado de seguros, nossa missão é proteger o que você mais ama. Oferecemos soluções completas com transparência e compromisso.'
 						title='Sua tranquilidade é nossa prioridade'
 					/>
 					<div className='grid gap-6 sm:grid-cols-2'>

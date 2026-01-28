@@ -13,11 +13,11 @@ export const HeroTop = () => {
 		<PageContainer className='relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-24'>
 			<div className='grid items-center gap-12 lg:grid-cols-2 lg:gap-16'>
 				<div className='animate-fade-up space-y-8'>
-					<h1 className='font-bold font-title text-4xl text-black/80 leading-tight md:text-5xl lg:text-6xl'>
+					<h1 className='font-bold font-title text-4xl text-black/80 leading-tight md:text-5xl lg:text-[3.65rem]'>
 						Proteja o que <span className='text-primary'>realmente importa</span>
 					</h1>
 					<p className='max-w-lg text-gray-400 text-lg leading-relaxed'>
-						Há mais de 15 anos ajudando famílias brasileiras a encontrar o seguro ideal. Oferecemos soluções
+						Há mais de 20 anos ajudando famílias brasileiras a encontrar o seguro ideal. Oferecemos soluções
 						personalizadas com as melhores seguradoras do mercado.
 					</p>
 

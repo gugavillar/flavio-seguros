@@ -52,6 +52,11 @@ export const insurances = [
 		urls: ['https://www.extranetlivonius.com.br/'],
 	},
 	{
+		image: '/logos/Mapfre.webp',
+		name: 'Mapfre',
+		urls: ['https://negocios.mapfre.com.br/acesso'],
+	},
+	{
 		image: '/logos/Porto.webp',
 		name: 'Porto',
 		urls: ['https://corretor.portoseguro.com.br/corretoronline'],

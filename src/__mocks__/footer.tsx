@@ -44,7 +44,7 @@ export const services = {
 export const support = {
 	links: [
 		{
-			children: 'Central de ajuda',
+			children: 'Assistência 24h',
 			href: '',
 		},
 		{
@@ -78,7 +78,7 @@ export const company = {
 			href: '',
 		},
 		{
-			children: 'Blog',
+			children: 'Premiações',
 			href: '',
 		},
 	],

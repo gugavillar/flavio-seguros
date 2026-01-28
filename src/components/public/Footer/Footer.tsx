@@ -39,7 +39,7 @@ export const Footer = () => {
 					<div className='space-y-4'>
 						<AvatarLogo />
 						<p className='text-gray-400 text-sm leading-relaxed'>
-							Há mais de 15 anos protegendo famílias brasileiras com as melhores soluções em seguros.
+							Há mais de 20 anos protegendo famílias brasileiras com as melhores soluções em seguros.
 						</p>
 						<div className='flex gap-4'>
 							{social.map((item, index) => (
