@@ -4,14 +4,16 @@ import { Navbar } from '@/components/admin'
 import { getUser } from '@/lib/authServer'
 
 export const Route = createFileRoute('/(admin)/(layout)/_layout')({
-	component: AdminLayoutComponent,
-	loader: async () => {
+	beforeLoad: async () => {
 		const user = await getUser()
-		if (!user?.id) {
-			throw redirect({ search: { error: 'notAuthenticated' }, to: '/login' })
-		}
 		return {
 			user,
+		}
+	},
+	component: AdminLayoutComponent,
+	loader: async ({ context }) => {
+		if (!context?.user?.id) {
+			throw redirect({ search: { error: 'notAuthenticated' }, to: '/login' })
 		}
 	},
 })

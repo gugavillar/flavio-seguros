@@ -1,4 +1,8 @@
 FROM node:20-alpine AS build
+
+ARG VITE_WBOT_TOKEN
+ENV VITE_WBOT_TOKEN=$VITE_WBOT_TOKEN
+
 WORKDIR /app
 
 RUN corepack enable
