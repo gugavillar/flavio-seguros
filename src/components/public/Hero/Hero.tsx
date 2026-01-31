@@ -1,8 +1,9 @@
-import { ArrowRight } from 'lucide-react'
-import type { ReactNode } from 'react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
+import { type ReactNode, useState } from 'react'
 
 import { info } from '@/__mocks__/hero'
-import { MaskedInput, PageContainer } from '@/components/core'
+import { services } from '@/__mocks__/services'
+import { PageContainer, Select } from '@/components/core'
 
 import { Button } from '../Button'
 
@@ -32,6 +33,7 @@ export const HeroInfo = ({
 }
 
 export const Hero = () => {
+	const [service, setService] = useState('')
 	return (
 		<PageContainer className='bg-primary-gradient'>
 			<div className='mx-auto max-w-4xl text-center'>
@@ -43,8 +45,16 @@ export const Hero = () => {
 					melhores opções para você.
 				</p>
 				<div className='mx-auto mb-12 flex max-w-xl flex-col gap-4 sm:flex-row'>
-					<MaskedInput format={'(##) #####-####'} id='phone' name='phone' placeholder='Seu melhor telefone' />
-					<Button className='bg-white text-primary hover:bg-white hover:opacity-70'>
+					<div className='relative w-full'>
+						<Select
+							name='services'
+							onChange={(e) => setService(e.target.value)}
+							options={services.map((services) => ({ label: services.title, value: services.title }))}
+							value={service}
+						/>
+						<ChevronDown className='absolute top-1/2 right-2 -translate-y-1/2 text-white' />
+					</div>
+					<Button className='bg-white text-primary hover:bg-white hover:opacity-70' disabled={!service}>
 						Solicitar cotação <ArrowRight />
 					</Button>
 				</div>

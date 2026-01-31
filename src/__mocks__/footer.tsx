@@ -26,7 +26,7 @@ export const servicesFooter = {
 		children: service.title,
 		to: service.path,
 	})),
-	title: 'Seguros',
+	title: 'Serviços',
 }
 
 export const support = {

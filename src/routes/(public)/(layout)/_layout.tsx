@@ -19,7 +19,7 @@ function PublicLayoutComponent() {
 				<CookieConsent
 					buttonClasses='inline-flex! cursor-pointer! items-center! justify-center! gap-2! whitespace-nowrap! rounded-md! bg-transparent! border! border-gray-200! px-4! py-2! font-medium! text-sm! text-white! ring-offset-primary! transition-all! duration-500! hover:bg-slate-50/20! focus-visible:outline-none! focus-visible:ring-2! focus-visible:ring-ring! focus-visible:ring-offset-2!'
 					buttonText='Aceitar'
-					containerClasses='justify-center! items-center! bg-primary-gradient! max-lg:top-0! max-lg:bottom-auto!'
+					containerClasses='justify-center! items-center! bg-primary-gradient! z-[99999]!'
 					contentClasses='container mx-auto max-w-[1425px] m-0! px-4 py-2'
 					cookieName='cookieConsent'
 					location='bottom'

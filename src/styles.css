@@ -128,3 +128,7 @@
 .swiper-pagination-bullet-active {
   background: var(--color-primary);
 }
+
+#wbot-open-chat, #wbot-open-chat:before, #wbot-header, #wbot-footer {
+  background-color: var(--color-primary) !important;
+}

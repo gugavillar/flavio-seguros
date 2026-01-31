@@ -1,4 +1,5 @@
 import { useMatchRoute } from '@tanstack/react-router'
+import { useClickAway } from '@uidotdev/usehooks'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
@@ -41,6 +42,10 @@ type NavbarProps = {
 export const Navbar = ({ showLinks = true }: NavbarProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 
+	const ref = useClickAway<HTMLDivElement>(() => {
+		setIsOpen(false)
+	})
+
 	const matchRoute = useMatchRoute()
 	const isServicePage = matchRoute({ to: '/$service' })
 
@@ -53,7 +58,10 @@ export const Navbar = ({ showLinks = true }: NavbarProps) => {
 					{showLinks && <Links handleToggle={handleToggle} isOpen={isOpen} />}
 				</nav>
 				{isOpen && showLinks && (
-					<div className='absolute top-full right-0 left-0 animate-fade-up border-border border-b bg-off-white-1 md:hidden'>
+					<div
+						className='absolute top-full right-0 left-0 animate-fade-up border-border border-b bg-off-white-1 md:hidden'
+						ref={ref}
+					>
 						<div className='flex flex-col gap-4 p-4 text-gray-500'>
 							<a className='py-2 font-medium' href='#servicos' onClick={handleToggle}>
 								Serviços
