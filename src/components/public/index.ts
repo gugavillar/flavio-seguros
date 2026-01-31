@@ -1,6 +1,7 @@
 export * from './AboutUs'
 export * from './AccordionContentText'
 export * from './Anchor'
+export * from './BenefitsService'
 export * from './BreadcrumbBar'
 export * from './Button'
 export * from './DescriptionService'
