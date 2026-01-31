@@ -1,9 +1,11 @@
 import type { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-export const Anchor = ({ className, ...props }: ComponentProps<'a'>) => {
+import { NavLink } from '@/components/core'
+
+export const Anchor = ({ className, ...props }: ComponentProps<typeof NavLink>) => {
 	return (
-		<a
+		<NavLink
 			{...props}
 			className={twMerge(
 				'font-medium text-gray-500 underline-offset-8 transition-colors hover:text-primary hover:underline',

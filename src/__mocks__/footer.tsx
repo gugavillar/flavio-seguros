@@ -1,5 +1,7 @@
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 
+import { services } from './services'
+
 export const social = [
 	{
 		href: '',
@@ -19,25 +21,11 @@ export const social = [
 	},
 ]
 
-export const services = {
-	links: [
-		{
-			children: 'Seguro de automóvel',
-			href: '',
-		},
-		{
-			children: 'Seguro de viagem',
-			href: '',
-		},
-		{
-			children: 'Seguro de vida',
-			href: '',
-		},
-		{
-			children: 'Seguro empresarial',
-			href: '',
-		},
-	],
+export const servicesFooter = {
+	links: services.map((service) => ({
+		children: service.title,
+		to: service.path,
+	})),
 	title: 'Seguros',
 }
 
@@ -67,7 +55,8 @@ export const company = {
 	links: [
 		{
 			children: 'Sobre nós',
-			href: '#sobre',
+			hash: 'sobre',
+			to: '/',
 		},
 		{
 			children: 'Nossa equipe',
