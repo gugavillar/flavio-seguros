@@ -23,7 +23,25 @@ const LinkList = ({ title, links }: { title: string; links: Array<ComponentProps
 			<ul className='space-y-3 text-gray-400'>
 				{links.map((link, index) => (
 					<li key={index}>
-						<Anchor {...link} className='text-gray-400 transition-colors hover:text-white' />
+						<Anchor {...link} className='text-gray-400 hover:text-white' />
+					</li>
+				))}
+			</ul>
+		</div>
+	)
+}
+
+const AnchorList = ({ title, links }: { title: string; links: Array<ComponentProps<'a'>> }) => {
+	return (
+		<div>
+			<h4 className='mb-4 font-semibold'>{title}</h4>
+			<ul className='space-y-3 text-gray-400'>
+				{links.map((link, index) => (
+					<li key={index}>
+						<a
+							{...link}
+							className='font-medium text-gray-400 underline-offset-8 transition-colors hover:text-white hover:underline'
+						/>
 					</li>
 				))}
 			</ul>
@@ -49,7 +67,7 @@ export const Footer = () => {
 					</div>
 					<LinkList {...servicesFooter} />
 					<LinkList {...company} />
-					<LinkList {...support} />
+					<AnchorList {...support} />
 				</div>
 				<div className='flex flex-col items-center justify-between gap-4 border-gray-200/30 border-t pt-8 md:flex-row'>
 					<p className='text-sm'>© 2026 Flávio Seguros. Todos os direitos reservados.</p>

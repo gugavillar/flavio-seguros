@@ -23,9 +23,11 @@ const Links = ({ handleToggle, isOpen }: { handleToggle: VoidFunction; isOpen: b
 				</NavLink>
 			</div>
 			<div className='hidden md:block'>
-				<Button>Fale conosco</Button>
+				<Button as='a' href='#'>
+					Fale conosco
+				</Button>
 			</div>
-			<button className='p-2 text-gray-500 md:hidden' onClick={handleToggle}>
+			<button aria-label='Menu' className='p-2 text-gray-500 md:hidden' onClick={handleToggle} role='navigation'>
 				{isOpen ? <X className='size-6' /> : <Menu className='size-6' />}
 			</button>
 		</>

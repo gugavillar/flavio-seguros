@@ -4,7 +4,7 @@ import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { images, listItems, stats } from '@/__mocks__/heroTop'
-import { FloatCard, PageContainer } from '@/components/core'
+import { FloatCard, NavLink, PageContainer } from '@/components/core'
 
 import { Button } from '../Button'
 
@@ -30,10 +30,16 @@ export const HeroTop = () => {
 						))}
 					</ul>
 					<div className='flex flex-col gap-4 sm:flex-row'>
-						<Button>Solicitar cotação grátis</Button>
-						<Button className='border border-primary bg-transparent text-primary hover:bg-primary/10'>
-							Conhecer seguros
+						<Button as='a' href='#'>
+							Solicitar cotação grátis
 						</Button>
+						<NavLink
+							className='inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-4 py-1.5 text-primary shadow-2xs transition-all duration-500 hover:bg-primary/10'
+							hash='servicos'
+							to='/'
+						>
+							Conhecer seguros
+						</NavLink>
 					</div>
 					<div className='flex items-center gap-8 pt-4'>
 						{stats.map((item, index) => (

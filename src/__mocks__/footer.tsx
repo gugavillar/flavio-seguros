@@ -41,11 +41,15 @@ export const support = {
 		},
 		{
 			children: 'Política de privacidade',
-			href: '',
+			href: '/docs/politica-de-privacidade.pdf',
+			rel: 'noopener noreferrer',
+			target: '_blank',
 		},
 		{
-			children: 'Termos de uso',
-			href: '',
+			children: 'Política de cookies',
+			href: '/docs/politica-de-cookies.pdf',
+			rel: 'noopener noreferrer',
+			target: '_blank',
 		},
 	],
 	title: 'Suporte',

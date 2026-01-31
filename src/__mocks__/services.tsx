@@ -3,25 +3,34 @@ import {
 	BadgeCheck,
 	Banknote,
 	Briefcase,
+	Building,
 	Building2,
 	CalendarX,
 	Car,
+	CheckCircle,
 	Clock,
+	CloudRain,
+	Cog,
 	Droplets,
 	FileText,
 	Flame,
+	Gavel,
 	Globe,
+	HardDrive,
 	Headset,
 	Heart,
 	HeartHandshake,
 	Home,
+	Key,
+	Laptop,
 	Lock,
 	Luggage,
-	PiggyBank,
+	MapPin,
+	MapPinHouse,
 	Plane,
 	Scale,
+	Settings,
 	Shield,
-	ShieldCheck,
 	Sliders,
 	Stethoscope,
 	TrendingUp,
@@ -57,90 +66,463 @@ export const services = [
 		title: 'Seguro Empresarial',
 	},
 	{
-		description: 'Planeje seu futuro com planos de previdência que se adaptam aos seus objetivos.',
-		icon: Shield,
-		path: 'previdencia-privada',
-		title: 'Previdência Privada',
-	},
-	{
 		description: 'Viaje tranquilo com cobertura médica, extravio de bagagem e muito mais.',
 		icon: Plane,
 		path: 'seguro-viagem',
 		title: 'Seguro Viagem',
 	},
+	{
+		description: 'Cobertura para imprevistos que possam causar invalidez, despesas médicas ou morte acidental.',
+		icon: Shield,
+		path: 'acidentes-pessoais',
+		title: 'Acidentes Pessoais',
+	},
+	{
+		description: 'Proteção completa para áreas comuns, estrutura e responsabilidades do condomínio.',
+		icon: Building,
+		path: 'seguro-condominio',
+		title: 'Seguro Condomínio',
+	},
+	{
+		description: 'Garanta seus equipamentos contra danos, roubo e acidentes inesperados.',
+		icon: Laptop,
+		path: 'equipamentos',
+		title: 'Seguro de Equipamentos',
+	},
+	{
+		description: 'Segurança para proprietários com garantia de recebimento do aluguel em caso de inadimplência.',
+		icon: Key,
+		path: 'fianca-locaticia',
+		title: 'Fiança Locatícia',
+	},
+	{
+		description: 'Proteção para imóveis urbanos ou rurais contra diversos tipos de danos e riscos.',
+		icon: MapPinHouse,
+		path: 'imobiliario',
+		title: 'Seguro Imobiliário',
+	},
+	{
+		description: 'Cobertura para danos causados a terceiros, garantindo mais segurança jurídica e financeira.',
+		icon: Scale,
+		path: 'responsabilidade-civil',
+		title: 'Responsabilidade Civil',
+	},
 ]
 
 export const servicePage = {
-	'previdencia-privada': {
-		badgeLabel: 'Planeje hoje, viva tranquilo amanhã',
+	'acidentes-pessoais': {
+		badgeLabel: 'Proteção para imprevistos do dia a dia',
 		benefits: [
 			{
-				description: 'Construa uma reserva financeira sólida para complementar sua aposentadoria.',
-				icon: PiggyBank,
-				title: 'Renda para o Futuro',
+				description:
+					'Indenização financeira em caso de morte ou invalidez permanente causada por acidentes inesperados.',
+				icon: Shield,
+				title: 'Cobertura por Acidente',
 			},
 			{
-				description: 'Escolha como e quando receber seu benefício, com opções de renda ou resgate.',
-				icon: Sliders,
-				title: 'Flexibilidade de Resgate',
+				description: 'Reembolso de despesas médicas, hospitalares e odontológicas decorrentes de acidentes cobertos.',
+				icon: Stethoscope,
+				title: 'Despesas Médicas',
 			},
 			{
-				description: 'Planos com vantagens fiscais que ajudam a pagar menos imposto no longo prazo.',
-				icon: Banknote,
-				title: 'Benefícios Fiscais',
+				description: 'Cobertura válida 24 horas por dia, tanto em atividades profissionais quanto pessoais.',
+				icon: Clock,
+				title: 'Proteção 24h',
 			},
 			{
-				description: 'Indique beneficiários para garantir segurança financeira à sua família.',
+				description: 'Possibilidade de contratação individual ou inclusão de familiares na mesma apólice.',
 				icon: Users,
-				title: 'Proteção Familiar',
+				title: 'Cobertura Familiar',
 			},
 			{
-				description: 'Invista de forma estratégica com perfis conservador, moderado ou arrojado.',
-				icon: TrendingUp,
-				title: 'Diversidade de Investimentos',
+				description: 'Planos flexíveis com valores acessíveis e adaptação às suas necessidades.',
+				icon: Sliders,
+				title: 'Planos Flexíveis',
 			},
 			{
-				description: 'Ideal para quem pensa no longo prazo e quer estabilidade financeira.',
-				icon: ShieldCheck,
-				title: 'Planejamento de Longo Prazo',
+				description: 'Segurança financeira para manter sua estabilidade mesmo em situações imprevistas.',
+				icon: HeartHandshake,
+				title: 'Tranquilidade Financeira',
 			},
 		],
 		description: {
 			content: [
-				'A Previdência Privada é a melhor forma de planejar o futuro com segurança, autonomia e tranquilidade financeira.',
-				'Com planos flexíveis, você define o valor das contribuições e escolhe o perfil de investimento mais adequado ao seu objetivo.',
-				'É uma excelente alternativa para complementar a aposentadoria do INSS e também uma poderosa ferramenta de planejamento sucessório.',
+				'O Seguro de Acidentes Pessoais oferece proteção financeira em casos de eventos inesperados que podem gerar afastamento do trabalho, despesas médicas elevadas ou impacto direto na renda familiar.',
+				'É uma solução ideal para quem busca segurança contínua, garantindo indenização e suporte financeiro mesmo fora do ambiente profissional, durante atividades cotidianas ou momentos de lazer.',
+				'Com contratação simples e planos acessíveis, o seguro proporciona tranquilidade para você e sua família, reduzindo riscos financeiros causados por acidentes inesperados.',
 			],
 			indications: [
-				'Quem deseja complementar a aposentadoria',
-				'Profissionais liberais e autônomos',
-				'Pessoas que buscam eficiência tributária',
-				'Quem pensa em planejamento sucessório',
+				'Profissionais autônomos e liberais',
+				'Trabalhadores operacionais e técnicos',
+				'Pessoas com rotina ativa ou esportiva',
+				'Quem deseja proteção financeira complementar',
 			],
-			title: 'Sobre a previdência privada',
+			title: 'Sobre acidentes pessoais',
+		},
+		faqs: [
+			{
+				answer: 'Sim. A cobertura é válida 24 horas por dia, inclusive em atividades pessoais, lazer ou deslocamentos.',
+				question: 'O seguro cobre acidentes fora do trabalho?',
+			},
+			{
+				answer: 'Consultas, exames, internações, cirurgias e outros procedimentos relacionados ao acidente coberto.',
+				question: 'Quais despesas médicas são reembolsadas?',
+			},
+			{
+				answer: 'Sim. É possível contratar planos individuais ou familiares, conforme sua necessidade.',
+				question: 'Posso incluir familiares na apólice?',
+			},
+			{
+				answer: 'Algumas coberturas podem ter carência, variando conforme a seguradora e o plano contratado.',
+				question: 'Existe carência para utilização do seguro?',
+			},
+			{
+				answer: 'Sim, dependendo da apólice, pode haver cobertura para afastamento temporário por acidente.',
+				question: 'O seguro cobre invalidez temporária?',
+			},
+			{
+				answer: 'Qualquer pessoa física que deseje proteção financeira contra acidentes inesperados.',
+				question: 'Quem pode contratar o seguro de acidentes pessoais?',
+			},
+		],
+		icon: Shield,
+		subtitle: 'Proteção financeira contínua contra acidentes que podem impactar sua renda e qualidade de vida.',
+		title: 'Acidentes pessoais',
+	},
+	equipamentos: {
+		badgeLabel: 'Proteção para seus equipamentos',
+		benefits: [
+			{
+				description:
+					'Cobertura contra roubo, furto qualificado e danos acidentais que possam comprometer o funcionamento dos equipamentos.',
+				icon: Laptop,
+				title: 'Danos e Roubo',
+			},
+			{
+				description:
+					'Proteção para equipamentos portáteis e fixos utilizados em atividades profissionais ou empresariais.',
+				icon: HardDrive,
+				title: 'Cobertura Flexível',
+			},
+			{
+				description: 'Indenização em caso de perda total ou danos irreparáveis aos equipamentos segurados.',
+				icon: Shield,
+				title: 'Perda Total',
+			},
+			{
+				description: 'Cobertura válida em diferentes endereços, conforme condições previstas na apólice.',
+				icon: MapPin,
+				title: 'Cobertura em Múltiplos Locais',
+			},
+			{
+				description: 'Planos ajustáveis de acordo com o tipo, valor e uso dos equipamentos.',
+				icon: Sliders,
+				title: 'Planos Personalizados',
+			},
+			{
+				description: 'Redução de prejuízos financeiros e continuidade das atividades profissionais.',
+				icon: TrendingUp,
+				title: 'Continuidade Operacional',
+			},
+		],
+		description: {
+			content: [
+				'O Seguro de Equipamentos é a solução ideal para proteger bens essenciais utilizados no dia a dia profissional, evitando prejuízos financeiros causados por roubos, acidentes ou danos inesperados.',
+				'Com coberturas personalizadas, o seguro garante indenização ou reparo dos equipamentos, permitindo que sua empresa ou atividade profissional mantenha suas operações sem interrupções.',
+				'É indicado tanto para equipamentos fixos quanto portáteis, oferecendo segurança financeira para profissionais autônomos, empresas e prestadores de serviço.',
+			],
+			indications: [
+				'Empresas de pequeno, médio e grande porte',
+				'Profissionais autônomos e liberais',
+				'Prestadores de serviços técnicos',
+				'Negócios que dependem de equipamentos especializados',
+			],
+			title: 'Sobre o seguro de equipamentos',
+		},
+		faqs: [
+			{
+				answer: 'Sim. Desde que contratado com cobertura para equipamentos portáteis ou múltiplos locais.',
+				question: 'O seguro cobre equipamentos fora do endereço principal?',
+			},
+			{
+				answer: 'Notebooks, computadores, máquinas industriais, equipamentos médicos, tecnológicos e similares.',
+				question: 'Quais tipos de equipamentos podem ser segurados?',
+			},
+			{
+				answer: 'Sim. Quedas, impactos e acidentes estão cobertos conforme as condições da apólice.',
+				question: 'Danos acidentais estão cobertos?',
+			},
+			{
+				answer: 'Depende da seguradora e do contrato. Em muitos casos, é possível incluir equipamentos locados.',
+				question: 'O seguro cobre equipamentos alugados?',
+			},
+			{
+				answer: 'Sim. O limite varia conforme o plano contratado e o valor declarado dos equipamentos.',
+				question: 'Existe limite de valor para os equipamentos segurados?',
+			},
+			{
+				answer: 'Após análise do sinistro, a seguradora realiza o reparo ou pagamento conforme previsto em contrato.',
+				question: 'Como funciona a indenização em caso de sinistro?',
+			},
+		],
+		icon: Laptop,
+		subtitle: 'Segurança financeira para proteger equipamentos essenciais contra danos, roubos e imprevistos.',
+		title: 'Seguro de equipamentos',
+	},
+	'fianca-locaticia': {
+		badgeLabel: 'Garantia para contratos de aluguel',
+		benefits: [
+			{
+				description: 'Garante o pagamento do aluguel ao proprietário em caso de inadimplência do inquilino.',
+				icon: Key,
+				title: 'Garantia de Aluguel',
+			},
+			{
+				description: 'Dispensa a necessidade de fiador, caução ou depósito antecipado.',
+				icon: CheckCircle,
+				title: 'Sem Fiador',
+			},
+			{
+				description: 'Cobertura para encargos como condomínio, IPTU e contas previstas em contrato.',
+				icon: FileText,
+				title: 'Encargos Inclusos',
+			},
+			{
+				description: 'Processo de contratação rápido, digital e com menos burocracia.',
+				icon: Zap,
+				title: 'Contratação Simplificada',
+			},
+			{
+				description: 'Mais segurança financeira para o proprietário durante todo o contrato.',
+				icon: Shield,
+				title: 'Segurança ao Locador',
+			},
+			{
+				description: 'Facilita a aprovação do aluguel, agilizando a negociação do imóvel.',
+				icon: TrendingUp,
+				title: 'Agilidade na Locação',
+			},
+		],
+		description: {
+			content: [
+				'A Fiança Locatícia é uma solução moderna que substitui o fiador tradicional, garantindo ao proprietário o recebimento do aluguel mesmo em situações de inadimplência do inquilino.',
+				'Além de reduzir burocracias, ela simplifica o processo de locação, trazendo mais segurança jurídica ao locador e praticidade ao inquilino durante toda a vigência do contrato.',
+				'É indicada para imóveis residenciais e comerciais, oferecendo tranquilidade financeira e agilidade nas negociações, sem necessidade de depósitos ou garantias adicionais.',
+			],
+			indications: [
+				'Proprietários de imóveis residenciais ou comerciais',
+				'Inquilinos que não possuem fiador',
+				'Imobiliárias e administradoras de imóveis',
+				'Contratos de locação que exigem agilidade',
+			],
+			title: 'Sobre a fiança locatícia',
+		},
+		faqs: [
+			{
+				answer: 'Sim. Ela elimina a necessidade de fiador, caução ou depósito antecipado.',
+				question: 'A fiança locatícia substitui o fiador?',
+			},
+			{
+				answer: 'Aluguel, condomínio, IPTU e outros encargos previstos no contrato de locação.',
+				question: 'Quais valores são garantidos pela fiança locatícia?',
+			},
+			{
+				answer: 'Normalmente o inquilino realiza o pagamento no momento da contratação do aluguel.',
+				question: 'Quem é responsável pelo pagamento da fiança locatícia?',
+			},
+			{
+				answer: 'Sim. Pode ser contratada tanto para imóveis residenciais quanto comerciais.',
+				question: 'A fiança locatícia é válida para imóveis comerciais?',
+			},
+			{
+				answer: 'Sim. A seguradora garante o pagamento conforme as condições previstas na apólice.',
+				question: 'O proprietário recebe mesmo em caso de inadimplência?',
+			},
+			{
+				answer: 'A renovação ocorre conforme o prazo do contrato de aluguel, podendo ser ajustada anualmente.',
+				question: 'Como funciona a renovação da fiança locatícia?',
+			},
+		],
+		icon: Key,
+		subtitle: 'Garantia completa para contratos de aluguel com menos burocracia e mais segurança.',
+		title: 'Fiança locatícia',
+	},
+	imobiliario: {
+		badgeLabel: 'Proteção para seu imóvel',
+		benefits: [
+			{
+				description:
+					'Cobertura contra danos estruturais causados por incêndio, explosão, queda de raio e outros eventos que possam comprometer a segurança do imóvel.',
+				icon: Home,
+				title: 'Proteção Estrutural',
+			},
+			{
+				description:
+					'Garante indenização para prejuízos causados por curtos-circuitos, variações de energia e falhas elétricas que atinjam a estrutura do imóvel.',
+				icon: Zap,
+				title: 'Danos Elétricos',
+			},
+			{
+				description:
+					'Proteção contra vendavais, granizo, alagamentos e outros fenômenos naturais previstos na apólice, reduzindo impactos financeiros.',
+				icon: CloudRain,
+				title: 'Eventos Naturais',
+			},
+			{
+				description:
+					'Cobre danos causados involuntariamente a terceiros decorrentes do imóvel, oferecendo mais segurança jurídica ao proprietário.',
+				icon: Shield,
+				title: 'Responsabilidade Civil',
+			},
+			{
+				description:
+					'Pode ser contratado tanto para imóveis residenciais quanto comerciais, adaptando as coberturas conforme o perfil do imóvel.',
+				icon: Building,
+				title: 'Imóveis Residenciais e Comerciais',
+			},
+			{
+				description:
+					'Permite personalizar coberturas adicionais de acordo com as necessidades do imóvel, oferecendo proteção sob medida.',
+				icon: Settings,
+				title: 'Personalização de Coberturas',
+			},
+		],
+		description: {
+			content: [
+				'O Seguro Imobiliário oferece proteção financeira para imóveis residenciais e comerciais, cobrindo danos estruturais e diversos riscos que podem gerar altos prejuízos.',
+				'Ele é ideal para proprietários que desejam preservar seu patrimônio e evitar impactos financeiros causados por incêndios, falhas elétricas ou eventos naturais.',
+				'Com coberturas personalizáveis, o seguro garante mais tranquilidade ao proprietário, assegurando a recuperação do imóvel em situações inesperadas.',
+			],
+			indications: [
+				'Proprietários de imóveis residenciais',
+				'Donos de imóveis comerciais',
+				'Investidores imobiliários',
+				'Locadores que desejam proteger seu patrimônio',
+			],
+			title: 'Sobre o seguro imobiliário',
 		},
 		faqs: [
 			{
 				answer:
-					'O PGBL permite deduzir contribuições do imposto de renda, enquanto o VGBL é indicado para quem faz declaração simplificada.',
-				question: 'Qual a diferença entre PGBL e VGBL?',
+					'Sim. O seguro pode ser contratado para imóveis alugados, protegendo a estrutura independentemente de quem esteja utilizando o imóvel.',
+				question: 'O seguro imobiliário cobre imóveis alugados?',
 			},
 			{
-				answer: 'Sim, a previdência privada permite resgates conforme as regras do plano contratado.',
-				question: 'Posso resgatar o valor antes da aposentadoria?',
+				answer:
+					'Imóveis residenciais e comerciais, como casas, apartamentos, salas comerciais e prédios, conforme as condições da apólice.',
+				question: 'Quais tipos de imóveis podem ser segurados?',
 			},
 			{
-				answer: 'Não. Você escolhe o valor e pode ajustar as contribuições ao longo do tempo.',
-				question: 'Existe valor mínimo para contribuir?',
+				answer:
+					'Incêndio, explosão, danos elétricos, queda de raio, vendaval e outros riscos previstos no contrato do seguro.',
+				question: 'Quais riscos estão normalmente cobertos?',
 			},
 			{
-				answer: 'Sim, é possível alterar o perfil conforme seus objetivos e momento de vida.',
-				question: 'Posso mudar o perfil de investimento?',
+				answer:
+					'Não. O seguro imobiliário foca na estrutura do imóvel, enquanto o residencial pode incluir também os bens internos.',
+				question: 'O seguro imobiliário é o mesmo que seguro residencial?',
+			},
+			{
+				answer: 'Sim. As coberturas podem ser ajustadas conforme o perfil do imóvel e as necessidades do proprietário.',
+				question: 'É possível personalizar as coberturas?',
+			},
+			{
+				answer:
+					'Proprietários que desejam proteger seu imóvel contra danos estruturais e reduzir riscos financeiros em caso de sinistro.',
+				question: 'Quem deve contratar o seguro imobiliário?',
 			},
 		],
-		icon: PiggyBank,
-		subtitle: 'Garanta um futuro financeiro mais tranquilo com planejamento, flexibilidade e vantagens fiscais.',
-		title: 'Previdência privada',
+		icon: Home,
+		subtitle: 'Proteção completa para seu patrimônio.',
+		title: 'Seguro imobiliário',
+	},
+	'responsabilidade-civil': {
+		badgeLabel: 'Proteção contra danos a terceiros',
+		benefits: [
+			{
+				description:
+					'Cobertura para prejuízos materiais causados involuntariamente a terceiros, protegendo seu patrimônio contra indenizações inesperadas.',
+				icon: Scale,
+				title: 'Danos Materiais',
+			},
+			{
+				description:
+					'Garante indenização em casos de lesões físicas causadas a terceiros durante atividades profissionais ou operacionais.',
+				icon: Activity,
+				title: 'Danos Corporais',
+			},
+			{
+				description:
+					'Proteção financeira para reclamações por danos morais, evitando impactos financeiros decorrentes de processos judiciais.',
+				icon: Shield,
+				title: 'Danos Morais',
+			},
+			{
+				description:
+					'Inclui despesas com defesa jurídica, honorários advocatícios e custas processuais, conforme limites contratados.',
+				icon: Gavel,
+				title: 'Custos Jurídicos',
+			},
+			{
+				description:
+					'Indicada para profissionais e empresas que prestam serviços e desejam se proteger contra erros ou omissões.',
+				icon: Briefcase,
+				title: 'Cobertura Profissional',
+			},
+			{
+				description:
+					'Permite ajustar limites e coberturas de acordo com o risco da atividade exercida, oferecendo segurança sob medida.',
+				icon: Settings,
+				title: 'Proteção Personalizável',
+			},
+		],
+		description: {
+			content: [
+				'O Seguro de Responsabilidade Civil protege pessoas físicas e jurídicas contra prejuízos financeiros causados involuntariamente a terceiros no exercício de suas atividades.',
+				'Ele é essencial para reduzir riscos jurídicos, cobrindo indenizações por danos materiais, corporais ou morais que possam gerar processos e altos custos.',
+				'Com coberturas flexíveis, o seguro oferece mais tranquilidade para empresas e profissionais que desejam atuar com segurança e respaldo financeiro.',
+			],
+			indications: [
+				'Empresas de prestação de serviços',
+				'Profissionais liberais',
+				'Empreendedores e autônomos',
+				'Negócios com atendimento ao público',
+			],
+			title: 'Sobre responsabilidade civil',
+		},
+		faqs: [
+			{
+				answer:
+					'São prejuízos materiais, corporais ou morais causados involuntariamente a outras pessoas durante atividades cobertas pela apólice.',
+				question: 'O que é considerado dano a terceiros?',
+			},
+			{
+				answer:
+					'Não. Ele também é indicado para profissionais liberais, autônomos e pessoas físicas que desejam se proteger contra riscos.',
+				question: 'O seguro é indicado apenas para empresas?',
+			},
+			{
+				answer: 'Sim. Dependendo do plano contratado, pode incluir honorários advocatícios e despesas judiciais.',
+				question: 'O seguro cobre custos com advogados?',
+			},
+			{
+				answer:
+					'Atividades profissionais, comerciais e operacionais, desde que estejam declaradas e aceitas na contratação.',
+				question: 'Quais atividades podem ser seguradas?',
+			},
+			{
+				answer: 'Sim. Os limites podem ser ajustados conforme o risco e o porte da atividade exercida.',
+				question: 'É possível personalizar os limites de cobertura?',
+			},
+			{
+				answer:
+					'Sempre que houver uma reclamação formal de terceiros por danos cobertos ocorridos durante a vigência da apólice.',
+				question: 'Quando o seguro pode ser acionado?',
+			},
+		],
+		icon: Scale,
+		subtitle: 'Segurança jurídica e financeira.',
+		title: 'Responsabilidade civil',
 	},
 	'seguro-auto': {
 		badgeLabel: 'Proteção veicular completa',
@@ -226,6 +608,87 @@ export const servicePage = {
 		subtitle:
 			'Proteja seu veículo contra roubo, colisão e imprevistos com as melhores coberturas do mercado. Assistência 24h e atendimento humanizado.',
 		title: 'Seguro Auto',
+	},
+	'seguro-condominio': {
+		badgeLabel: 'Proteção para áreas comuns',
+		benefits: [
+			{
+				description:
+					'Cobertura para a estrutura do condomínio, incluindo áreas comuns, fundações, muros, portões e demais elementos essenciais ao funcionamento.',
+				icon: Building2,
+				title: 'Proteção Estrutural',
+			},
+			{
+				description:
+					'Garante indenização em casos de incêndio, explosão, queda de raio e fumaça, protegendo o patrimônio coletivo contra grandes prejuízos.',
+				icon: Flame,
+				title: 'Danos por Incêndio e Explosão',
+			},
+			{
+				description:
+					'Proteção contra vendaval, granizo, alagamento e outros eventos naturais previstos na apólice, reduzindo impactos financeiros ao condomínio.',
+				icon: CloudRain,
+				title: 'Eventos Naturais',
+			},
+			{
+				description:
+					'Cobre danos materiais ou corporais causados a moradores, visitantes ou terceiros nas áreas comuns do condomínio.',
+				icon: Shield,
+				title: 'Responsabilidade Civil',
+			},
+			{
+				description:
+					'Cobertura para elevadores, portões automáticos, bombas, centrais elétricas e outros equipamentos essenciais.',
+				icon: Cog,
+				title: 'Equipamentos do Condomínio',
+			},
+			{
+				description:
+					'Permite a inclusão de coberturas adicionais conforme o perfil do condomínio, oferecendo proteção sob medida.',
+				icon: Settings,
+				title: 'Coberturas Personalizáveis',
+			},
+		],
+		description: {
+			content: [
+				'O Seguro Condomínio protege o patrimônio coletivo, cobrindo a estrutura, áreas comuns e equipamentos essenciais contra diversos riscos previstos em apólice.',
+				'Além de garantir mais tranquilidade aos moradores, o seguro ajuda a evitar prejuízos financeiros elevados decorrentes de incêndios, eventos naturais ou acidentes.',
+				'É uma proteção fundamental para síndicos e administradoras, assegurando o cumprimento legal e a gestão financeira responsável do condomínio.',
+			],
+			indications: ['Síndicos', 'Administradoras de condomínio', 'Condomínios residenciais', 'Condomínios comerciais'],
+			title: 'Sobre o seguro condomínio',
+		},
+		faqs: [
+			{
+				answer:
+					'Sim. A legislação brasileira exige que condomínios contratem seguro contra incêndio e outros riscos previstos em lei.',
+				question: 'O seguro condomínio é obrigatório?',
+			},
+			{
+				answer:
+					'Não. O seguro condomínio cobre áreas comuns e estrutura. As unidades devem possuir seguro residencial próprio.',
+				question: 'O seguro cobre apartamentos individuais?',
+			},
+			{
+				answer: 'Sim, desde que a cobertura de responsabilidade civil esteja contratada na apólice.',
+				question: 'Danos a terceiros estão cobertos?',
+			},
+			{
+				answer: 'Hall, escadas, elevadores, garagens, portões, áreas de lazer e demais espaços de uso coletivo.',
+				question: 'Quais áreas são consideradas áreas comuns?',
+			},
+			{
+				answer: 'Sim. Equipamentos do condomínio podem ser incluídos conforme as coberturas contratadas.',
+				question: 'Equipamentos como elevadores estão cobertos?',
+			},
+			{
+				answer: 'Sim. As coberturas podem ser ajustadas de acordo com o porte, tipo e necessidades do condomínio.',
+				question: 'É possível personalizar as coberturas?',
+			},
+		],
+		icon: Building2,
+		subtitle: 'Segurança para o patrimônio coletivo.',
+		title: 'Seguro condomínio',
 	},
 	'seguro-empresarial': {
 		badgeLabel: 'Proteção completa para seu negócio',
@@ -398,7 +861,6 @@ export const servicePage = {
 			'Proteja sua casa e seus bens contra incêndio, roubo, danos elétricos e muito mais. Assistência 24h com eletricista, encanador e chaveiro.',
 		title: 'Seguro residencial',
 	},
-
 	'seguro-viagem': {
 		badgeLabel: 'Viaje com tranquilidade',
 		benefits: [
