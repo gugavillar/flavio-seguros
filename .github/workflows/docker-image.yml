@@ -2,7 +2,12 @@ name: Build Docker images
 
 on:
   push:
-    branches: ['main']
+    branches:
+      - 'main'
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'Dockerfile'
 
 jobs:
   build-and-push-dockerfile-image:
