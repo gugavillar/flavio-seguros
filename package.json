@@ -26,6 +26,7 @@
     "lucide-react": "^0.563.0",
     "nitro": "npm:nitro-nightly@3.0.1-20260128-211656-ae83c97e",
     "react": "^19.2.4",
+    "react-cookie-consent": "^10.0.1",
     "react-dom": "^19.2.4",
     "react-number-format": "^5.4.4",
     "swiper": "^12.1.0",
