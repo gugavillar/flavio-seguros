@@ -1,3 +1,4 @@
+import { faqs } from '@/__mocks__/faq'
 import { HeaderSection, PageContainer } from '@/components/core'
 
 import { AccordionContentText } from '../AccordionContentText'
@@ -12,7 +13,7 @@ export const Faq = () => {
 					title='Tire suas dúvidas'
 				/>
 				<div className='space-y-4'>
-					<AccordionContentText />
+					<AccordionContentText faqs={faqs} />
 				</div>
 			</div>
 		</PageContainer>

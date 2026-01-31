@@ -1,7 +1,13 @@
-import { faqs } from '@/__mocks__/faq'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/core'
 
-export const AccordionContentText = () => {
+type AccordionContentTextProps = {
+	faqs: Array<{
+		question: string
+		answer: string
+	}>
+}
+
+export const AccordionContentText = ({ faqs }: AccordionContentTextProps) => {
 	return (
 		<Accordion className='space-y-4' collapsible type='single'>
 			{faqs.map((faq, index) => (

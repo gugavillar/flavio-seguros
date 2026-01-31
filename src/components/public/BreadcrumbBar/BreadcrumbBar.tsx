@@ -1,18 +1,21 @@
-import { useParams } from '@tanstack/react-router'
+import { useMatch } from '@tanstack/react-router'
 import { ChevronRight } from 'lucide-react'
 
 import { NavLink } from '@/components/core'
 
 export const BreadcrumbBar = () => {
-	const { service } = useParams({ from: '/(public)/(layout)/_layout/$service' })
-	const serviceTransform = service.replace('-', ' ')
+	const params = useMatch({ from: '/(public)/(layout)/_layout/$service', shouldThrow: false })
+	const serviceTransform = params?.params?.service?.replace('-', ' ')
+
+	if (!serviceTransform) return null
+
 	return (
 		<div className='border-gray-300 border-t bg-off-white-2'>
 			<div className='container mx-auto px-4 py-3'>
 				<nav aria-label='Breadcrumb' role='navigation'>
 					<ol className='flex flex-wrap items-center gap-1.5 text-gray-500 text-sm sm:gap-2.5'>
 						<li className='inline-flex items-center gap-1.5'>
-							<NavLink className='text-gray-500 hover:text-primary' to='/'>
+							<NavLink className='text-gray-500 hover:text-primary' hash='servicos' to='/'>
 								Início
 							</NavLink>
 						</li>

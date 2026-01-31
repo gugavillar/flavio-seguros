@@ -1,5 +1,5 @@
 import { services } from '@/__mocks__/services'
-import { DescriptionCard, HeaderSection, PageContainer } from '@/components/core'
+import { DescriptionCard, HeaderSection, NavLink, PageContainer } from '@/components/core'
 
 export const Services = () => {
 	return (
@@ -13,7 +13,9 @@ export const Services = () => {
 			</div>
 			<div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
 				{services.map((item) => (
-					<DescriptionCard key={item.title} {...item} />
+					<NavLink key={item.title} params={{ service: item.path }} to='/$service'>
+						<DescriptionCard {...item} />
+					</NavLink>
 				))}
 			</div>
 		</PageContainer>
