@@ -1,31 +1,11 @@
 import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 
-import appCss from '../styles.css?url'
+import '../styles.css'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-import { NotFound } from '@/components/core'
-
 export const Route = createRootRoute({
 	head: () => ({
-		links: [
-			{
-				href: appCss,
-				rel: 'stylesheet',
-			},
-			{
-				href: 'https://fonts.googleapis.com',
-				rel: 'preconnect',
-			},
-			{
-				href: 'https://fonts.gstatic.com',
-				rel: 'preconnect',
-			},
-			{
-				href: 'https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap',
-				rel: 'stylesheet',
-			},
-		],
 		meta: [
 			{
 				charSet: 'utf-8',
@@ -39,7 +19,6 @@ export const Route = createRootRoute({
 			},
 		],
 	}),
-	notFoundComponent: NotFound,
 	shellComponent: RootDocument,
 })
 
