@@ -11,7 +11,7 @@ type FaqServiceProps = {
 
 export const FaqService = ({ faqs }: FaqServiceProps) => {
 	return (
-		<PageContainer className='px-4 py-20'>
+		<PageContainer className='py-20'>
 			<div className='container mx-auto max-w-3xl'>
 				<h2 className='mb-12 text-center font-bold font-title text-3xl md:text-4xl'>Perguntas frequentes</h2>
 				<div className='space-y-4'>

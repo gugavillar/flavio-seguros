@@ -5,7 +5,38 @@ import { useState } from 'react'
 import { AvatarLogo, NavLink } from '@/components/core'
 import { BreadcrumbBar, Button } from '@/components/public'
 
-export const Navbar = () => {
+const Links = ({ handleToggle, isOpen }: { handleToggle: VoidFunction; isOpen: boolean }) => {
+	return (
+		<>
+			<div className='hidden items-center gap-8 md:flex'>
+				<NavLink hash='servicos' to='/'>
+					Serviços
+				</NavLink>
+				<NavLink hash='sobre' to='/'>
+					Sobre nós
+				</NavLink>
+				<NavLink hash='depoimentos' to='/'>
+					Depoimentos
+				</NavLink>
+				<NavLink hash='faq' to='/'>
+					FAQ
+				</NavLink>
+			</div>
+			<div className='hidden md:block'>
+				<Button>Fale conosco</Button>
+			</div>
+			<button className='p-2 text-gray-500 md:hidden' onClick={handleToggle}>
+				{isOpen ? <X className='size-6' /> : <Menu className='size-6' />}
+			</button>
+		</>
+	)
+}
+
+type NavbarProps = {
+	showLinks?: boolean
+}
+
+export const Navbar = ({ showLinks = true }: NavbarProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const matchRoute = useMatchRoute()
@@ -17,28 +48,9 @@ export const Navbar = () => {
 			<div className='container mx-auto p-4'>
 				<nav aria-label='Navbar' className='flex items-center justify-between' role='navigation'>
 					<AvatarLogo />
-					<div className='hidden items-center gap-8 md:flex'>
-						<NavLink hash='servicos' to='/'>
-							Serviços
-						</NavLink>
-						<NavLink hash='sobre' to='/'>
-							Sobre nós
-						</NavLink>
-						<NavLink hash='depoimentos' to='/'>
-							Depoimentos
-						</NavLink>
-						<NavLink hash='faq' to='/'>
-							FAQ
-						</NavLink>
-					</div>
-					<div className='hidden md:block'>
-						<Button>Fale conosco</Button>
-					</div>
-					<button className='p-2 text-gray-500 md:hidden' onClick={handleToggle}>
-						{isOpen ? <X className='size-6' /> : <Menu className='size-6' />}
-					</button>
+					{showLinks && <Links handleToggle={handleToggle} isOpen={isOpen} />}
 				</nav>
-				{isOpen && (
+				{isOpen && showLinks && (
 					<div className='absolute top-full right-0 left-0 animate-fade-up border-border border-b bg-off-white-1 md:hidden'>
 						<div className='flex flex-col gap-4 p-4 text-gray-500'>
 							<a className='py-2 font-medium' href='#servicos' onClick={handleToggle}>
@@ -58,7 +70,7 @@ export const Navbar = () => {
 					</div>
 				)}
 			</div>
-			{isServicePage && <BreadcrumbBar />}
+			{isServicePage && showLinks && <BreadcrumbBar />}
 		</header>
 	)
 }

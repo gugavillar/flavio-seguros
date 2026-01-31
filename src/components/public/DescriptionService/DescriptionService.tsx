@@ -10,7 +10,7 @@ type DescriptionServiceProps = {
 
 export const DescriptionService = ({ title, content, indications }: DescriptionServiceProps) => {
 	return (
-		<PageContainer className='px-4 py-20'>
+		<PageContainer className='py-20'>
 			<div className='container mx-auto max-w-4xl'>
 				<h2 className='mb-8 text-center font-bold font-title text-3xl text-black/80 md:text-4xl'> {title}</h2>
 				<div className='space-y-6'>

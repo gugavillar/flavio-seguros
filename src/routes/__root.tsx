@@ -1,10 +1,10 @@
 import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 
-import { NotFound } from '@/components/core'
-
 import appCss from '../styles.css?url'
 import 'swiper/css'
 import 'swiper/css/pagination'
+
+import { NotFound } from '@/components/core'
 
 export const Route = createRootRoute({
 	head: () => ({

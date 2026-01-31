@@ -1,17 +1,21 @@
-import { ClientOnly, createFileRoute, useLoaderData } from '@tanstack/react-router'
+import { ClientOnly, createFileRoute, notFound, useLoaderData } from '@tanstack/react-router'
 
 import { servicePage } from '@/__mocks__/services'
 import { BenefitsService, DescriptionService, FaqService, HeroService } from '@/components/public'
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
-	component: ServicePage,
-	loader: ({ params }) => {
-		return params.service
+	beforeLoad: ({ params }) => {
+		if (!servicePage[params.service as keyof typeof servicePage]) {
+			throw notFound()
+		}
 	},
+	component: ServicePage,
+	loader: ({ params }) => params.service,
 })
 
 function ServicePage() {
 	const service: keyof typeof servicePage = useLoaderData({ from: '/(public)/(layout)/_layout/$service' })
+
 	return (
 		<ClientOnly>
 			<HeroService
