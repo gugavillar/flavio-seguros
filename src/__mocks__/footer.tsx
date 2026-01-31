@@ -67,7 +67,7 @@ export const company = {
 	links: [
 		{
 			children: 'Sobre nós',
-			href: '',
+			href: '#sobre',
 		},
 		{
 			children: 'Nossa equipe',

@@ -14,6 +14,7 @@ import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
 import { Route as publiclayoutLayoutRouteImport } from './routes/(public)/(layout)/_layout'
 import { Route as adminlayoutLayoutRouteImport } from './routes/(admin)/(layout)/_layout'
 import { Route as publiclayoutLayoutIndexRouteImport } from './routes/(public)/(layout)/_layout.index'
+import { Route as publiclayoutLayoutServiceRouteImport } from './routes/(public)/(layout)/_layout.$service'
 import { Route as adminlayoutLayoutAdminRouteImport } from './routes/(admin)/(layout)/_layout.admin'
 
 const LoginRoute = LoginRouteImport.update({
@@ -39,6 +40,12 @@ const publiclayoutLayoutIndexRoute = publiclayoutLayoutIndexRouteImport.update({
   path: '/',
   getParentRoute: () => publiclayoutLayoutRoute,
 } as any)
+const publiclayoutLayoutServiceRoute =
+  publiclayoutLayoutServiceRouteImport.update({
+    id: '/$service',
+    path: '/$service',
+    getParentRoute: () => publiclayoutLayoutRoute,
+  } as any)
 const adminlayoutLayoutAdminRoute = adminlayoutLayoutAdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -49,12 +56,14 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin': typeof adminlayoutLayoutAdminRoute
+  '/$service': typeof publiclayoutLayoutServiceRoute
   '/': typeof publiclayoutLayoutIndexRoute
 }
 export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin': typeof adminlayoutLayoutAdminRoute
+  '/$service': typeof publiclayoutLayoutServiceRoute
   '/': typeof publiclayoutLayoutIndexRoute
 }
 export interface FileRoutesById {
@@ -64,13 +73,14 @@ export interface FileRoutesById {
   '/(public)/(layout)/_layout': typeof publiclayoutLayoutRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/(admin)/(layout)/_layout/admin': typeof adminlayoutLayoutAdminRoute
+  '/(public)/(layout)/_layout/$service': typeof publiclayoutLayoutServiceRoute
   '/(public)/(layout)/_layout/': typeof publiclayoutLayoutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/login' | '/api/auth/$' | '/admin' | '/'
+  fullPaths: '/login' | '/api/auth/$' | '/admin' | '/$service' | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/login' | '/api/auth/$' | '/admin' | '/'
+  to: '/login' | '/api/auth/$' | '/admin' | '/$service' | '/'
   id:
     | '__root__'
     | '/login'
@@ -78,6 +88,7 @@ export interface FileRouteTypes {
     | '/(public)/(layout)/_layout'
     | '/api/auth/$'
     | '/(admin)/(layout)/_layout/admin'
+    | '/(public)/(layout)/_layout/$service'
     | '/(public)/(layout)/_layout/'
   fileRoutesById: FileRoutesById
 }
@@ -125,6 +136,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof publiclayoutLayoutIndexRouteImport
       parentRoute: typeof publiclayoutLayoutRoute
     }
+    '/(public)/(layout)/_layout/$service': {
+      id: '/(public)/(layout)/_layout/$service'
+      path: '/$service'
+      fullPath: '/$service'
+      preLoaderRoute: typeof publiclayoutLayoutServiceRouteImport
+      parentRoute: typeof publiclayoutLayoutRoute
+    }
     '/(admin)/(layout)/_layout/admin': {
       id: '/(admin)/(layout)/_layout/admin'
       path: '/admin'
@@ -147,10 +165,12 @@ const adminlayoutLayoutRouteWithChildren =
   adminlayoutLayoutRoute._addFileChildren(adminlayoutLayoutRouteChildren)
 
 interface publiclayoutLayoutRouteChildren {
+  publiclayoutLayoutServiceRoute: typeof publiclayoutLayoutServiceRoute
   publiclayoutLayoutIndexRoute: typeof publiclayoutLayoutIndexRoute
 }
 
 const publiclayoutLayoutRouteChildren: publiclayoutLayoutRouteChildren = {
+  publiclayoutLayoutServiceRoute: publiclayoutLayoutServiceRoute,
   publiclayoutLayoutIndexRoute: publiclayoutLayoutIndexRoute,
 }
 

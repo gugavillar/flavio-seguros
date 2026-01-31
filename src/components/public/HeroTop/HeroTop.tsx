@@ -53,6 +53,7 @@ export const HeroTop = () => {
 							delay: 4000,
 							disableOnInteraction: false,
 						}}
+						className='rounded-2xl'
 						loop
 						modules={[Autoplay]}
 						slidesPerView={1}

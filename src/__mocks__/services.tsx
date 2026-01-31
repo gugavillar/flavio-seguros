@@ -32,3 +32,13 @@ export const services = [
 		title: 'Seguro Viagem',
 	},
 ]
+
+export const servicePage = {
+	'seguro-auto': {
+		badgeLabel: 'Proteção veicular completa',
+		icon: Car,
+		subtitle:
+			'Proteja seu veículo contra roubo, colisão e imprevistos com as melhores coberturas do mercado. Assistência 24h e atendimento humanizado.',
+		title: 'Seguro Auto',
+	},
+}

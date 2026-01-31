@@ -14,7 +14,6 @@ function PublicLayoutComponent() {
 				<Outlet />
 			</main>
 			<Footer />
-			{/* <ScriptChat /> */}
 		</>
 	)
 }
