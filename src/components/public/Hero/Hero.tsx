@@ -38,7 +38,7 @@ export const Hero = () => {
 				<h2 className='mb-6 font-bold font-title text-2xl text-white md:text-3xl lg:text-4xl'>
 					Pronto para proteger o que importa?
 				</h2>
-				<p className='mx-auto mb-8 max-w-2xl text-gray-400 text-lg'>
+				<p className='mx-auto mb-8 max-w-2xl text-gray-300 text-lg'>
 					Solicite uma cotação gratuita e sem compromisso. Nossa equipe entrará em contato em até 24 horas com as
 					melhores opções para você.
 				</p>
@@ -48,7 +48,7 @@ export const Hero = () => {
 						Solicitar cotação <ArrowRight />
 					</Button>
 				</div>
-				<div className='flex flex-wrap justify-center gap-8 text-gray-400'>
+				<div className='flex flex-wrap justify-center gap-8 text-gray-300'>
 					{info.map((item) => (
 						<HeroInfo key={item.text} {...item} />
 					))}

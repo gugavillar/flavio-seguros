@@ -23,7 +23,7 @@ const LinkList = ({ title, links }: { title: string; links: Array<ComponentProps
 			<ul className='space-y-3 text-gray-400'>
 				{links.map((link, index) => (
 					<li key={index}>
-						<Anchor {...link} className='transition-colors hover:text-white' />
+						<Anchor {...link} className='text-gray-400 transition-colors hover:text-white' />
 					</li>
 				))}
 			</ul>

@@ -16,7 +16,7 @@ export const HeroTop = () => {
 					<h1 className='font-bold font-title text-4xl text-black/80 leading-tight md:text-5xl lg:text-[3.65rem]'>
 						Proteja o que <span className='text-primary'>realmente importa</span>
 					</h1>
-					<p className='max-w-lg text-gray-400 text-lg leading-relaxed'>
+					<p className='max-w-lg text-gray-500 text-lg leading-relaxed'>
 						Há mais de 20 anos ajudando famílias brasileiras a encontrar o seguro ideal. Oferecemos soluções
 						personalizadas com as melhores seguradoras do mercado.
 					</p>
@@ -40,7 +40,7 @@ export const HeroTop = () => {
 							<Fragment key={index}>
 								<div className='text-center'>
 									<p className='font-bold text-2xl text-black/80'>{item.title}</p>
-									<p className='text-gray-400 text-sm'>{item.subtitle}</p>
+									<p className='text-gray-500 text-sm'>{item.subtitle}</p>
 								</div>
 								<div className='h-12 w-px bg-gray-200 last:hidden' />
 							</Fragment>

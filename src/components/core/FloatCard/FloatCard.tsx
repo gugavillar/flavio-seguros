@@ -14,7 +14,7 @@ export const FloatCard = ({ className, icon, title, description, ...props }: Flo
 				<div className='flex size-12 items-center justify-center rounded-full bg-primary-gradient'> {icon}</div>
 				<div>
 					<p className='font-semibold text-black/80'>{title}</p>
-					<p className='text-gray-400 text-sm'>{description}</p>
+					<p className='text-gray-500 text-sm'>{description}</p>
 				</div>
 			</div>
 		</div>

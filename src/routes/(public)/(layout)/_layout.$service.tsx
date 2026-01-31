@@ -1,7 +1,7 @@
 import { createFileRoute, useLoaderData } from '@tanstack/react-router'
 
 import { servicePage } from '@/__mocks__/services'
-import { HeroService } from '@/components/public'
+import { DescriptionService, HeroService } from '@/components/public'
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
 	component: ServicePage,
@@ -20,6 +20,7 @@ function ServicePage() {
 				subtitle={servicePage[service].subtitle}
 				title={servicePage[service].title}
 			/>
+			<DescriptionService {...servicePage[service].description} />
 		</>
 	)
 }

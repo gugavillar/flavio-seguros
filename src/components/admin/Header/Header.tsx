@@ -9,7 +9,7 @@ export const Header = () => {
 			<h1 className='mb-4 font-bold text-4xl text-black/80 tracking-tight sm:text-5xl lg:text-6xl'>
 				Catálogo de <span className='text-primary'>Soluções</span>
 			</h1>
-			<p className='mx-auto max-w-2xl font-sans text-gray-400 text-lg sm:text-xl'>
+			<p className='mx-auto max-w-2xl font-sans text-gray-500 text-lg sm:text-xl'>
 				Este é o portal de serviços da corretora onde reunimos todos os links para facilitar seu atendimento.
 			</p>
 		</header>

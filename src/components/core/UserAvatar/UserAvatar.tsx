@@ -29,7 +29,7 @@ export const UserAvatar = ({ name, description, image }: UserAvatarProps) => {
 			)}
 			<div className='flex flex-col'>
 				<span className='font-semibold text-black/80 text-sm'>{name}</span>
-				<span className='hidden text-gray-400 text-xs sm:block'>{description}</span>
+				<span className='hidden text-gray-500 text-xs sm:block'>{description}</span>
 			</div>
 		</div>
 	)

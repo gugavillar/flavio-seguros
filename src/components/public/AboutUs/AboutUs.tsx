@@ -11,7 +11,7 @@ const AboutUsCard = ({ icon, title, description }: { icon: ReactNode; title: str
 				{icon}
 			</div>
 			<h3 className='mb-2 font-semibold text-black/80'>{title}</h3>
-			<p className='text-gray-400 text-sm'>{description}</p>
+			<p className='text-gray-500 text-sm'>{description}</p>
 		</div>
 	)
 }

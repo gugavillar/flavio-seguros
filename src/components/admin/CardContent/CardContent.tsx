@@ -39,7 +39,7 @@ export const CardContent = <T extends ElementType = 'div'>({
 							>
 								{title}
 							</h3>
-							{description && <p className='mt-1 line-clamp-2 text-gray-400 text-sm'>{description}</p>}
+							{description && <p className='mt-1 line-clamp-2 text-gray-500 text-sm'>{description}</p>}
 							{children}
 						</div>
 					</div>

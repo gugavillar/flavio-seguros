@@ -34,13 +34,13 @@ export const Navbar = () => {
 					<div className='hidden md:block'>
 						<Button>Fale conosco</Button>
 					</div>
-					<button className='p-2 text-gray-400 md:hidden' onClick={handleToggle}>
+					<button className='p-2 text-gray-500 md:hidden' onClick={handleToggle}>
 						{isOpen ? <X className='size-6' /> : <Menu className='size-6' />}
 					</button>
 				</nav>
 				{isOpen && (
 					<div className='absolute top-full right-0 left-0 animate-fade-up border-border border-b bg-off-white-1 md:hidden'>
-						<div className='flex flex-col gap-4 p-4 text-gray-400'>
+						<div className='flex flex-col gap-4 p-4 text-gray-500'>
 							<a className='py-2 font-medium' href='#servicos' onClick={handleToggle}>
 								Serviços
 							</a>
