@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { testimonials } from '@/__mocks__/testimonials'
 import { Card, HeaderSection, PageContainer, UserAvatar } from '@/components/core'
+import { NAVIGATION_HASH } from '@/utils'
 
 const TestimonialCard = ({
 	content,
@@ -34,7 +35,7 @@ const TestimonialCard = ({
 export const Testimonials = () => {
 	const isSmallDevice = useMediaQuery('only screen and (max-width : 767px)')
 	return (
-		<PageContainer id='depoimentos'>
+		<PageContainer id={NAVIGATION_HASH.TESTIMONIALS}>
 			<div className='mx-auto mb-16 max-w-2xl text-center'>
 				<HeaderSection
 					badgeLabel='Depoimentos'

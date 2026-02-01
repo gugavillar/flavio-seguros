@@ -3,8 +3,6 @@ import type { ComponentProps, ReactNode } from 'react'
 import { company, servicesFooter, social, support } from '@/__mocks__/footer'
 import { AvatarLogo } from '@/components/core'
 
-import { Anchor } from '../Anchor'
-
 const SocialLink = ({ href, icon }: { href: string; icon: ReactNode }) => {
 	return (
 		<a
@@ -16,15 +14,13 @@ const SocialLink = ({ href, icon }: { href: string; icon: ReactNode }) => {
 	)
 }
 
-const LinkList = ({ title, links }: { title: string; links: Array<ComponentProps<'a'>> }) => {
+const LinkList = ({ title, links }: { title: string; links: Array<{ children: ReactNode }> }) => {
 	return (
 		<div>
 			<h4 className='mb-4 font-semibold'>{title}</h4>
 			<ul className='space-y-3 text-gray-400'>
 				{links.map((link, index) => (
-					<li key={index}>
-						<Anchor {...link} className='text-gray-400 hover:text-white' />
-					</li>
+					<li key={index}>{link.children}</li>
 				))}
 			</ul>
 		</div>

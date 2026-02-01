@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 
 import { features } from '@/__mocks__/aboutUs'
 import { FloatCard, HeaderSection, PageContainer } from '@/components/core'
+import { NAVIGATION_HASH } from '@/utils'
 
 const AboutUsCard = ({ icon, title, description }: { icon: ReactNode; title: string; description: string }) => {
 	return (
@@ -18,7 +19,7 @@ const AboutUsCard = ({ icon, title, description }: { icon: ReactNode; title: str
 
 export const AboutUs = () => {
 	return (
-		<PageContainer id='sobre'>
+		<PageContainer id={NAVIGATION_HASH.ABOUT}>
 			<div className='grid items-center gap-16 lg:grid-cols-2'>
 				<div className='relative order-2 lg:order-1'>
 					<div className='relative'>

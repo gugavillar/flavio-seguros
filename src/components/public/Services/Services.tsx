@@ -1,9 +1,10 @@
 import { services } from '@/__mocks__/services'
 import { DescriptionCard, HeaderSection, NavLink, PageContainer } from '@/components/core'
+import { NAVIGATION_HASH } from '@/utils'
 
 export const Services = () => {
 	return (
-		<PageContainer id='servicos'>
+		<PageContainer id={NAVIGATION_HASH.SERVICES}>
 			<div className='mx-auto mb-16 max-w-2xl text-center'>
 				<HeaderSection
 					badgeLabel='Nossos Serviços'

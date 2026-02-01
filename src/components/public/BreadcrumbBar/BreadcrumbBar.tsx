@@ -2,6 +2,7 @@ import { useMatch } from '@tanstack/react-router'
 import { ChevronRight } from 'lucide-react'
 
 import { NavLink } from '@/components/core'
+import { NAVIGATION_HASH } from '@/utils'
 
 export const BreadcrumbBar = () => {
 	const params = useMatch({ from: '/(public)/(layout)/_layout/$service', shouldThrow: false })
@@ -15,7 +16,7 @@ export const BreadcrumbBar = () => {
 				<nav aria-label='Breadcrumb' role='navigation'>
 					<ol className='flex flex-wrap items-center gap-1.5 text-gray-500 text-sm sm:gap-2.5'>
 						<li className='inline-flex items-center gap-1.5'>
-							<NavLink className='text-gray-500 hover:text-primary' hash='servicos' to='/'>
+							<NavLink className='text-gray-500 hover:text-primary' hash={NAVIGATION_HASH.SERVICES} to='/'>
 								Início
 							</NavLink>
 						</li>

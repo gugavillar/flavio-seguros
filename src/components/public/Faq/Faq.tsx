@@ -1,11 +1,12 @@
 import { faqs } from '@/__mocks__/faq'
 import { HeaderSection, PageContainer } from '@/components/core'
+import { NAVIGATION_HASH } from '@/utils'
 
 import { AccordionContentText } from '../AccordionContentText'
 
 export const Faq = () => {
 	return (
-		<PageContainer id='faq'>
+		<PageContainer id={NAVIGATION_HASH.FAQ}>
 			<div className='mx-auto max-w-3xl text-center'>
 				<HeaderSection
 					badgeLabel='Perguntas frequentes'

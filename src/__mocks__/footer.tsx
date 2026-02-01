@@ -1,5 +1,8 @@
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 
+import { Anchor } from '@/components/public'
+import { goToHash, NAVIGATION_HASH } from '@/utils'
+
 import { services } from './services'
 
 export const social = [
@@ -23,8 +26,11 @@ export const social = [
 
 export const servicesFooter = {
 	links: services.map((service) => ({
-		children: service.title,
-		to: service.path,
+		children: (
+			<Anchor className='text-gray-400 hover:text-white' to={service.path}>
+				{service.title}
+			</Anchor>
+		),
 	})),
 	title: 'Serviços',
 }
@@ -33,11 +39,9 @@ export const support = {
 	links: [
 		{
 			children: 'Assistência 24h',
-			href: '',
 		},
 		{
 			children: 'Fale conosco',
-			href: '',
 		},
 		{
 			children: 'Política de privacidade',
@@ -58,21 +62,20 @@ export const support = {
 export const company = {
 	links: [
 		{
-			children: 'Sobre nós',
-			hash: 'sobre',
-			to: '/',
+			children: (
+				<a className='text-gray-400 hover:text-white' onClick={() => goToHash(NAVIGATION_HASH.ABOUT)}>
+					Sobre nós
+				</a>
+			),
 		},
 		{
-			children: 'Nossa equipe',
-			href: '',
+			children: <Anchor className='text-gray-400 hover:text-white'>Nossa equipe</Anchor>,
 		},
 		{
-			children: 'Trabalhe conosco',
-			href: '',
+			children: <Anchor className='text-gray-400 hover:text-white'>Trabalhe conosco</Anchor>,
 		},
 		{
-			children: 'Premiações',
-			href: '',
+			children: <Anchor className='text-gray-400 hover:text-white'>Premiações</Anchor>,
 		},
 	],
 	title: 'Empresa',
