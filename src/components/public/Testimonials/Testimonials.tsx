@@ -34,6 +34,8 @@ const TestimonialCard = ({
 
 export const Testimonials = () => {
 	const isSmallDevice = useMediaQuery('only screen and (max-width : 767px)')
+	const isMediumDevice = useMediaQuery('only screen and (max-width : 1023px)')
+	const showSlides = isSmallDevice ? 1 : isMediumDevice ? 2 : 3
 	return (
 		<PageContainer id={NAVIGATION_HASH.TESTIMONIALS}>
 			<div className='mx-auto mb-16 max-w-2xl text-center'>
@@ -48,7 +50,7 @@ export const Testimonials = () => {
 				loop
 				modules={[Pagination]}
 				pagination={{ clickable: true }}
-				slidesPerView={isSmallDevice ? 1 : 3}
+				slidesPerView={showSlides}
 				spaceBetween={24}
 			>
 				{testimonials.map((item) => (

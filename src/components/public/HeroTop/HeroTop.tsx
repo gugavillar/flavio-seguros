@@ -17,7 +17,7 @@ export const HeroTop = () => {
 					<h1 className='font-bold font-title text-4xl text-black/80 leading-tight md:text-5xl lg:text-[3.65rem]'>
 						Proteja o que <span className='text-primary'>realmente importa</span>
 					</h1>
-					<p className='max-w-lg text-gray-500 text-lg leading-relaxed'>
+					<p className='text-gray-500 text-lg leading-relaxed lg:max-w-xl'>
 						Há mais de 20 anos ajudando famílias brasileiras a encontrar o seguro ideal. Oferecemos soluções
 						personalizadas com as melhores seguradoras do mercado.
 					</p>
@@ -41,7 +41,7 @@ export const HeroTop = () => {
 							Conhecer seguros
 						</a>
 					</div>
-					<div className='flex items-center gap-8 pt-4'>
+					<div className='flex items-center gap-8 pt-4 max-sm:justify-center'>
 						{stats.map((item, index) => (
 							<Fragment key={index}>
 								<div className='text-center'>

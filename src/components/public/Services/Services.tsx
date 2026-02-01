@@ -14,7 +14,7 @@ export const Services = () => {
 			</div>
 			<div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
 				{services.map((item) => (
-					<NavLink key={item.title} to={item.path}>
+					<NavLink className='flex' key={item.title} to={item.path}>
 						<DescriptionCard {...item} />
 					</NavLink>
 				))}
