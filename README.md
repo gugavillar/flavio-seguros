@@ -63,7 +63,7 @@ Clone o repositório:
 git clone https://github.com/gugavillar/flavio-seguros.git
 cd flavio-seguros
 
-# Instale as dependências:
+# Instale as dependências: 
 pnpm install
 
 # Rode o projeto em modo de desenvolvimento:
@@ -71,8 +71,10 @@ pnpm dev
 ```
 
 ## Estrutura de pastas
+```bash
 src/
  ├─ routes/        # Rotas e layouts (TanStack Router)
  ├─ components/    # Componentes reutilizáveis de UI
  ├─ lib/           # Helpers, configs e integrações
  └─ public/        # Imagens e arquivos estáticos
+ ```

@@ -19,16 +19,24 @@ const CardAward = ({ title, description }: { title: string; description: string 
 	)
 }
 
-const Timeline = ({ year, awards }: { year: string; awards: { title: string; description: string }[] }) => {
+const Timeline = ({
+	year,
+	awards,
+	isLast,
+}: {
+	year: string
+	awards: { title: string; description: string }[]
+	isLast?: boolean
+}) => {
 	return (
 		<div className='mb-8 flex gap-6 last:mb-0'>
-			<div className='flex flex-col items-center'>
+			<div className='flex h-auto flex-col items-center'>
 				<div className='flex size-16 items-center justify-center rounded-full bg-primary-gradient font-bold text-lg text-white shadow-soft-white'>
 					{year}
 				</div>
-				<div className='mt-4 h-2.5 w-0.5 bg-primary/60' />
+				{!isLast && <div className='mt-4 w-0.5 grow bg-primary/60' />}
 			</div>
-			<div className='flex-1'>
+			<div className='flex-1 pt-2'>
 				<div className='grid gap-4 md:grid-cols-2'>
 					{awards.map((award) => (
 						<CardAward key={award.title} {...award} />
@@ -49,8 +57,8 @@ export const TimelineAwards = () => {
 				/>
 			</div>
 			<div className='mx-auto max-w-4xl'>
-				{timelineAwards.map((item) => (
-					<Timeline key={item.year} {...item} />
+				{timelineAwards.map((item, index) => (
+					<Timeline key={item.year} {...item} isLast={index === timelineAwards.length - 1} />
 				))}
 			</div>
 		</PageContainer>
