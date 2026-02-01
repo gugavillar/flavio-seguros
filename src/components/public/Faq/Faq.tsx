@@ -10,6 +10,7 @@ export const Faq = () => {
 			<div className='mx-auto max-w-3xl text-center'>
 				<HeaderSection
 					badgeLabel='Perguntas frequentes'
+					className='max-lg:mx-auto max-lg:max-w-2xl'
 					description='Encontre respostas para as perguntas mais comuns sobre nossos serviços.'
 					title='Tire suas dúvidas'
 				/>

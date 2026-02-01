@@ -75,7 +75,11 @@ export const company = {
 			children: <Anchor className='text-gray-400 hover:text-white'>Trabalhe conosco</Anchor>,
 		},
 		{
-			children: <Anchor className='text-gray-400 hover:text-white'>Premiações</Anchor>,
+			children: (
+				<Anchor className='text-gray-400 hover:text-white' to='/premiacoes'>
+					Premiações
+				</Anchor>
+			),
 		},
 	],
 	title: 'Empresa',

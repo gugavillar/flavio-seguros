@@ -14,6 +14,7 @@ import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
 import { Route as publiclayoutLayoutRouteImport } from './routes/(public)/(layout)/_layout'
 import { Route as adminlayoutLayoutRouteImport } from './routes/(admin)/(layout)/_layout'
 import { Route as publiclayoutLayoutIndexRouteImport } from './routes/(public)/(layout)/_layout.index'
+import { Route as publiclayoutLayoutPremiacoesRouteImport } from './routes/(public)/(layout)/_layout.premiacoes'
 import { Route as publiclayoutLayoutServiceRouteImport } from './routes/(public)/(layout)/_layout.$service'
 import { Route as adminlayoutLayoutAdminRouteImport } from './routes/(admin)/(layout)/_layout.admin'
 
@@ -40,6 +41,12 @@ const publiclayoutLayoutIndexRoute = publiclayoutLayoutIndexRouteImport.update({
   path: '/',
   getParentRoute: () => publiclayoutLayoutRoute,
 } as any)
+const publiclayoutLayoutPremiacoesRoute =
+  publiclayoutLayoutPremiacoesRouteImport.update({
+    id: '/premiacoes',
+    path: '/premiacoes',
+    getParentRoute: () => publiclayoutLayoutRoute,
+  } as any)
 const publiclayoutLayoutServiceRoute =
   publiclayoutLayoutServiceRouteImport.update({
     id: '/$service',
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin': typeof adminlayoutLayoutAdminRoute
   '/$service': typeof publiclayoutLayoutServiceRoute
+  '/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
   '/': typeof publiclayoutLayoutIndexRoute
 }
 export interface FileRoutesByTo {
@@ -64,6 +72,7 @@ export interface FileRoutesByTo {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin': typeof adminlayoutLayoutAdminRoute
   '/$service': typeof publiclayoutLayoutServiceRoute
+  '/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
   '/': typeof publiclayoutLayoutIndexRoute
 }
 export interface FileRoutesById {
@@ -74,13 +83,20 @@ export interface FileRoutesById {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/(admin)/(layout)/_layout/admin': typeof adminlayoutLayoutAdminRoute
   '/(public)/(layout)/_layout/$service': typeof publiclayoutLayoutServiceRoute
+  '/(public)/(layout)/_layout/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
   '/(public)/(layout)/_layout/': typeof publiclayoutLayoutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/login' | '/api/auth/$' | '/admin' | '/$service' | '/'
+  fullPaths:
+    | '/login'
+    | '/api/auth/$'
+    | '/admin'
+    | '/$service'
+    | '/premiacoes'
+    | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/login' | '/api/auth/$' | '/admin' | '/$service' | '/'
+  to: '/login' | '/api/auth/$' | '/admin' | '/$service' | '/premiacoes' | '/'
   id:
     | '__root__'
     | '/login'
@@ -89,6 +105,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/(admin)/(layout)/_layout/admin'
     | '/(public)/(layout)/_layout/$service'
+    | '/(public)/(layout)/_layout/premiacoes'
     | '/(public)/(layout)/_layout/'
   fileRoutesById: FileRoutesById
 }
@@ -136,6 +153,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof publiclayoutLayoutIndexRouteImport
       parentRoute: typeof publiclayoutLayoutRoute
     }
+    '/(public)/(layout)/_layout/premiacoes': {
+      id: '/(public)/(layout)/_layout/premiacoes'
+      path: '/premiacoes'
+      fullPath: '/premiacoes'
+      preLoaderRoute: typeof publiclayoutLayoutPremiacoesRouteImport
+      parentRoute: typeof publiclayoutLayoutRoute
+    }
     '/(public)/(layout)/_layout/$service': {
       id: '/(public)/(layout)/_layout/$service'
       path: '/$service'
@@ -166,11 +190,13 @@ const adminlayoutLayoutRouteWithChildren =
 
 interface publiclayoutLayoutRouteChildren {
   publiclayoutLayoutServiceRoute: typeof publiclayoutLayoutServiceRoute
+  publiclayoutLayoutPremiacoesRoute: typeof publiclayoutLayoutPremiacoesRoute
   publiclayoutLayoutIndexRoute: typeof publiclayoutLayoutIndexRoute
 }
 
 const publiclayoutLayoutRouteChildren: publiclayoutLayoutRouteChildren = {
   publiclayoutLayoutServiceRoute: publiclayoutLayoutServiceRoute,
+  publiclayoutLayoutPremiacoesRoute: publiclayoutLayoutPremiacoesRoute,
   publiclayoutLayoutIndexRoute: publiclayoutLayoutIndexRoute,
 }
 
