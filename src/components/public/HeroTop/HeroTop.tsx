@@ -35,7 +35,7 @@ export const HeroTop = () => {
 							Solicitar cotação grátis
 						</Button>
 						<a
-							className='inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-4 py-1.5 text-primary shadow-2xs transition-all duration-500 hover:bg-primary/10'
+							className='inline-flex cursor-pointer items-center justify-center rounded-md border border-primary bg-transparent px-4 py-1.5 text-primary shadow-2xs transition-all duration-500 hover:bg-primary/10'
 							onClick={() => goToHash(NAVIGATION_HASH.SERVICES)}
 						>
 							Conhecer seguros

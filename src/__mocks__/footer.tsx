@@ -63,7 +63,7 @@ export const company = {
 	links: [
 		{
 			children: (
-				<a className='text-gray-400 hover:text-white' onClick={() => goToHash(NAVIGATION_HASH.ABOUT)}>
+				<a className='cursor-pointer text-gray-400 hover:text-white' onClick={() => goToHash(NAVIGATION_HASH.ABOUT)}>
 					Sobre nós
 				</a>
 			),

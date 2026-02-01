@@ -15,10 +15,18 @@ const Links = ({ setIsOpen, isOpen }: { setIsOpen: Dispatch<SetStateAction<boole
 	return (
 		<>
 			<div className='hidden items-center gap-8 md:flex'>
-				<a onClick={() => onNavigate(NAVIGATION_HASH.SERVICES)}>Serviços</a>
-				<a onClick={() => onNavigate(NAVIGATION_HASH.ABOUT)}>Sobre nós</a>
-				<a onClick={() => onNavigate(NAVIGATION_HASH.TESTIMONIALS)}>Depoimentos</a>
-				<a onClick={() => onNavigate(NAVIGATION_HASH.FAQ)}>FAQ</a>
+				<a className='cursor-pointer px-1.5 py-2' onClick={() => onNavigate(NAVIGATION_HASH.SERVICES)}>
+					Serviços
+				</a>
+				<a className='cursor-pointer px-1.5 py-2' onClick={() => onNavigate(NAVIGATION_HASH.ABOUT)}>
+					Sobre nós
+				</a>
+				<a className='cursor-pointer px-1.5 py-2' onClick={() => onNavigate(NAVIGATION_HASH.TESTIMONIALS)}>
+					Depoimentos
+				</a>
+				<a className='cursor-pointer px-1.5 py-2' onClick={() => onNavigate(NAVIGATION_HASH.FAQ)}>
+					FAQ
+				</a>
 			</div>
 			<div className='hidden md:block'>
 				<Button as='a' href='#'>
@@ -65,16 +73,16 @@ export const Navbar = ({ showLinks = true }: NavbarProps) => {
 				{isOpen && showLinks && (
 					<div className='absolute top-full right-0 left-0 animate-fade-up border-border border-b bg-off-white-1 md:hidden'>
 						<div className='flex flex-col gap-4 p-4 text-gray-500'>
-							<a className='py-2 font-medium' onClick={() => onNavigate(NAVIGATION_HASH.SERVICES)}>
+							<a className='cursor-pointer py-2 font-medium' onClick={() => onNavigate(NAVIGATION_HASH.SERVICES)}>
 								Serviços
 							</a>
-							<a className='py-2 font-medium' onClick={() => onNavigate(NAVIGATION_HASH.ABOUT)}>
+							<a className='cursor-pointer py-2 font-medium' onClick={() => onNavigate(NAVIGATION_HASH.ABOUT)}>
 								Sobre Nós
 							</a>
-							<a className='py-2 font-medium' onClick={() => onNavigate(NAVIGATION_HASH.TESTIMONIALS)}>
+							<a className='cursor-pointer py-2 font-medium' onClick={() => onNavigate(NAVIGATION_HASH.TESTIMONIALS)}>
 								Depoimentos
 							</a>
-							<a className='py-2 font-medium' onClick={() => onNavigate(NAVIGATION_HASH.FAQ)}>
+							<a className='cursor-pointer py-2 font-medium' onClick={() => onNavigate(NAVIGATION_HASH.FAQ)}>
 								FAQ
 							</a>
 							<Button className='w-full text-white'>Fale Conosco</Button>
