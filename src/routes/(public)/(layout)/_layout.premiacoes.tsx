@@ -4,6 +4,9 @@ import { HeaderAwards, MainAwards, RecognizedQuality, TimelineAwards, TrustedPar
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/premiacoes')({
 	component: AwardsPage,
+	staticData: {
+		breadcrumb: 'Premiações',
+	},
 })
 
 function AwardsPage() {

@@ -1,11 +1,11 @@
-import { useMatchRoute } from '@tanstack/react-router'
+import { useMatches } from '@tanstack/react-router'
 import { useClickAway } from '@uidotdev/usehooks'
 import { Menu, X } from 'lucide-react'
 import { type Dispatch, type SetStateAction, useState } from 'react'
 
 import { AvatarLogo, NavLink } from '@/components/core'
 import { BreadcrumbBar, Button } from '@/components/public'
-import { NAVIGATION_HASH } from '@/utils'
+import { NAVIGATION_HASH, transformPath } from '@/utils'
 
 const commonProps = {
 	activeOptions: { includeHash: true },
@@ -58,8 +58,17 @@ export const Navbar = ({ showLinks = true }: NavbarProps) => {
 		setIsOpen(false)
 	})
 
-	const matchRoute = useMatchRoute()
-	const isServicePage = matchRoute({ to: '/$service' })
+	const matches = useMatches()
+	const allBreadcrumbs = matches
+		.map((match) => {
+			const breadcrumb = match.staticData?.breadcrumb
+
+			if (!breadcrumb) return undefined
+
+			return typeof breadcrumb === 'function' ? transformPath(breadcrumb(match)) : breadcrumb
+		})
+		.filter((v): v is string => Boolean(v))
+	const hasBreadcrumbs = Boolean(allBreadcrumbs.length)
 	const closeMenu = () => setIsOpen(false)
 
 	return (
@@ -89,7 +98,7 @@ export const Navbar = ({ showLinks = true }: NavbarProps) => {
 					</div>
 				)}
 			</div>
-			{isServicePage && showLinks && <BreadcrumbBar />}
+			{hasBreadcrumbs && showLinks && <BreadcrumbBar breadcrumbs={allBreadcrumbs} />}
 		</header>
 	)
 }

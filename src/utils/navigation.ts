@@ -9,3 +9,8 @@ export enum NAVIGATION_HASH {
 	TESTIMONIALS = 'depoimentos',
 	FAQ = 'faq',
 }
+
+export const transformPath = (path: string) => {
+	const formattedPath = path.replace(/-|\//g, ' ')
+	return formattedPath
+}

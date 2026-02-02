@@ -11,6 +11,9 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
 	},
 	component: ServicePage,
 	loader: ({ params }) => params.service,
+	staticData: {
+		breadcrumb: (ctx) => ctx.params?.service,
+	},
 })
 
 function ServicePage() {

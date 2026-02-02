@@ -1,8 +1,14 @@
-import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
+import { type AnyRouteMatch, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 
 import '../styles.css'
 import 'swiper/css'
 import 'swiper/css/pagination'
+
+declare module '@tanstack/react-router' {
+	interface StaticDataRouteOption {
+		breadcrumb?: string | ((ctx: AnyRouteMatch) => string)
+	}
+}
 
 export const Route = createRootRoute({
 	head: () => ({

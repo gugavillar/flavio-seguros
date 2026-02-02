@@ -16,7 +16,7 @@ export const HeroService = ({ title, subtitle, icon: Icon, badgeLabel }: HeroSer
 				<div className='flex flex-col items-center gap-12 lg:flex-row'>
 					<div className='flex-1 text-center lg:text-left'>
 						<Badge className='bg-slate-100/15 text-white' label={badgeLabel} />
-						<h1 className='tex-4xl mb-6 font-bold font-title text-white leading-tight md:text-5xl lg:text-6xl'>
+						<h1 className='mb-6 font-bold font-title text-4xl text-white leading-tight md:text-5xl lg:text-6xl'>
 							{title}
 						</h1>
 						<p className='mb-8 max-w-3xl text-gray-300 text-lg opacity-90 md:text-xl'>{subtitle}</p>
