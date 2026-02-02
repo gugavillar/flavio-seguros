@@ -1,5 +1,8 @@
 import { Crown } from 'lucide-react'
 
+import { messages } from '@/__mocks__/whatsapp'
+import { generateWhatsAppLink } from '@/utils'
+
 import { Button } from '../Button'
 
 export const RecognizedQuality = () => {
@@ -12,7 +15,14 @@ export const RecognizedQuality = () => {
 					Nossas premiações refletem o compromisso diário de oferecer o melhor serviço para você e sua família. Conte
 					conosco!
 				</p>
-				<Button className='border border-gray-200 bg-white text-primary hover:bg-white/70'>Solicitar cotação</Button>
+				<Button
+					as='a'
+					className='border border-gray-200 bg-white text-primary hover:bg-white/70'
+					href={generateWhatsAppLink(messages.price())}
+					target='_blank'
+				>
+					Solicitar cotação
+				</Button>
 			</div>
 		</div>
 	)

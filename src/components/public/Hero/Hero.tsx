@@ -1,20 +1,22 @@
-import { ArrowRight, ChevronDown } from 'lucide-react'
-import { type ReactNode, useState } from 'react'
+import { ArrowRight, ChevronDown, type LucideIcon } from 'lucide-react'
+import { useState } from 'react'
 
 import { info } from '@/__mocks__/hero'
 import { services } from '@/__mocks__/services'
+import { messages } from '@/__mocks__/whatsapp'
 import { PageContainer, Select } from '@/components/core'
+import { generateWhatsAppLink } from '@/utils'
 
 import { Button } from '../Button'
 
 export const HeroInfo = ({
-	icon,
+	icon: Icon,
 	text,
 	href,
 	rel,
 	target,
 }: {
-	icon: ReactNode
+	icon: LucideIcon
 	text: string
 	href: string
 	rel?: string
@@ -22,7 +24,7 @@ export const HeroInfo = ({
 }) => {
 	return (
 		<div className='flex items-center gap-2'>
-			{icon}
+			<Icon />
 			<span>
 				<a href={href} rel={rel} target={target}>
 					{text}
@@ -54,7 +56,13 @@ export const Hero = () => {
 						/>
 						<ChevronDown className='absolute top-1/2 right-2 -translate-y-1/2 text-white' />
 					</div>
-					<Button className='bg-white text-primary hover:bg-white hover:opacity-70' disabled={!service}>
+					<Button
+						as='a'
+						className='bg-white text-primary hover:bg-white hover:opacity-70'
+						disabled={!service}
+						href={generateWhatsAppLink(messages.price(service))}
+						target='_blank'
+					>
 						Solicitar cotação <ArrowRight />
 					</Button>
 				</div>

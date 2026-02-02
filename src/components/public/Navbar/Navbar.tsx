@@ -3,9 +3,10 @@ import { useClickAway } from '@uidotdev/usehooks'
 import { Menu, X } from 'lucide-react'
 import { type Dispatch, type SetStateAction, useState } from 'react'
 
+import { messages } from '@/__mocks__/whatsapp'
 import { AvatarLogo, NavLink } from '@/components/core'
 import { BreadcrumbBar, Button } from '@/components/public'
-import { NAVIGATION_HASH, transformPath } from '@/utils'
+import { generateWhatsAppLink, NAVIGATION_HASH, transformPath } from '@/utils'
 
 const commonProps = {
 	activeOptions: { includeHash: true },
@@ -31,7 +32,7 @@ const Links = ({ setIsOpen, isOpen }: { setIsOpen: Dispatch<SetStateAction<boole
 				</NavLink>
 			</div>
 			<div className='hidden lg:block'>
-				<Button as='a' href='#'>
+				<Button as='a' href={generateWhatsAppLink(messages.talk)} target='_blank'>
 					Fale conosco
 				</Button>
 			</div>
@@ -93,7 +94,9 @@ export const Navbar = ({ showLinks = true }: NavbarProps) => {
 							<NavLink {...commonProps} hash={NAVIGATION_HASH.FAQ} onClick={closeMenu} to='/'>
 								FAQ
 							</NavLink>
-							<Button className='w-full text-white'>Fale Conosco</Button>
+							<Button as='a' className='w-full text-white' href={generateWhatsAppLink(messages.talk)} target='_blank'>
+								Fale Conosco
+							</Button>
 						</div>
 					</div>
 				)}

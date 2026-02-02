@@ -4,8 +4,9 @@ import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { images, listItems, stats } from '@/__mocks__/heroTop'
+import { messages } from '@/__mocks__/whatsapp'
 import { FloatCard, PageContainer } from '@/components/core'
-import { goToHash, NAVIGATION_HASH } from '@/utils'
+import { generateWhatsAppLink, goToHash, NAVIGATION_HASH } from '@/utils'
 
 import { Button } from '../Button'
 
@@ -31,7 +32,7 @@ export const HeroTop = () => {
 						))}
 					</ul>
 					<div className='flex flex-col gap-4 sm:flex-row'>
-						<Button as='a' href='#'>
+						<Button as='a' href={generateWhatsAppLink(messages.price())} target='_blank'>
 							Solicitar cotação grátis
 						</Button>
 						<a

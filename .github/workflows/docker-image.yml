@@ -40,3 +40,4 @@ jobs:
           platforms: linux/amd64
           build-args: |
             VITE_WBOT_TOKEN=${{ secrets.WBOT_TOKEN }}
+            VITE_WHATS_APP=${{ secrets.WHATS_APP }}

@@ -1,15 +1,14 @@
-import { CheckCircle2 } from 'lucide-react'
-import type { ReactNode } from 'react'
+import { CheckCircle2, type LucideIcon } from 'lucide-react'
 
 import { features } from '@/__mocks__/aboutUs'
 import { FloatCard, HeaderSection, PageContainer } from '@/components/core'
 import { NAVIGATION_HASH } from '@/utils'
 
-const AboutUsCard = ({ icon, title, description }: { icon: ReactNode; title: string; description: string }) => {
+const AboutUsCard = ({ icon: Icon, title, description }: { icon: LucideIcon; title: string; description: string }) => {
 	return (
 		<div className='group rounded-xl bg-gray-200/50 p-4 text-left transition-colors hover:bg-primary/15'>
 			<div className='mb-4 flex size-12 items-center justify-center rounded-lg bg-primary-gradient text-white transition-transform group-hover:scale-110'>
-				{icon}
+				<Icon />
 			</div>
 			<h3 className='mb-2 font-semibold text-black/80'>{title}</h3>
 			<p className='text-gray-500 text-sm'>{description}</p>
