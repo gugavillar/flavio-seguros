@@ -1,6 +1,8 @@
 import { Home, Phone } from 'lucide-react'
 
+import { messages } from '@/__mocks__/whatsapp'
 import { Navbar } from '@/components/public'
+import { generateWhatsAppLink } from '@/utils'
 
 import { NavLink } from '../NavLink'
 
@@ -28,7 +30,8 @@ export const NotFound = () => {
 							</NavLink>
 							<a
 								className='inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-md border border-gray-300 bg-transparent px-8 font-medium text-black/80 text-sm ring-offset-background transition-colors hover:bg-primary/50 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0'
-								href='mailto:[EMAIL_ADDRESS]'
+								href={generateWhatsAppLink(messages.lost)}
+								target='_blank'
 							>
 								<Phone className='size-5' />
 								Fale conosco

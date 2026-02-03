@@ -86,7 +86,7 @@ export const services = [
 	{
 		description: 'Garanta seus equipamentos contra danos, roubo e acidentes inesperados.',
 		icon: Laptop,
-		path: '/equipamentos',
+		path: '/seguro-equipamentos',
 		title: 'Seguro de Equipamentos',
 	},
 	{
@@ -98,8 +98,8 @@ export const services = [
 	{
 		description: 'Proteção para imóveis urbanos ou rurais contra diversos tipos de danos e riscos.',
 		icon: MapPinHouse,
-		path: '/imobiliario',
-		title: 'Seguro Imobiliário',
+		path: '/consorcio',
+		title: 'Consórcio',
 	},
 	{
 		description: 'Cobertura para danos causados a terceiros, garantindo mais segurança jurídica e financeira.',
@@ -189,85 +189,91 @@ export const servicePage = {
 		subtitle: 'Proteção financeira contínua contra acidentes que podem impactar sua renda e qualidade de vida.',
 		title: 'Acidentes pessoais',
 	},
-	equipamentos: {
-		badgeLabel: 'Proteção para seus equipamentos',
+	consorcio: {
+		badgeLabel: 'Planejamento para suas conquistas',
 		benefits: [
 			{
 				description:
-					'Cobertura contra roubo, furto qualificado e danos acidentais que possam comprometer o funcionamento dos equipamentos.',
-				icon: Laptop,
-				title: 'Danos e Roubo',
+					'Permite adquirir bens ou serviços de forma planejada, sem juros, por meio de parcelas mensais que cabem no seu orçamento.',
+				icon: Home,
+				title: 'Aquisição Planejada',
 			},
 			{
 				description:
-					'Proteção para equipamentos portáteis e fixos utilizados em atividades profissionais ou empresariais.',
-				icon: HardDrive,
-				title: 'Cobertura Flexível',
+					'Possibilidade de contemplação por sorteio ou lance, antecipando a conquista do seu bem ou serviço.',
+				icon: Zap,
+				title: 'Contemplação Flexível',
 			},
 			{
-				description: 'Indenização em caso de perda total ou danos irreparáveis aos equipamentos segurados.',
+				description:
+					'Não há cobrança de juros, apenas taxa de administração, tornando o consórcio uma alternativa mais econômica.',
+				icon: CloudRain,
+				title: 'Sem Juros',
+			},
+			{
+				description:
+					'Oferece segurança jurídica com regras claras definidas em contrato e fiscalização pelos órgãos reguladores.',
 				icon: Shield,
-				title: 'Perda Total',
+				title: 'Segurança e Transparência',
 			},
 			{
-				description: 'Cobertura válida em diferentes endereços, conforme condições previstas na apólice.',
-				icon: MapPin,
-				title: 'Cobertura em Múltiplos Locais',
+				description:
+					'Pode ser utilizado para aquisição de imóveis, veículos ou contratação de serviços, conforme o grupo escolhido.',
+				icon: Building,
+				title: 'Diversidade de Finalidades',
 			},
 			{
-				description: 'Planos ajustáveis de acordo com o tipo, valor e uso dos equipamentos.',
-				icon: Sliders,
-				title: 'Planos Personalizados',
-			},
-			{
-				description: 'Redução de prejuízos financeiros e continuidade das atividades profissionais.',
-				icon: TrendingUp,
-				title: 'Continuidade Operacional',
+				description:
+					'Planos e valores de crédito podem ser ajustados conforme o objetivo e a capacidade financeira do participante.',
+				icon: Settings,
+				title: 'Planos Personalizáveis',
 			},
 		],
 		description: {
 			content: [
-				'O Seguro de Equipamentos é a solução ideal para proteger bens essenciais utilizados no dia a dia profissional, evitando prejuízos financeiros causados por roubos, acidentes ou danos inesperados.',
-				'Com coberturas personalizadas, o seguro garante indenização ou reparo dos equipamentos, permitindo que sua empresa ou atividade profissional mantenha suas operações sem interrupções.',
-				'É indicado tanto para equipamentos fixos quanto portáteis, oferecendo segurança financeira para profissionais autônomos, empresas e prestadores de serviço.',
+				'O consórcio é uma forma inteligente de planejar a aquisição de bens ou serviços de maneira econômica e organizada.',
+				'Ele funciona por meio da união de pessoas com o mesmo objetivo, contribuindo mensalmente para a formação de um fundo comum.',
+				'Com opções de contemplação e planos flexíveis, o consórcio oferece previsibilidade financeira e mais controle sobre suas conquistas.',
 			],
 			indications: [
-				'Empresas de pequeno, médio e grande porte',
-				'Profissionais autônomos e liberais',
-				'Prestadores de serviços técnicos',
-				'Negócios que dependem de equipamentos especializados',
+				'Pessoas que desejam comprar imóveis ou veículos',
+				'Quem busca planejamento financeiro sem juros',
+				'Famílias que querem realizar projetos de médio e longo prazo',
+				'Investidores que preferem aquisição programada',
 			],
-			title: 'Sobre o seguro de equipamentos',
+			title: 'Sobre o consórcio',
 		},
 		faqs: [
 			{
-				answer: 'Sim. Desde que contratado com cobertura para equipamentos portáteis ou múltiplos locais.',
-				question: 'O seguro cobre equipamentos fora do endereço principal?',
+				answer:
+					'Sim. É possível ofertar lances para antecipar a contemplação, além de participar dos sorteios mensais.',
+				question: 'Posso ser contemplado antes do fim do consórcio?',
 			},
 			{
-				answer: 'Notebooks, computadores, máquinas industriais, equipamentos médicos, tecnológicos e similares.',
-				question: 'Quais tipos de equipamentos podem ser segurados?',
+				answer: 'Imóveis, veículos e serviços, conforme as regras e categorias definidas no grupo de consórcio.',
+				question: 'Quais bens podem ser adquiridos com consórcio?',
 			},
 			{
-				answer: 'Sim. Quedas, impactos e acidentes estão cobertos conforme as condições da apólice.',
-				question: 'Danos acidentais estão cobertos?',
+				answer:
+					'O consórcio não possui juros, apenas taxa de administração, enquanto o financiamento inclui juros sobre o valor financiado.',
+				question: 'Qual a diferença entre consórcio e financiamento?',
 			},
 			{
-				answer: 'Depende da seguradora e do contrato. Em muitos casos, é possível incluir equipamentos locados.',
-				question: 'O seguro cobre equipamentos alugados?',
+				answer: 'Não. A contemplação depende de sorteio ou lance, respeitando as regras estabelecidas em contrato.',
+				question: 'A contemplação é garantida imediatamente?',
 			},
 			{
-				answer: 'Sim. O limite varia conforme o plano contratado e o valor declarado dos equipamentos.',
-				question: 'Existe limite de valor para os equipamentos segurados?',
+				answer: 'Sim. É possível escolher planos, valores de crédito e prazos de acordo com seu objetivo.',
+				question: 'Os planos de consórcio podem ser personalizados?',
 			},
 			{
-				answer: 'Após análise do sinistro, a seguradora realiza o reparo ou pagamento conforme previsto em contrato.',
-				question: 'Como funciona a indenização em caso de sinistro?',
+				answer: 'Pessoas que desejam se planejar financeiramente para adquirir bens ou serviços sem pagar juros.',
+				question: 'Quem deve contratar um consórcio?',
 			},
 		],
-		icon: Laptop,
-		subtitle: 'Segurança financeira para proteger equipamentos essenciais contra danos, roubos e imprevistos.',
-		title: 'Seguro de equipamentos',
+		icon: Home,
+		subtitle: 'Planejamento inteligente para realizar seus sonhos.',
+		title: 'Consórcio',
 	},
 	'fianca-locaticia': {
 		badgeLabel: 'Garantia para contratos de aluguel',
@@ -346,95 +352,6 @@ export const servicePage = {
 		icon: Key,
 		subtitle: 'Garantia completa para contratos de aluguel com menos burocracia e mais segurança.',
 		title: 'Fiança locatícia',
-	},
-	imobiliario: {
-		badgeLabel: 'Proteção para seu imóvel',
-		benefits: [
-			{
-				description:
-					'Cobertura contra danos estruturais causados por incêndio, explosão, queda de raio e outros eventos que possam comprometer a segurança do imóvel.',
-				icon: Home,
-				title: 'Proteção Estrutural',
-			},
-			{
-				description:
-					'Garante indenização para prejuízos causados por curtos-circuitos, variações de energia e falhas elétricas que atinjam a estrutura do imóvel.',
-				icon: Zap,
-				title: 'Danos Elétricos',
-			},
-			{
-				description:
-					'Proteção contra vendavais, granizo, alagamentos e outros fenômenos naturais previstos na apólice, reduzindo impactos financeiros.',
-				icon: CloudRain,
-				title: 'Eventos Naturais',
-			},
-			{
-				description:
-					'Cobre danos causados involuntariamente a terceiros decorrentes do imóvel, oferecendo mais segurança jurídica ao proprietário.',
-				icon: Shield,
-				title: 'Responsabilidade Civil',
-			},
-			{
-				description:
-					'Pode ser contratado tanto para imóveis residenciais quanto comerciais, adaptando as coberturas conforme o perfil do imóvel.',
-				icon: Building,
-				title: 'Imóveis Residenciais e Comerciais',
-			},
-			{
-				description:
-					'Permite personalizar coberturas adicionais de acordo com as necessidades do imóvel, oferecendo proteção sob medida.',
-				icon: Settings,
-				title: 'Personalização de Coberturas',
-			},
-		],
-		description: {
-			content: [
-				'O Seguro Imobiliário oferece proteção financeira para imóveis residenciais e comerciais, cobrindo danos estruturais e diversos riscos que podem gerar altos prejuízos.',
-				'Ele é ideal para proprietários que desejam preservar seu patrimônio e evitar impactos financeiros causados por incêndios, falhas elétricas ou eventos naturais.',
-				'Com coberturas personalizáveis, o seguro garante mais tranquilidade ao proprietário, assegurando a recuperação do imóvel em situações inesperadas.',
-			],
-			indications: [
-				'Proprietários de imóveis residenciais',
-				'Donos de imóveis comerciais',
-				'Investidores imobiliários',
-				'Locadores que desejam proteger seu patrimônio',
-			],
-			title: 'Sobre o seguro imobiliário',
-		},
-		faqs: [
-			{
-				answer:
-					'Sim. O seguro pode ser contratado para imóveis alugados, protegendo a estrutura independentemente de quem esteja utilizando o imóvel.',
-				question: 'O seguro imobiliário cobre imóveis alugados?',
-			},
-			{
-				answer:
-					'Imóveis residenciais e comerciais, como casas, apartamentos, salas comerciais e prédios, conforme as condições da apólice.',
-				question: 'Quais tipos de imóveis podem ser segurados?',
-			},
-			{
-				answer:
-					'Incêndio, explosão, danos elétricos, queda de raio, vendaval e outros riscos previstos no contrato do seguro.',
-				question: 'Quais riscos estão normalmente cobertos?',
-			},
-			{
-				answer:
-					'Não. O seguro imobiliário foca na estrutura do imóvel, enquanto o residencial pode incluir também os bens internos.',
-				question: 'O seguro imobiliário é o mesmo que seguro residencial?',
-			},
-			{
-				answer: 'Sim. As coberturas podem ser ajustadas conforme o perfil do imóvel e as necessidades do proprietário.',
-				question: 'É possível personalizar as coberturas?',
-			},
-			{
-				answer:
-					'Proprietários que desejam proteger seu imóvel contra danos estruturais e reduzir riscos financeiros em caso de sinistro.',
-				question: 'Quem deve contratar o seguro imobiliário?',
-			},
-		],
-		icon: Home,
-		subtitle: 'Proteção completa para seu patrimônio.',
-		title: 'Seguro imobiliário',
 	},
 	'responsabilidade-civil': {
 		badgeLabel: 'Proteção contra danos a terceiros',
@@ -775,6 +692,86 @@ export const servicePage = {
 		subtitle:
 			'Proteja o patrimônio da sua empresa, seus funcionários e a continuidade das operações. Soluções personalizadas para cada segmento.',
 		title: 'Seguro empresarial',
+	},
+	'seguro-equipamentos': {
+		badgeLabel: 'Proteção para seus equipamentos',
+		benefits: [
+			{
+				description:
+					'Cobertura contra roubo, furto qualificado e danos acidentais que possam comprometer o funcionamento dos equipamentos.',
+				icon: Laptop,
+				title: 'Danos e Roubo',
+			},
+			{
+				description:
+					'Proteção para equipamentos portáteis e fixos utilizados em atividades profissionais ou empresariais.',
+				icon: HardDrive,
+				title: 'Cobertura Flexível',
+			},
+			{
+				description: 'Indenização em caso de perda total ou danos irreparáveis aos equipamentos segurados.',
+				icon: Shield,
+				title: 'Perda Total',
+			},
+			{
+				description: 'Cobertura válida em diferentes endereços, conforme condições previstas na apólice.',
+				icon: MapPin,
+				title: 'Cobertura em Múltiplos Locais',
+			},
+			{
+				description: 'Planos ajustáveis de acordo com o tipo, valor e uso dos equipamentos.',
+				icon: Sliders,
+				title: 'Planos Personalizados',
+			},
+			{
+				description: 'Redução de prejuízos financeiros e continuidade das atividades profissionais.',
+				icon: TrendingUp,
+				title: 'Continuidade Operacional',
+			},
+		],
+		description: {
+			content: [
+				'O Seguro de Equipamentos é a solução ideal para proteger bens essenciais utilizados no dia a dia profissional, evitando prejuízos financeiros causados por roubos, acidentes ou danos inesperados.',
+				'Com coberturas personalizadas, o seguro garante indenização ou reparo dos equipamentos, permitindo que sua empresa ou atividade profissional mantenha suas operações sem interrupções.',
+				'É indicado tanto para equipamentos fixos quanto portáteis, oferecendo segurança financeira para profissionais autônomos, empresas e prestadores de serviço.',
+			],
+			indications: [
+				'Empresas de pequeno, médio e grande porte',
+				'Profissionais autônomos e liberais',
+				'Prestadores de serviços técnicos',
+				'Negócios que dependem de equipamentos especializados',
+			],
+			title: 'Sobre o seguro de equipamentos',
+		},
+		faqs: [
+			{
+				answer: 'Sim. Desde que contratado com cobertura para equipamentos portáteis ou múltiplos locais.',
+				question: 'O seguro cobre equipamentos fora do endereço principal?',
+			},
+			{
+				answer: 'Notebooks, computadores, máquinas industriais, equipamentos médicos, tecnológicos e similares.',
+				question: 'Quais tipos de equipamentos podem ser segurados?',
+			},
+			{
+				answer: 'Sim. Quedas, impactos e acidentes estão cobertos conforme as condições da apólice.',
+				question: 'Danos acidentais estão cobertos?',
+			},
+			{
+				answer: 'Depende da seguradora e do contrato. Em muitos casos, é possível incluir equipamentos locados.',
+				question: 'O seguro cobre equipamentos alugados?',
+			},
+			{
+				answer: 'Sim. O limite varia conforme o plano contratado e o valor declarado dos equipamentos.',
+				question: 'Existe limite de valor para os equipamentos segurados?',
+			},
+			{
+				answer: 'Após análise do sinistro, a seguradora realiza o reparo ou pagamento conforme previsto em contrato.',
+				question: 'Como funciona a indenização em caso de sinistro?',
+			},
+		],
+		icon: Laptop,
+		subtitle: 'Segurança financeira para proteger equipamentos essenciais contra danos, roubos e imprevistos.',
+		title: 'Seguro de equipamentos',
 	},
 	'seguro-residencial': {
 		badgeLabel: 'Proteção para seu lar',
