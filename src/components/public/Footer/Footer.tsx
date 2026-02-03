@@ -67,7 +67,7 @@ export const Footer = () => {
 				</div>
 				<div className='flex flex-col items-center justify-between gap-4 border-gray-200/30 border-t pt-8 md:flex-row'>
 					<p className='text-sm'>© 2026 Flávio Seguros. Todos os direitos reservados.</p>
-					<p>SUSEP Nº 202091931 - Corretora de seguros</p>
+					<p>SUSEP Nº 202091931 - Gravatá Corretora de Seguros</p>
 				</div>
 			</div>
 		</footer>

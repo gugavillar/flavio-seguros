@@ -96,7 +96,7 @@ export const services = [
 		title: 'Fiança Locatícia',
 	},
 	{
-		description: 'Proteção para imóveis urbanos ou rurais contra diversos tipos de danos e riscos.',
+		description: 'Solução financeira para conquistar imóveis, veículos ou serviços com parcelas planejadas.',
 		icon: MapPinHouse,
 		path: '/consorcio',
 		title: 'Consórcio',
