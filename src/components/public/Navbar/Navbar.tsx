@@ -32,7 +32,7 @@ const Links = ({ setIsOpen, isOpen }: { setIsOpen: Dispatch<SetStateAction<boole
 				</NavLink>
 			</div>
 			<div className='hidden lg:block'>
-				<Button as='a' href={generateWhatsAppLink(messages.talk)} target='_blank'>
+				<Button as='a' href={generateWhatsAppLink({ message: messages.talk })} target='_blank'>
 					Fale conosco
 				</Button>
 			</div>
@@ -94,7 +94,12 @@ export const Navbar = ({ showLinks = true }: NavbarProps) => {
 							<NavLink {...commonProps} hash={NAVIGATION_HASH.FAQ} onClick={closeMenu} to='/'>
 								FAQ
 							</NavLink>
-							<Button as='a' className='w-full text-white' href={generateWhatsAppLink(messages.talk)} target='_blank'>
+							<Button
+								as='a'
+								className='w-full text-white'
+								href={generateWhatsAppLink({ message: messages.talk })}
+								target='_blank'
+							>
 								Fale Conosco
 							</Button>
 						</div>

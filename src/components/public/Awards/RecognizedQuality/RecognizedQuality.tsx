@@ -17,7 +17,7 @@ export const RecognizedQuality = () => {
 				<Button
 					as='a'
 					className='border border-gray-200 bg-white text-primary hover:bg-white/70'
-					href={generateWhatsAppLink(messages.price())}
+					href={generateWhatsAppLink({ message: messages.price() })}
 					target='_blank'
 				>
 					Solicitar cotação

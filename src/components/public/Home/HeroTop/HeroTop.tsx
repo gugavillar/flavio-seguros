@@ -30,7 +30,7 @@ export const HeroTop = () => {
 						))}
 					</ul>
 					<div className='flex flex-col gap-4 sm:flex-row'>
-						<Button as='a' href={generateWhatsAppLink(messages.price())} target='_blank'>
+						<Button as='a' href={generateWhatsAppLink({ message: messages.price() })} target='_blank'>
 							Solicitar cotação grátis
 						</Button>
 						<a

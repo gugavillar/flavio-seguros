@@ -15,9 +15,9 @@ export const transformPath = (path: string) => {
 	return formattedPath
 }
 
-export const generateWhatsAppLink = (message?: string) => {
+export const generateWhatsAppLink = ({ phone = '8135331163', message }: { phone?: string; message?: string }) => {
 	if (message) {
-		return `${import.meta.env.VITE_WHATS_APP}&text=${encodeURIComponent(message || '')}`
+		return `${import.meta.env.VITE_WHATS_APP}${phone}&text=${encodeURIComponent(message)}`
 	}
-	return import.meta.env.VITE_WHATS_APP
+	return `${import.meta.env.VITE_WHATS_APP}${phone}`
 }

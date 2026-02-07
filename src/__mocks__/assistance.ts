@@ -1,5 +1,7 @@
 import { AlertTriangle, Car, Clock, Headphones, Heart, Home, LucideShield } from 'lucide-react'
 
+import { insurances } from './insurances'
+
 export const benefits = [
 	{
 		icon: LucideShield,
@@ -37,3 +39,30 @@ export const assistanceTypes = [
 		title: 'Assistência Emergencial',
 	},
 ]
+
+export const importantTips = [
+	{
+		description: 'Isso agiliza o atendimento e permite que a seguradora localize rapidamente suas informações.',
+		title: 'Tenha seu número de apólice em mãos',
+	},
+	{
+		description: 'Tenha referências do local para facilitar o envio do socorro ou prestador de serviço.',
+		title: 'Informe sua localização exata',
+	},
+	{
+		description: 'Sempre solicite e guarde o número do protocolo para acompanhamento posterior.',
+		title: 'Anote o protocolo de atendimento',
+	},
+	{
+		description: 'Nossa equipe está pronta para orientá-lo sobre qual assistência acionar.',
+		title: 'Em caso de dúvida, ligue para nós',
+	},
+]
+
+export const emergencePhones = insurances.map((insurance) => ({
+	assistancePhone: insurance.assistancePhone,
+	title: insurance.name,
+	types: ['Auto', 'Residencial', 'Saúde'],
+	url: insurance.image,
+	whatsappPhone: insurance.whatsappPhone,
+}))

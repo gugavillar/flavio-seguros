@@ -1,9 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import { HeaderAssistance, WhatIsAssistance } from '@/components/public'
+import { EmergencePhones, HeaderAssistance, Tips, WhatIsAssistance } from '@/components/public'
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/assistencia')({
 	component: AssistancePage,
+	staticData: {
+		breadcrumb: 'Assistência 24h',
+	},
 })
 
 function AssistancePage() {
@@ -11,6 +14,8 @@ function AssistancePage() {
 		<>
 			<HeaderAssistance />
 			<WhatIsAssistance />
+			<EmergencePhones />
+			<Tips />
 		</>
 	)
 }

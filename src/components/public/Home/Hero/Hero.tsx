@@ -1,5 +1,6 @@
 import { ArrowRight, ChevronDown, type LucideIcon } from 'lucide-react'
 import { useState } from 'react'
+import { twMerge } from 'tailwind-merge'
 
 import { info } from '@/__mocks__/hero'
 import { services } from '@/__mocks__/services'
@@ -56,9 +57,11 @@ export const Hero = () => {
 					</div>
 					<Button
 						as='a'
-						className='bg-white text-primary hover:bg-white hover:opacity-70'
-						disabled={!service}
-						href={generateWhatsAppLink(messages.price(service))}
+						className={twMerge(
+							'bg-white text-primary hover:bg-white hover:opacity-70',
+							!service && 'pointer-events-none cursor-not-allowed opacity-50'
+						)}
+						href={generateWhatsAppLink({ message: messages.price(service) })}
 						target='_blank'
 					>
 						Solicitar cotação <ArrowRight />

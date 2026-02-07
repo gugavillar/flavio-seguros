@@ -30,7 +30,7 @@ export const NotFound = () => {
 							</NavLink>
 							<a
 								className='inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-md border border-gray-300 bg-transparent px-8 font-medium text-black/80 text-sm ring-offset-background transition-colors hover:bg-primary/50 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0'
-								href={generateWhatsAppLink(messages.lost)}
+								href={generateWhatsAppLink({ message: messages.lost })}
 								target='_blank'
 							>
 								<Phone className='size-5' />
@@ -44,7 +44,7 @@ export const NotFound = () => {
 				<div className='container mx-auto px-4'>
 					<div className='flex flex-col items-center justify-between gap-4 py-8 md:flex-row'>
 						<p className='text-sm'>© 2026 Flávio Seguros. Todos os direitos reservados.</p>
-						<p>SUSEP Nº 12345678 - Corretora de seguros</p>
+						<p>SUSEP Nº 202091931 - Gravatá Corretora de Seguros</p>
 					</div>
 				</div>
 			</footer>
