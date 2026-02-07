@@ -1,9 +1,8 @@
 import { Crown } from 'lucide-react'
 
 import { messages } from '@/__mocks__/whatsapp'
+import { Button } from '@/components/core'
 import { generateWhatsAppLink } from '@/utils'
-
-import { Button } from '../Button'
 
 export const RecognizedQuality = () => {
 	return (

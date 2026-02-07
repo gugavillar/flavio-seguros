@@ -5,10 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { images, listItems, stats } from '@/__mocks__/heroTop'
 import { messages } from '@/__mocks__/whatsapp'
-import { FloatCard, PageContainer } from '@/components/core'
+import { Button, FloatCard, PageContainer } from '@/components/core'
 import { generateWhatsAppLink, goToHash, NAVIGATION_HASH } from '@/utils'
-
-import { Button } from '../Button'
 
 export const HeroTop = () => {
 	return (

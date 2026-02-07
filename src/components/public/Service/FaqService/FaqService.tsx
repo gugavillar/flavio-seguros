@@ -1,6 +1,4 @@
-import { PageContainer } from '@/components/core'
-
-import { AccordionContentText } from '../AccordionContentText'
+import { AccordionContentText, PageContainer } from '@/components/core'
 
 type FaqServiceProps = {
 	faqs: Array<{

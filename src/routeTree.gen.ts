@@ -15,6 +15,7 @@ import { Route as publiclayoutLayoutRouteImport } from './routes/(public)/(layou
 import { Route as adminlayoutLayoutRouteImport } from './routes/(admin)/(layout)/_layout'
 import { Route as publiclayoutLayoutIndexRouteImport } from './routes/(public)/(layout)/_layout.index'
 import { Route as publiclayoutLayoutPremiacoesRouteImport } from './routes/(public)/(layout)/_layout.premiacoes'
+import { Route as publiclayoutLayoutAssistenciaRouteImport } from './routes/(public)/(layout)/_layout.assistencia'
 import { Route as publiclayoutLayoutServiceRouteImport } from './routes/(public)/(layout)/_layout.$service'
 import { Route as adminlayoutLayoutAdminRouteImport } from './routes/(admin)/(layout)/_layout.admin'
 
@@ -47,6 +48,12 @@ const publiclayoutLayoutPremiacoesRoute =
     path: '/premiacoes',
     getParentRoute: () => publiclayoutLayoutRoute,
   } as any)
+const publiclayoutLayoutAssistenciaRoute =
+  publiclayoutLayoutAssistenciaRouteImport.update({
+    id: '/assistencia',
+    path: '/assistencia',
+    getParentRoute: () => publiclayoutLayoutRoute,
+  } as any)
 const publiclayoutLayoutServiceRoute =
   publiclayoutLayoutServiceRouteImport.update({
     id: '/$service',
@@ -64,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin': typeof adminlayoutLayoutAdminRoute
   '/$service': typeof publiclayoutLayoutServiceRoute
+  '/assistencia': typeof publiclayoutLayoutAssistenciaRoute
   '/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
   '/': typeof publiclayoutLayoutIndexRoute
 }
@@ -72,6 +80,7 @@ export interface FileRoutesByTo {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/admin': typeof adminlayoutLayoutAdminRoute
   '/$service': typeof publiclayoutLayoutServiceRoute
+  '/assistencia': typeof publiclayoutLayoutAssistenciaRoute
   '/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
   '/': typeof publiclayoutLayoutIndexRoute
 }
@@ -83,6 +92,7 @@ export interface FileRoutesById {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/(admin)/(layout)/_layout/admin': typeof adminlayoutLayoutAdminRoute
   '/(public)/(layout)/_layout/$service': typeof publiclayoutLayoutServiceRoute
+  '/(public)/(layout)/_layout/assistencia': typeof publiclayoutLayoutAssistenciaRoute
   '/(public)/(layout)/_layout/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
   '/(public)/(layout)/_layout/': typeof publiclayoutLayoutIndexRoute
 }
@@ -93,10 +103,18 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/admin'
     | '/$service'
+    | '/assistencia'
     | '/premiacoes'
     | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/login' | '/api/auth/$' | '/admin' | '/$service' | '/premiacoes' | '/'
+  to:
+    | '/login'
+    | '/api/auth/$'
+    | '/admin'
+    | '/$service'
+    | '/assistencia'
+    | '/premiacoes'
+    | '/'
   id:
     | '__root__'
     | '/login'
@@ -105,6 +123,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/(admin)/(layout)/_layout/admin'
     | '/(public)/(layout)/_layout/$service'
+    | '/(public)/(layout)/_layout/assistencia'
     | '/(public)/(layout)/_layout/premiacoes'
     | '/(public)/(layout)/_layout/'
   fileRoutesById: FileRoutesById
@@ -160,6 +179,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof publiclayoutLayoutPremiacoesRouteImport
       parentRoute: typeof publiclayoutLayoutRoute
     }
+    '/(public)/(layout)/_layout/assistencia': {
+      id: '/(public)/(layout)/_layout/assistencia'
+      path: '/assistencia'
+      fullPath: '/assistencia'
+      preLoaderRoute: typeof publiclayoutLayoutAssistenciaRouteImport
+      parentRoute: typeof publiclayoutLayoutRoute
+    }
     '/(public)/(layout)/_layout/$service': {
       id: '/(public)/(layout)/_layout/$service'
       path: '/$service'
@@ -190,12 +216,14 @@ const adminlayoutLayoutRouteWithChildren =
 
 interface publiclayoutLayoutRouteChildren {
   publiclayoutLayoutServiceRoute: typeof publiclayoutLayoutServiceRoute
+  publiclayoutLayoutAssistenciaRoute: typeof publiclayoutLayoutAssistenciaRoute
   publiclayoutLayoutPremiacoesRoute: typeof publiclayoutLayoutPremiacoesRoute
   publiclayoutLayoutIndexRoute: typeof publiclayoutLayoutIndexRoute
 }
 
 const publiclayoutLayoutRouteChildren: publiclayoutLayoutRouteChildren = {
   publiclayoutLayoutServiceRoute: publiclayoutLayoutServiceRoute,
+  publiclayoutLayoutAssistenciaRoute: publiclayoutLayoutAssistenciaRoute,
   publiclayoutLayoutPremiacoesRoute: publiclayoutLayoutPremiacoesRoute,
   publiclayoutLayoutIndexRoute: publiclayoutLayoutIndexRoute,
 }

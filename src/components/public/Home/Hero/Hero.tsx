@@ -4,10 +4,8 @@ import { useState } from 'react'
 import { info } from '@/__mocks__/hero'
 import { services } from '@/__mocks__/services'
 import { messages } from '@/__mocks__/whatsapp'
-import { PageContainer, Select } from '@/components/core'
+import { Button, PageContainer, Select } from '@/components/core'
 import { generateWhatsAppLink } from '@/utils'
-
-import { Button } from '../Button'
 
 export const HeroInfo = ({
 	icon: Icon,

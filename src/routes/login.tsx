@@ -2,8 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { ArrowLeft } from 'lucide-react'
 import { z } from 'zod'
 
-import { AvatarLogo, GoogleIcon, NavLink } from '@/components/core'
-import { Button } from '@/components/public'
+import { AvatarLogo, Button, GoogleIcon, NavLink } from '@/components/core'
 import { signIn } from '@/lib/authClient'
 
 export const Route = createFileRoute('/login')({

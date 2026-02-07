@@ -1,7 +1,7 @@
 import { ClientOnly, createFileRoute, Outlet } from '@tanstack/react-router'
 import CookieConsent from 'react-cookie-consent'
 
-import { Footer, Navbar } from '@/components/public'
+import { Footer, Navbar, ScriptChat } from '@/components/public'
 
 export const Route = createFileRoute('/(public)/(layout)/_layout')({
 	component: PublicLayoutComponent,
@@ -36,6 +36,7 @@ function PublicLayoutComponent() {
 					</a>
 					.
 				</CookieConsent>
+				<ScriptChat />
 			</ClientOnly>
 		</>
 	)

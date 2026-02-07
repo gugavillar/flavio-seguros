@@ -1,0 +1,7 @@
+export * from './AboutUs'
+export * from './Faq'
+export * from './Hero'
+export * from './HeroTop'
+export * from './InsuranceCarousel'
+export * from './Services'
+export * from './Testimonials'

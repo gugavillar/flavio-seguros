@@ -1,8 +1,6 @@
 import { faqs } from '@/__mocks__/faq'
-import { HeaderSection, PageContainer } from '@/components/core'
+import { AccordionContentText, HeaderSection, PageContainer } from '@/components/core'
 import { NAVIGATION_HASH } from '@/utils'
-
-import { AccordionContentText } from '../AccordionContentText'
 
 export const Faq = () => {
 	return (

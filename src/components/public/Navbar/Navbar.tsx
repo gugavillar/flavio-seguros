@@ -4,8 +4,8 @@ import { Menu, X } from 'lucide-react'
 import { type Dispatch, type SetStateAction, useState } from 'react'
 
 import { messages } from '@/__mocks__/whatsapp'
-import { AvatarLogo, NavLink } from '@/components/core'
-import { BreadcrumbBar, Button } from '@/components/public'
+import { AvatarLogo, Button, NavLink } from '@/components/core'
+import { BreadcrumbBar } from '@/components/public'
 import { generateWhatsAppLink, NAVIGATION_HASH, transformPath } from '@/utils'
 
 const commonProps = {

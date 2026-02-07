@@ -1,0 +1,5 @@
+export * from './HeaderAwards'
+export * from './MainAwards'
+export * from './RecognizedQuality'
+export * from './TimelineAwards'
+export * from './TrustedPartners'
