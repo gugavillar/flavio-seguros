@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 
-import { Anchor } from '@/components/public'
+import { NavLink } from '@/components/core'
 import { generateWhatsAppLink, NAVIGATION_HASH } from '@/utils'
 
 import { services } from './services'
@@ -28,9 +28,9 @@ export const social = [
 export const servicesFooter = {
 	links: services.map((service) => ({
 		children: (
-			<Anchor className='text-gray-400 hover:text-white' to={service.path}>
+			<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to={service.path}>
 				{service.title}
-			</Anchor>
+			</NavLink>
 		),
 	})),
 	title: 'Serviços',
@@ -40,9 +40,9 @@ export const support = {
 	links: [
 		{
 			children: (
-				<Anchor className='text-gray-400 hover:text-white' to='/assistencia'>
+				<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to='/assistencia'>
 					Assistência 24h
-				</Anchor>
+				</NavLink>
 			),
 		},
 		{
@@ -88,22 +88,34 @@ export const company = {
 	links: [
 		{
 			children: (
-				<Anchor className='text-gray-400 hover:text-white' hash={NAVIGATION_HASH.ABOUT} to='/'>
+				<NavLink
+					className='text-gray-400 underline-offset-8 hover:text-white hover:underline'
+					hash={NAVIGATION_HASH.ABOUT}
+					to='/'
+				>
 					Sobre nós
-				</Anchor>
+				</NavLink>
 			),
 		},
 		{
-			children: <Anchor className='text-gray-400 hover:text-white'>Nossa equipe</Anchor>,
-		},
-		{
-			children: <Anchor className='text-gray-400 hover:text-white'>Trabalhe conosco</Anchor>,
+			children: (
+				<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to='/'>
+					Nossa equipe
+				</NavLink>
+			),
 		},
 		{
 			children: (
-				<Anchor className='text-gray-400 hover:text-white' to='/premiacoes'>
+				<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to='/'>
+					Trabalhe conosco
+				</NavLink>
+			),
+		},
+		{
+			children: (
+				<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to='/premiacoes'>
 					Premiações
-				</Anchor>
+				</NavLink>
 			),
 		},
 	],

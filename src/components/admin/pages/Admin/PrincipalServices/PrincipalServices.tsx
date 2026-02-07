@@ -1,9 +1,7 @@
 import { BriefcaseBusiness } from 'lucide-react'
 
 import { principalServices } from '@/__mocks__/principalServices'
-
-import { CardContent } from '../CardContent'
-import { SectionTitle } from '../SectionTitle'
+import { CardContent, SectionTitle } from '@/components/admin'
 
 export const PrincipalServices = () => {
 	return (

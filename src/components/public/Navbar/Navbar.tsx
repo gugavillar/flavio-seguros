@@ -11,7 +11,7 @@ import { generateWhatsAppLink, NAVIGATION_HASH, transformPath } from '@/utils'
 const commonProps = {
 	activeOptions: { includeHash: true },
 	activeProps: { className: 'text-primary underline underline-offset-3' },
-	className: 'cursor-pointer px-1.5 py-2',
+	className: 'cursor-pointer px-1.5 py-2 hover:underline hover:underline-offset-3',
 }
 
 const Links = ({ setIsOpen, isOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>>; isOpen: boolean }) => {
@@ -21,10 +21,10 @@ const Links = ({ setIsOpen, isOpen }: { setIsOpen: Dispatch<SetStateAction<boole
 				<NavLink {...commonProps} hash={NAVIGATION_HASH.SERVICES} to='/'>
 					Serviços
 				</NavLink>
-				<NavLink {...commonProps} className='cursor-pointer px-1.5 py-2' hash={NAVIGATION_HASH.ABOUT} to='/'>
+				<NavLink {...commonProps} hash={NAVIGATION_HASH.ABOUT} to='/'>
 					Sobre nós
 				</NavLink>
-				<NavLink {...commonProps} className='cursor-pointer px-1.5 py-2' hash={NAVIGATION_HASH.TESTIMONIALS} to='/'>
+				<NavLink {...commonProps} hash={NAVIGATION_HASH.TESTIMONIALS} to='/'>
 					Depoimentos
 				</NavLink>
 				<NavLink {...commonProps} hash={NAVIGATION_HASH.FAQ} to='/'>

@@ -1,9 +1,7 @@
 import { Headphones } from 'lucide-react'
 
 import { supportAndResources } from '@/__mocks__/supportAndResources'
-
-import { CardContent } from '../CardContent'
-import { SectionTitle } from '../SectionTitle'
+import { CardContent, SectionTitle } from '@/components/admin'
 
 export const SupportAndResources = () => {
 	return (

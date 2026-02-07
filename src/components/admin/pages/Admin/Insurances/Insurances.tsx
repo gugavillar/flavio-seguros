@@ -3,9 +3,8 @@ import { ChevronRight, Shield } from 'lucide-react'
 import { useState } from 'react'
 
 import { insurances } from '@/__mocks__/insurances'
-
-import { CardContent } from '../CardContent'
-import { SectionTitle } from '../SectionTitle'
+import { CardContent, SectionTitle } from '@/components/admin'
+import { Input } from '@/components/core'
 
 export const Insurances = () => {
 	const [search, setSearch] = useState('')
@@ -17,8 +16,7 @@ export const Insurances = () => {
 		<section className='space-y-6'>
 			<SectionTitle icon={<Shield className='size-5' />} title='Seguradoras' />
 			<div className='space-y-3'>
-				<input
-					className='block w-full rounded-lg border-gray-200 px-4 py-2.5 text-gray-800 focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 sm:py-3 sm:text-sm'
+				<Input
 					onChange={(e) => setSearch(e.target.value)}
 					placeholder='Procurar seguradora'
 					type='search'
