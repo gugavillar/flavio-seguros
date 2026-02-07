@@ -1,11 +1,16 @@
 import { ClientOnly, createFileRoute, notFound, useLoaderData } from '@tanstack/react-router'
+import z from 'zod'
 
 import { servicePage } from '@/__mocks__/services'
 import { BenefitsService, DescriptionService, FaqService, HeroService } from '@/components/public'
 
+const serviceSchema = z.object({ service: z.enum(Object.keys(servicePage)) })
+
 export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
 	beforeLoad: ({ params }) => {
-		if (!servicePage[params.service as keyof typeof servicePage]) {
+		try {
+			serviceSchema.parse({ service: params.service })
+		} catch {
 			throw notFound()
 		}
 	},
