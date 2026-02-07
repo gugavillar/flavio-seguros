@@ -2,7 +2,6 @@ import { ChevronRight } from 'lucide-react'
 import { Fragment } from 'react'
 
 import { NavLink } from '@/components/core'
-import { NAVIGATION_HASH } from '@/utils'
 
 type BreadcrumbBarProps = {
 	breadcrumbs: Array<string>
@@ -17,7 +16,7 @@ export const BreadcrumbBar = ({ breadcrumbs }: BreadcrumbBarProps) => {
 				<nav aria-label='Breadcrumb' role='navigation'>
 					<ol className='flex flex-wrap items-center gap-1.5 text-gray-500 text-sm sm:gap-2.5'>
 						<li className='inline-flex items-center gap-1.5'>
-							<NavLink className='text-gray-500 hover:text-primary' hash={NAVIGATION_HASH.SERVICES} to='/'>
+							<NavLink className='text-gray-500 hover:text-primary' to='/'>
 								Início
 							</NavLink>
 						</li>

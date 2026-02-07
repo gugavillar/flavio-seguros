@@ -26,8 +26,10 @@ const EmergencePhoneCard = ({
 				</div>
 				<h3 className='mb-2 text-center font-semibold text-black/80 text-lg'>{title}</h3>
 				<div className='mb-4 flex flex-wrap justify-center gap-1'>
-					{types.map((type) => (
-						<span className='rounded-full bg-primary/15 px-2 py-1 text-primary text-xs'>{type}</span>
+					{types.map((type, index) => (
+						<span className='rounded-full bg-primary/15 px-2 py-1 text-primary text-xs' key={index}>
+							{type}
+						</span>
 					))}
 				</div>
 				<div className='flex items-center justify-center gap-6'>
