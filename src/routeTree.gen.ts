@@ -16,6 +16,7 @@ import { Route as adminlayoutLayoutRouteImport } from './routes/(admin)/(layout)
 import { Route as publiclayoutLayoutIndexRouteImport } from './routes/(public)/(layout)/_layout.index'
 import { Route as publiclayoutLayoutTrabalheConoscoRouteImport } from './routes/(public)/(layout)/_layout.trabalhe-conosco'
 import { Route as publiclayoutLayoutPremiacoesRouteImport } from './routes/(public)/(layout)/_layout.premiacoes'
+import { Route as publiclayoutLayoutNossaEquipeRouteImport } from './routes/(public)/(layout)/_layout.nossa-equipe'
 import { Route as publiclayoutLayoutAssistenciaRouteImport } from './routes/(public)/(layout)/_layout.assistencia'
 import { Route as publiclayoutLayoutServiceRouteImport } from './routes/(public)/(layout)/_layout.$service'
 import { Route as adminlayoutLayoutAdminRouteImport } from './routes/(admin)/(layout)/_layout.admin'
@@ -55,6 +56,12 @@ const publiclayoutLayoutPremiacoesRoute =
     path: '/premiacoes',
     getParentRoute: () => publiclayoutLayoutRoute,
   } as any)
+const publiclayoutLayoutNossaEquipeRoute =
+  publiclayoutLayoutNossaEquipeRouteImport.update({
+    id: '/nossa-equipe',
+    path: '/nossa-equipe',
+    getParentRoute: () => publiclayoutLayoutRoute,
+  } as any)
 const publiclayoutLayoutAssistenciaRoute =
   publiclayoutLayoutAssistenciaRouteImport.update({
     id: '/assistencia',
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof adminlayoutLayoutAdminRoute
   '/$service': typeof publiclayoutLayoutServiceRoute
   '/assistencia': typeof publiclayoutLayoutAssistenciaRoute
+  '/nossa-equipe': typeof publiclayoutLayoutNossaEquipeRoute
   '/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
   '/trabalhe-conosco': typeof publiclayoutLayoutTrabalheConoscoRoute
   '/': typeof publiclayoutLayoutIndexRoute
@@ -89,6 +97,7 @@ export interface FileRoutesByTo {
   '/admin': typeof adminlayoutLayoutAdminRoute
   '/$service': typeof publiclayoutLayoutServiceRoute
   '/assistencia': typeof publiclayoutLayoutAssistenciaRoute
+  '/nossa-equipe': typeof publiclayoutLayoutNossaEquipeRoute
   '/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
   '/trabalhe-conosco': typeof publiclayoutLayoutTrabalheConoscoRoute
   '/': typeof publiclayoutLayoutIndexRoute
@@ -102,6 +111,7 @@ export interface FileRoutesById {
   '/(admin)/(layout)/_layout/admin': typeof adminlayoutLayoutAdminRoute
   '/(public)/(layout)/_layout/$service': typeof publiclayoutLayoutServiceRoute
   '/(public)/(layout)/_layout/assistencia': typeof publiclayoutLayoutAssistenciaRoute
+  '/(public)/(layout)/_layout/nossa-equipe': typeof publiclayoutLayoutNossaEquipeRoute
   '/(public)/(layout)/_layout/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
   '/(public)/(layout)/_layout/trabalhe-conosco': typeof publiclayoutLayoutTrabalheConoscoRoute
   '/(public)/(layout)/_layout/': typeof publiclayoutLayoutIndexRoute
@@ -114,6 +124,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/$service'
     | '/assistencia'
+    | '/nossa-equipe'
     | '/premiacoes'
     | '/trabalhe-conosco'
     | '/'
@@ -124,6 +135,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/$service'
     | '/assistencia'
+    | '/nossa-equipe'
     | '/premiacoes'
     | '/trabalhe-conosco'
     | '/'
@@ -136,6 +148,7 @@ export interface FileRouteTypes {
     | '/(admin)/(layout)/_layout/admin'
     | '/(public)/(layout)/_layout/$service'
     | '/(public)/(layout)/_layout/assistencia'
+    | '/(public)/(layout)/_layout/nossa-equipe'
     | '/(public)/(layout)/_layout/premiacoes'
     | '/(public)/(layout)/_layout/trabalhe-conosco'
     | '/(public)/(layout)/_layout/'
@@ -199,6 +212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof publiclayoutLayoutPremiacoesRouteImport
       parentRoute: typeof publiclayoutLayoutRoute
     }
+    '/(public)/(layout)/_layout/nossa-equipe': {
+      id: '/(public)/(layout)/_layout/nossa-equipe'
+      path: '/nossa-equipe'
+      fullPath: '/nossa-equipe'
+      preLoaderRoute: typeof publiclayoutLayoutNossaEquipeRouteImport
+      parentRoute: typeof publiclayoutLayoutRoute
+    }
     '/(public)/(layout)/_layout/assistencia': {
       id: '/(public)/(layout)/_layout/assistencia'
       path: '/assistencia'
@@ -237,6 +257,7 @@ const adminlayoutLayoutRouteWithChildren =
 interface publiclayoutLayoutRouteChildren {
   publiclayoutLayoutServiceRoute: typeof publiclayoutLayoutServiceRoute
   publiclayoutLayoutAssistenciaRoute: typeof publiclayoutLayoutAssistenciaRoute
+  publiclayoutLayoutNossaEquipeRoute: typeof publiclayoutLayoutNossaEquipeRoute
   publiclayoutLayoutPremiacoesRoute: typeof publiclayoutLayoutPremiacoesRoute
   publiclayoutLayoutTrabalheConoscoRoute: typeof publiclayoutLayoutTrabalheConoscoRoute
   publiclayoutLayoutIndexRoute: typeof publiclayoutLayoutIndexRoute
@@ -245,6 +266,7 @@ interface publiclayoutLayoutRouteChildren {
 const publiclayoutLayoutRouteChildren: publiclayoutLayoutRouteChildren = {
   publiclayoutLayoutServiceRoute: publiclayoutLayoutServiceRoute,
   publiclayoutLayoutAssistenciaRoute: publiclayoutLayoutAssistenciaRoute,
+  publiclayoutLayoutNossaEquipeRoute: publiclayoutLayoutNossaEquipeRoute,
   publiclayoutLayoutPremiacoesRoute: publiclayoutLayoutPremiacoesRoute,
   publiclayoutLayoutTrabalheConoscoRoute:
     publiclayoutLayoutTrabalheConoscoRoute,

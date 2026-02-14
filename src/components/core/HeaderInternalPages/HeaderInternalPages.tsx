@@ -8,6 +8,7 @@ type HeaderInternalPagesProps = ComponentProps<'div'> & {
 	title: string
 	description: string
 	isSplitTitle?: boolean
+	endSplitIndex?: number
 }
 
 export const HeaderInternalPages = ({
@@ -17,12 +18,14 @@ export const HeaderInternalPages = ({
 	isSplitTitle = false,
 	className,
 	children,
+	endSplitIndex = 1,
 	...props
 }: HeaderInternalPagesProps) => {
 	const splitTitle = isSplitTitle ? title.split(' ') : title
 	const newTitle = Array.isArray(splitTitle) ? (
 		<>
-			{splitTitle.slice(0, 1)} <span className='text-primary'>{splitTitle.slice(1)}</span>
+			{splitTitle.slice(0, endSplitIndex).join(' ')}{' '}
+			<span className='text-primary'>{splitTitle.slice(endSplitIndex).join(' ')}</span>
 		</>
 	) : (
 		splitTitle
