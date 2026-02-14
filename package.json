@@ -12,6 +12,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "^0.9.5",
@@ -28,8 +29,11 @@
     "react": "^19.2.4",
     "react-cookie-consent": "^10.0.1",
     "react-dom": "^19.2.4",
+    "react-hook-form": "^7.71.1",
+    "react-number-format": "^5.4.4",
     "swiper": "^12.1.0",
     "tailwindcss": "^4.1.18",
+    "validations-br": "^1.2.0",
     "vite-tsconfig-paths": "^6.1.0",
     "zod": "^4.3.6"
   },
