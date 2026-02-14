@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { Badge } from '../Badge'
 
-type HeaderSectionProps = ComponentProps<'div'> & {
+export type HeaderSectionProps = ComponentProps<'div'> & {
 	badgeLabel?: string
 	title: string
 	description: string

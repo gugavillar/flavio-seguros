@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-type BadgeProps = ComponentProps<'div'> & {
+export type BadgeProps = ComponentProps<'div'> & {
 	icon?: ReactNode
 	label: string
 }

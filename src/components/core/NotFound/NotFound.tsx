@@ -22,14 +22,14 @@ export const NotFound = () => {
 						</p>
 						<div className='flex flex-col justify-center gap-4 sm:flex-row'>
 							<NavLink
-								className='inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-8 font-medium text-primary-foreground text-sm text-white ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0'
+								className='inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-8 font-medium text-primary-foreground text-sm text-white transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0'
 								to='/'
 							>
 								<Home className='size-5' />
 								Voltar ao início
 							</NavLink>
 							<a
-								className='inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-md border border-gray-300 bg-transparent px-8 font-medium text-black/80 text-sm ring-offset-background transition-colors hover:bg-primary/50 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0'
+								className='inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-md border border-gray-300 bg-transparent px-8 font-medium text-black/80 text-sm transition-colors hover:bg-primary/50 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0'
 								href={generateWhatsAppLink({ message: messages.lost })}
 								target='_blank'
 							>

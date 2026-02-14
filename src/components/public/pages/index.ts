@@ -1,4 +1,5 @@
 export * from './Assistance'
 export * from './Awards'
+export * from './Careers'
 export * from './Home'
 export * from './Service'

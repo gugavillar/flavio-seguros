@@ -106,7 +106,7 @@ export const company = {
 		},
 		{
 			children: (
-				<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to='/'>
+				<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to='/trabalhe-conosco'>
 					Trabalhe conosco
 				</NavLink>
 			),

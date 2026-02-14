@@ -1,7 +1,7 @@
 import { ClockIcon, type LucideIcon } from 'lucide-react'
 
 import { benefits } from '@/__mocks__/assistance'
-import { HeaderSection, PageContainer } from '@/components/core'
+import { HeaderInternalPages } from '@/components/core'
 
 const Benefit = ({ icon: Icon, label }: { icon: LucideIcon; label: string }) => {
 	return (
@@ -14,20 +14,16 @@ const Benefit = ({ icon: Icon, label }: { icon: LucideIcon; label: string }) => 
 
 export const HeaderAssistance = () => {
 	return (
-		<PageContainer className='pt-36 pb-20'>
-			<div className='mx-auto max-w-3xl text-center'>
-				<HeaderSection
-					badgeLabel='Disponível 24 horas'
-					description='Estamos aqui para você a qualquer momento. Nossa rede de assistência 24 horas oferece suporte completo em situações de emergência, garantindo sua tranquilidade e segurança onde quer que você esteja.'
-					icon={<ClockIcon />}
-					title='Assistência 24h'
-				/>
-				<div className='flex flex-wrap justify-center gap-4'>
-					{benefits.map((item) => (
-						<Benefit key={item.label} {...item} />
-					))}
-				</div>
+		<HeaderInternalPages
+			badge={{ icon: <ClockIcon />, label: 'Disponível 24 horas' }}
+			description='Estamos aqui para você a qualquer momento. Nossa rede de assistência 24 horas oferece suporte completo em situações de emergência, garantindo sua tranquilidade e segurança onde quer que você esteja.'
+			title='Assistência 24h'
+		>
+			<div className='mt-8 flex flex-wrap justify-center gap-4'>
+				{benefits.map((item) => (
+					<Benefit key={item.label} {...item} />
+				))}
 			</div>
-		</PageContainer>
+		</HeaderInternalPages>
 	)
 }

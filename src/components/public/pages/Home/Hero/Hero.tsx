@@ -25,7 +25,7 @@ export const HeroInfo = ({
 		<div className='flex items-center gap-2'>
 			<Icon />
 			<span>
-				<a href={href} rel={rel} target={target}>
+				<a className='underline-offset-8 hover:text-white hover:underline' href={href} rel={rel} target={target}>
 					{text}
 				</a>
 			</span>
