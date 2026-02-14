@@ -24,7 +24,7 @@ export const Form = () => {
 			phone: '',
 		},
 		mode: 'onBlur',
-		resolver: zodResolver(formSchema as any),
+		resolver: zodResolver(formSchema),
 	})
 	const inputRef = useRef<HTMLInputElement>(null)
 
