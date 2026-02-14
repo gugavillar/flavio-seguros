@@ -19,7 +19,7 @@ const Links = ({ setIsOpen, isOpen }: { setIsOpen: Dispatch<SetStateAction<boole
 		<>
 			<div className='hidden items-center gap-8 lg:flex'>
 				<NavLink {...commonProps} hash={NAVIGATION_HASH.SERVICES} to='/'>
-					Serviços
+					Seguros
 				</NavLink>
 				<NavLink {...commonProps} hash={NAVIGATION_HASH.ABOUT} to='/'>
 					Sobre nós

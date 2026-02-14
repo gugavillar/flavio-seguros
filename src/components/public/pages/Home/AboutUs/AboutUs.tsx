@@ -32,7 +32,7 @@ export const AboutUs = () => {
 						className='right-0 max-sm:bottom-0 sm:top-10'
 						description='Seguradoras parceiras'
 						icon={<CheckCircle2 className='text-white' />}
-						title='+10'
+						title='+15'
 					/>
 				</div>
 				<div className='order-1 space-y-8 max-lg:text-center lg:order-2'>

@@ -7,7 +7,7 @@ export const Services = () => {
 		<PageContainer id={NAVIGATION_HASH.SERVICES}>
 			<div className='mx-auto mb-16 max-w-2xl text-center'>
 				<HeaderSection
-					badgeLabel='Nossos Serviços'
+					badgeLabel='Nossos Seguros'
 					description='Trabalhamos com as melhores seguradoras do mercado para oferecer as melhores condições e coberturas para você.'
 					title='Seguros para todas as suas necessidades'
 				/>

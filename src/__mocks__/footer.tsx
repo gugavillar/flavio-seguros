@@ -33,7 +33,7 @@ export const servicesFooter = {
 			</NavLink>
 		),
 	})),
-	title: 'Serviços',
+	title: 'Seguros',
 }
 
 export const support = {

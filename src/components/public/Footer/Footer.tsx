@@ -29,7 +29,7 @@ const LinkList = ({ title, links }: { title: string; links: Array<{ children: Re
 
 export const Footer = () => {
 	return (
-		<footer className='bg-black/80 py-16 text-white'>
+		<footer className='bg-black/70 py-16 text-white'>
 			<div className='container mx-auto px-4'>
 				<div className='mb-12 grid gap-12 md:grid-cols-4'>
 					<div className='space-y-4'>
