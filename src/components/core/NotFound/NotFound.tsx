@@ -5,6 +5,7 @@ import { Navbar } from '@/components/public'
 import { generateWhatsAppLink } from '@/utils'
 
 import { NavLink } from '../NavLink'
+import { SusepNumber } from '../SusepNumber'
 
 export const NotFound = () => {
 	return (
@@ -43,8 +44,7 @@ export const NotFound = () => {
 			<footer className='border-gray-300 border-t'>
 				<div className='container mx-auto px-4'>
 					<div className='flex flex-col items-center justify-between gap-4 py-8 md:flex-row'>
-						<p className='text-sm'>© 2026 Flávio Seguros. Todos os direitos reservados.</p>
-						<p>SUSEP Nº 202091931 - Gravatá Corretora de Seguros</p>
+						<SusepNumber />
 					</div>
 				</div>
 			</footer>

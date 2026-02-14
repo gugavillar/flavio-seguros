@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
 import { company, servicesFooter, social, support } from '@/__mocks__/footer'
-import { AvatarLogo } from '@/components/core'
+import { AvatarLogo, SusepNumber } from '@/components/core'
 
 const SocialLink = ({ href, icon }: { href: string; icon: ReactNode }) => {
 	return (
@@ -48,8 +48,7 @@ export const Footer = () => {
 					<LinkList {...support} />
 				</div>
 				<div className='flex flex-col items-center justify-between gap-4 border-gray-200/30 border-t pt-8 md:flex-row'>
-					<p className='text-sm'>© 2026 Flávio Seguros. Todos os direitos reservados.</p>
-					<p>SUSEP Nº 202091931 - Gravatá Corretora de Seguros</p>
+					<SusepNumber />
 				</div>
 			</div>
 		</footer>

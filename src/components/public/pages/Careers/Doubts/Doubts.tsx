@@ -6,10 +6,10 @@ import { Button, CTACard } from '@/components/core'
 import { generateWhatsAppLink } from '@/utils'
 
 export const Doubts = () => {
-	const email = info.filter((item) => item.icon === Mail)[0]?.text
+	const email = info.find((item) => item.icon === Mail)?.text ?? ''
 	return (
 		<CTACard
-			description={`Entre em contato conosco pelo e-mail ${email} ou ligue para mais informações. Teremos prazer em ajudá-lo.`}
+			description={`Entre em contato conosco pelo e-mail ${email} ou clique no botão abaixo para mais informações. Teremos prazer em ajudá-lo.`}
 			icon={Shield}
 			title='Dúvidas sobre o processo?'
 		>
