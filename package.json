@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@prismicio/client": "^7.21.6",
+    "@prismicio/react": "^3.3.0",
     "@radix-ui/react-accordion": "^1.2.12",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "^0.9.5",

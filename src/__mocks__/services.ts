@@ -161,28 +161,30 @@ export const servicePage = {
 		},
 		faqs: [
 			{
-				answer: 'Sim. A cobertura é válida 24 horas por dia, inclusive em atividades pessoais, lazer ou deslocamentos.',
-				question: 'O seguro cobre acidentes fora do trabalho?',
+				'faq-answer':
+					'Sim. A cobertura é válida 24 horas por dia, inclusive em atividades pessoais, lazer ou deslocamentos.',
+				'faq-question': 'O seguro cobre acidentes fora do trabalho?',
 			},
 			{
-				answer: 'Consultas, exames, internações, cirurgias e outros procedimentos relacionados ao acidente coberto.',
-				question: 'Quais despesas médicas são reembolsadas?',
+				'faq-answer':
+					'Consultas, exames, internações, cirurgias e outros procedimentos relacionados ao acidente coberto.',
+				'faq-question': 'Quais despesas médicas são reembolsadas?',
 			},
 			{
-				answer: 'Sim. É possível contratar planos individuais ou familiares, conforme sua necessidade.',
-				question: 'Posso incluir familiares na apólice?',
+				'faq-answer': 'Sim. É possível contratar planos individuais ou familiares, conforme sua necessidade.',
+				'faq-question': 'Posso incluir familiares na apólice?',
 			},
 			{
-				answer: 'Algumas coberturas podem ter carência, variando conforme a seguradora e o plano contratado.',
-				question: 'Existe carência para utilização do seguro?',
+				'faq-answer': 'Algumas coberturas podem ter carência, variando conforme a seguradora e o plano contratado.',
+				'faq-question': 'Existe carência para utilização do seguro?',
 			},
 			{
-				answer: 'Sim, dependendo da apólice, pode haver cobertura para afastamento temporário por acidente.',
-				question: 'O seguro cobre invalidez temporária?',
+				'faq-answer': 'Sim, dependendo da apólice, pode haver cobertura para afastamento temporário por acidente.',
+				'faq-question': 'O seguro cobre invalidez temporária?',
 			},
 			{
-				answer: 'Qualquer pessoa física que deseje proteção financeira contra acidentes inesperados.',
-				question: 'Quem pode contratar o seguro de acidentes pessoais?',
+				'faq-answer': 'Qualquer pessoa física que deseje proteção financeira contra acidentes inesperados.',
+				'faq-question': 'Quem pode contratar o seguro de acidentes pessoais?',
 			},
 		],
 		icon: Shield,
@@ -245,30 +247,31 @@ export const servicePage = {
 		},
 		faqs: [
 			{
-				answer:
+				'faq-answer':
 					'Sim. É possível ofertar lances para antecipar a contemplação, além de participar dos sorteios mensais.',
-				question: 'Posso ser contemplado antes do fim do consórcio?',
+				'faq-question': 'Posso ser contemplado antes do fim do consórcio?',
 			},
 			{
-				answer: 'Imóveis, veículos e serviços, conforme as regras e categorias definidas no grupo de consórcio.',
-				question: 'Quais bens podem ser adquiridos com consórcio?',
+				'faq-answer': 'Imóveis, veículos e serviços, conforme as regras e categorias definidas no grupo de consórcio.',
+				'faq-question': 'Quais bens podem ser adquiridos com consórcio?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'O consórcio não possui juros, apenas taxa de administração, enquanto o financiamento inclui juros sobre o valor financiado.',
-				question: 'Qual a diferença entre consórcio e financiamento?',
+				'faq-question': 'Qual a diferença entre consórcio e financiamento?',
 			},
 			{
-				answer: 'Não. A contemplação depende de sorteio ou lance, respeitando as regras estabelecidas em contrato.',
-				question: 'A contemplação é garantida imediatamente?',
+				'faq-answer':
+					'Não. A contemplação depende de sorteio ou lance, respeitando as regras estabelecidas em contrato.',
+				'faq-question': 'A contemplação é garantida imediatamente?',
 			},
 			{
-				answer: 'Sim. É possível escolher planos, valores de crédito e prazos de acordo com seu objetivo.',
-				question: 'Os planos de consórcio podem ser personalizados?',
+				'faq-answer': 'Sim. É possível escolher planos, valores de crédito e prazos de acordo com seu objetivo.',
+				'faq-question': 'Os planos de consórcio podem ser personalizados?',
 			},
 			{
-				answer: 'Pessoas que desejam se planejar financeiramente para adquirir bens ou serviços sem pagar juros.',
-				question: 'Quem deve contratar um consórcio?',
+				'faq-answer': 'Pessoas que desejam se planejar financeiramente para adquirir bens ou serviços sem pagar juros.',
+				'faq-question': 'Quem deve contratar um consórcio?',
 			},
 		],
 		icon: Home,
@@ -325,28 +328,28 @@ export const servicePage = {
 		},
 		faqs: [
 			{
-				answer: 'Sim. Ela elimina a necessidade de fiador, caução ou depósito antecipado.',
-				question: 'A fiança locatícia substitui o fiador?',
+				'faq-answer': 'Sim. Ela elimina a necessidade de fiador, caução ou depósito antecipado.',
+				'faq-question': 'A fiança locatícia substitui o fiador?',
 			},
 			{
-				answer: 'Aluguel, condomínio, IPTU e outros encargos previstos no contrato de locação.',
-				question: 'Quais valores são garantidos pela fiança locatícia?',
+				'faq-answer': 'Aluguel, condomínio, IPTU e outros encargos previstos no contrato de locação.',
+				'faq-question': 'Quais valores são garantidos pela fiança locatícia?',
 			},
 			{
-				answer: 'Normalmente o inquilino realiza o pagamento no momento da contratação do aluguel.',
-				question: 'Quem é responsável pelo pagamento da fiança locatícia?',
+				'faq-answer': 'Normalmente o inquilino realiza o pagamento no momento da contratação do aluguel.',
+				'faq-question': 'Quem é responsável pelo pagamento da fiança locatícia?',
 			},
 			{
-				answer: 'Sim. Pode ser contratada tanto para imóveis residenciais quanto comerciais.',
-				question: 'A fiança locatícia é válida para imóveis comerciais?',
+				'faq-answer': 'Sim. Pode ser contratada tanto para imóveis residenciais quanto comerciais.',
+				'faq-question': 'A fiança locatícia é válida para imóveis comerciais?',
 			},
 			{
-				answer: 'Sim. A seguradora garante o pagamento conforme as condições previstas na apólice.',
-				question: 'O proprietário recebe mesmo em caso de inadimplência?',
+				'faq-answer': 'Sim. A seguradora garante o pagamento conforme as condições previstas na apólice.',
+				'faq-question': 'O proprietário recebe mesmo em caso de inadimplência?',
 			},
 			{
-				answer: 'A renovação ocorre conforme o prazo do contrato de aluguel, podendo ser ajustada anualmente.',
-				question: 'Como funciona a renovação da fiança locatícia?',
+				'faq-answer': 'A renovação ocorre conforme o prazo do contrato de aluguel, podendo ser ajustada anualmente.',
+				'faq-question': 'Como funciona a renovação da fiança locatícia?',
 			},
 		],
 		icon: Key,
@@ -409,32 +412,32 @@ export const servicePage = {
 		},
 		faqs: [
 			{
-				answer:
+				'faq-answer':
 					'São prejuízos materiais, corporais ou morais causados involuntariamente a outras pessoas durante atividades cobertas pela apólice.',
-				question: 'O que é considerado dano a terceiros?',
+				'faq-question': 'O que é considerado dano a terceiros?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Não. Ele também é indicado para profissionais liberais, autônomos e pessoas físicas que desejam se proteger contra riscos.',
-				question: 'O seguro é indicado apenas para empresas?',
+				'faq-question': 'O seguro é indicado apenas para empresas?',
 			},
 			{
-				answer: 'Sim. Dependendo do plano contratado, pode incluir honorários advocatícios e despesas judiciais.',
-				question: 'O seguro cobre custos com advogados?',
+				'faq-answer': 'Sim. Dependendo do plano contratado, pode incluir honorários advocatícios e despesas judiciais.',
+				'faq-question': 'O seguro cobre custos com advogados?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Atividades profissionais, comerciais e operacionais, desde que estejam declaradas e aceitas na contratação.',
-				question: 'Quais atividades podem ser seguradas?',
+				'faq-question': 'Quais atividades podem ser seguradas?',
 			},
 			{
-				answer: 'Sim. Os limites podem ser ajustados conforme o risco e o porte da atividade exercida.',
-				question: 'É possível personalizar os limites de cobertura?',
+				'faq-answer': 'Sim. Os limites podem ser ajustados conforme o risco e o porte da atividade exercida.',
+				'faq-question': 'É possível personalizar os limites de cobertura?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Sempre que houver uma reclamação formal de terceiros por danos cobertos ocorridos durante a vigência da apólice.',
-				question: 'Quando o seguro pode ser acionado?',
+				'faq-question': 'Quando o seguro pode ser acionado?',
 			},
 		],
 		icon: Scale,
@@ -491,34 +494,34 @@ export const servicePage = {
 		},
 		faqs: [
 			{
-				answer:
+				'faq-answer':
 					'Você precisará do documento do veículo (CRLV), CNH do condutor principal, comprovante de residência e CPF. Para pessoa jurídica, também é necessário o CNPJ e contrato social.',
-				question: 'Qual documentação preciso para contratar o seguro auto?',
+				'faq-question': 'Qual documentação preciso para contratar o seguro auto?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Após o envio de toda a documentação, a análise é feita em até 24 horas úteis. Em casos simples, a aprovação pode sair no mesmo dia.',
-				question: 'Quanto tempo leva para aprovar minha proposta?',
+				'faq-question': 'Quanto tempo leva para aprovar minha proposta?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Sim! Você pode incluir condutores adicionais na apólice. Isso é importante para garantir a cobertura quando outras pessoas dirigirem seu veículo.',
-				question: 'Posso incluir outros motoristas na apólice?',
+				'faq-question': 'Posso incluir outros motoristas na apólice?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'A franquia é o valor que você paga em caso de sinistro parcial. Quanto maior a franquia escolhida, menor o valor do seguro. Oferecemos opções de franquia reduzida, normal e majorada.',
-				question: 'Como funciona a franquia do seguro?',
+				'faq-question': 'Como funciona a franquia do seguro?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Acessórios instalados após a compra do veículo podem ser cobertos mediante contratação adicional. Som, rodas, kit gás e blindagem são alguns exemplos.',
-				question: 'O seguro cobre acessórios do veículo?',
+				'faq-question': 'O seguro cobre acessórios do veículo?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Basta ligar para nossa central de atendimento disponível 24 horas. Você também pode acionar pelo nosso aplicativo ou WhatsApp.',
-				question: 'Como acionar a assistência 24 horas?',
+				'faq-question': 'Como acionar a assistência 24 horas?',
 			},
 		],
 		icon: Car,
@@ -577,30 +580,31 @@ export const servicePage = {
 		},
 		faqs: [
 			{
-				answer:
+				'faq-answer':
 					'Sim. A legislação brasileira exige que condomínios contratem seguro contra incêndio e outros riscos previstos em lei.',
-				question: 'O seguro condomínio é obrigatório?',
+				'faq-question': 'O seguro condomínio é obrigatório?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Não. O seguro condomínio cobre áreas comuns e estrutura. As unidades devem possuir seguro residencial próprio.',
-				question: 'O seguro cobre apartamentos individuais?',
+				'faq-question': 'O seguro cobre apartamentos individuais?',
 			},
 			{
-				answer: 'Sim, desde que a cobertura de responsabilidade civil esteja contratada na apólice.',
-				question: 'Danos a terceiros estão cobertos?',
+				'faq-answer': 'Sim, desde que a cobertura de responsabilidade civil esteja contratada na apólice.',
+				'faq-question': 'Danos a terceiros estão cobertos?',
 			},
 			{
-				answer: 'Hall, escadas, elevadores, garagens, portões, áreas de lazer e demais espaços de uso coletivo.',
-				question: 'Quais áreas são consideradas áreas comuns?',
+				'faq-answer': 'Hall, escadas, elevadores, garagens, portões, áreas de lazer e demais espaços de uso coletivo.',
+				'faq-question': 'Quais áreas são consideradas áreas comuns?',
 			},
 			{
-				answer: 'Sim. Equipamentos do condomínio podem ser incluídos conforme as coberturas contratadas.',
-				question: 'Equipamentos como elevadores estão cobertos?',
+				'faq-answer': 'Sim. Equipamentos do condomínio podem ser incluídos conforme as coberturas contratadas.',
+				'faq-question': 'Equipamentos como elevadores estão cobertos?',
 			},
 			{
-				answer: 'Sim. As coberturas podem ser ajustadas de acordo com o porte, tipo e necessidades do condomínio.',
-				question: 'É possível personalizar as coberturas?',
+				'faq-answer':
+					'Sim. As coberturas podem ser ajustadas de acordo com o porte, tipo e necessidades do condomínio.',
+				'faq-question': 'É possível personalizar as coberturas?',
 			},
 		],
 		icon: Building2,
@@ -658,34 +662,34 @@ export const servicePage = {
 		},
 		faqs: [
 			{
-				answer:
+				'faq-answer':
 					'Não existe um valor mínimo fixo. O custo depende do tamanho da empresa, atividade, valor do patrimônio e coberturas escolhidas. Fazemos cotações personalizadas.',
-				question: 'Qual o valor mínimo para contratar o seguro empresarial?',
+				'faq-question': 'Qual o valor mínimo para contratar o seguro empresarial?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Sim, é possível incluir cobertura para equipamentos e atividades realizadas em home office pelos colaboradores. Consulte-nos sobre esta extensão.',
-				question: 'O seguro cobre home office dos funcionários?',
+				'faq-question': 'O seguro cobre home office dos funcionários?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Sim, trabalhamos com seguros para diversos segmentos: comércio, indústria, serviços, tecnologia, saúde, entre outros. Cada segmento tem coberturas específicas.',
-				question: 'Empresas de todos os segmentos podem contratar?',
+				'faq-question': 'Empresas de todos os segmentos podem contratar?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'É uma proteção que indeniza sua empresa pelos lucros que deixaria de ter durante uma paralisação causada por um sinistro coberto, como incêndio ou explosão.',
-				question: 'O que é a cobertura de lucros cessantes?',
+				'faq-question': 'O que é a cobertura de lucros cessantes?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Não. Seguros específicos como de veículos da frota ou seguro de vida em grupo para funcionários devem ser contratados separadamente. Oferecemos pacotes completos.',
-				question: 'O seguro empresarial substitui outros seguros obrigatórios?',
+				'faq-question': 'O seguro empresarial substitui outros seguros obrigatórios?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Ao identificar um sinistro, entre em contato conosco imediatamente. Nossa equipe orienta sobre a documentação necessária e acompanha todo o processo de indenização.',
-				question: 'Como funciona em caso de sinistro?',
+				'faq-question': 'Como funciona em caso de sinistro?',
 			},
 		],
 		icon: Building2,
@@ -745,28 +749,29 @@ export const servicePage = {
 		},
 		faqs: [
 			{
-				answer: 'Sim. Desde que contratado com cobertura para equipamentos portáteis ou múltiplos locais.',
-				question: 'O seguro cobre equipamentos fora do endereço principal?',
+				'faq-answer': 'Sim. Desde que contratado com cobertura para equipamentos portáteis ou múltiplos locais.',
+				'faq-question': 'O seguro cobre equipamentos fora do endereço principal?',
 			},
 			{
-				answer: 'Notebooks, computadores, máquinas industriais, equipamentos médicos, tecnológicos e similares.',
-				question: 'Quais tipos de equipamentos podem ser segurados?',
+				'faq-answer': 'Notebooks, computadores, máquinas industriais, equipamentos médicos, tecnológicos e similares.',
+				'faq-question': 'Quais tipos de equipamentos podem ser segurados?',
 			},
 			{
-				answer: 'Sim. Quedas, impactos e acidentes estão cobertos conforme as condições da apólice.',
-				question: 'Danos acidentais estão cobertos?',
+				'faq-answer': 'Sim. Quedas, impactos e acidentes estão cobertos conforme as condições da apólice.',
+				'faq-question': 'Danos acidentais estão cobertos?',
 			},
 			{
-				answer: 'Depende da seguradora e do contrato. Em muitos casos, é possível incluir equipamentos locados.',
-				question: 'O seguro cobre equipamentos alugados?',
+				'faq-answer': 'Depende da seguradora e do contrato. Em muitos casos, é possível incluir equipamentos locados.',
+				'faq-question': 'O seguro cobre equipamentos alugados?',
 			},
 			{
-				answer: 'Sim. O limite varia conforme o plano contratado e o valor declarado dos equipamentos.',
-				question: 'Existe limite de valor para os equipamentos segurados?',
+				'faq-answer': 'Sim. O limite varia conforme o plano contratado e o valor declarado dos equipamentos.',
+				'faq-question': 'Existe limite de valor para os equipamentos segurados?',
 			},
 			{
-				answer: 'Após análise do sinistro, a seguradora realiza o reparo ou pagamento conforme previsto em contrato.',
-				question: 'Como funciona a indenização em caso de sinistro?',
+				'faq-answer':
+					'Após análise do sinistro, a seguradora realiza o reparo ou pagamento conforme previsto em contrato.',
+				'faq-question': 'Como funciona a indenização em caso de sinistro?',
 			},
 		],
 		icon: Laptop,
@@ -823,34 +828,34 @@ export const servicePage = {
 		},
 		faqs: [
 			{
-				answer:
+				'faq-answer':
 					'Sim! O seguro residencial pode ser contratado tanto para casas quanto para apartamentos, com coberturas adaptadas a cada tipo de imóvel.',
-				question: 'O seguro residencial cobre apartamento e casa?',
+				'faq-question': 'O seguro residencial cobre apartamento e casa?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Com certeza! Inquilinos podem contratar o seguro para proteger seus bens pessoais e benfeitorias. Muitos contratos de aluguel inclusive exigem isso.',
-				question: 'Imóvel alugado pode ter seguro residencial?',
+				'faq-question': 'Imóvel alugado pode ter seguro residencial?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Móveis, eletrodomésticos, eletrônicos, roupas, objetos de decoração e outros itens dentro da residência. Joias e obras de arte podem ter cobertura adicional.',
-				question: 'Quais bens ficam cobertos pelo seguro?',
+				'faq-question': 'Quais bens ficam cobertos pelo seguro?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Reformas pequenas geralmente são cobertas. Para obras maiores, é recomendável contratar um seguro específico de obras para garantir a cobertura completa.',
-				question: 'O seguro cobre reformas e construções?',
+				'faq-question': 'O seguro cobre reformas e construções?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Você pode acionar serviços como chaveiro, eletricista, encanador, vidraceiro e desentupidor a qualquer hora, sem custo adicional até os limites da apólice.',
-				question: 'Como funciona a assistência 24 horas?',
+				'faq-question': 'Como funciona a assistência 24 horas?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Geralmente não são cobertos: danos por desgaste natural, infestações de pragas, terremotos (salvo contratação específica) e danos intencionais.',
-				question: 'O que não é coberto pelo seguro residencial?',
+				'faq-question': 'O que não é coberto pelo seguro residencial?',
 			},
 		],
 		icon: Home,
@@ -908,20 +913,20 @@ export const servicePage = {
 		},
 		faqs: [
 			{
-				answer: 'Sim, o seguro viagem é obrigatório para entrada em países do Espaço Schengen.',
-				question: 'O seguro viagem é obrigatório?',
+				'faq-answer': 'Sim, o seguro viagem é obrigatório para entrada em países do Espaço Schengen.',
+				'faq-question': 'O seguro viagem é obrigatório?',
 			},
 			{
-				answer: 'Sim, desde que a contratação seja feita antes do início da viagem.',
-				question: 'Posso contratar o seguro viagem depois de comprar a passagem?',
+				'faq-answer': 'Sim, desde que a contratação seja feita antes do início da viagem.',
+				'faq-question': 'Posso contratar o seguro viagem depois de comprar a passagem?',
 			},
 			{
-				answer: 'Você entra em contato com a central de atendimento 24h indicada na apólice.',
-				question: 'Como acionar o seguro durante a viagem?',
+				'faq-answer': 'Você entra em contato com a central de atendimento 24h indicada na apólice.',
+				'faq-question': 'Como acionar o seguro durante a viagem?',
 			},
 			{
-				answer: 'Sim, existem planos específicos para idosos e pessoas com condições pré-existentes.',
-				question: 'O seguro cobre idosos?',
+				'faq-answer': 'Sim, existem planos específicos para idosos e pessoas com condições pré-existentes.',
+				'faq-question': 'O seguro cobre idosos?',
 			},
 		],
 		icon: Plane,
@@ -978,34 +983,34 @@ export const servicePage = {
 		},
 		faqs: [
 			{
-				answer:
+				'faq-answer':
 					'O seguro individual cobre apenas o titular, enquanto o familiar pode incluir cônjuge e dependentes na mesma apólice, geralmente com custo-benefício melhor.',
-				question: 'Qual a diferença entre seguro de vida individual e familiar?',
+				'faq-question': 'Qual a diferença entre seguro de vida individual e familiar?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'A maioria das seguradoras aceita contratação até 65-70 anos, mas as condições podem variar. Quanto mais jovem você contratar, menores serão os valores.',
-				question: 'Existe idade máxima para contratar o seguro de vida?',
+				'faq-question': 'Existe idade máxima para contratar o seguro de vida?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Existe um período de carência de 30 dias. Após esse período sem pagamento, a apólice pode ser cancelada. Algumas seguradoras oferecem opção de reativação.',
-				question: 'O que acontece se eu deixar de pagar o seguro?',
+				'faq-question': 'O que acontece se eu deixar de pagar o seguro?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Para coberturas até determinados valores, geralmente não é necessário. Para valores maiores, pode ser solicitada uma declaração de saúde ou exames simples.',
-				question: 'Preciso fazer exame médico para contratar?',
+				'faq-question': 'Preciso fazer exame médico para contratar?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Por lei, a seguradora tem até 30 dias para pagar após a entrega de toda a documentação necessária. Na prática, muitas pagam em menos tempo.',
-				question: 'Quanto tempo leva para os beneficiários receberem a indenização?',
+				'faq-question': 'Quanto tempo leva para os beneficiários receberem a indenização?',
 			},
 			{
-				answer:
+				'faq-answer':
 					'Sim, você pode alterar os beneficiários a qualquer momento, sem custo adicional. Basta solicitar a alteração através da corretora.',
-				question: 'Posso alterar os beneficiários depois de contratar?',
+				'faq-question': 'Posso alterar os beneficiários depois de contratar?',
 			},
 		],
 		icon: Heart,
