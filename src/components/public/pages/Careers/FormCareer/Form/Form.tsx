@@ -1,19 +1,24 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowRight, FileText, Upload, X } from 'lucide-react'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import { ZodError } from 'zod'
 
-import { Button, Input, Label, MaskedInput } from '@/components/core'
+import { Button, Input, Label, MaskedInput, Spinner } from '@/components/core'
+import { deleteFile, sendFile } from '@/lib/sendFile'
 
-import { type FormSchemaType, formSchema } from './Form.schema'
+import { type FileDataType, type FormSchemaType, formSchema } from './Form.schema'
 
 export const Form = () => {
+	const [fileData, setFileData] = useState<null | FileDataType>(null)
+	const [isSendFile, setIsSendFile] = useState(false)
 	const {
 		register,
 		handleSubmit,
 		control,
 		watch,
 		setValue,
+		setError,
 		formState: { errors },
 	} = useForm<FormSchemaType>({
 		defaultValues: {
@@ -30,6 +35,51 @@ export const Form = () => {
 
 	const onSubmit = (data: FormSchemaType) => {
 		console.log(data)
+	}
+
+	const verifyFile = async (file: File | undefined) => {
+		if (!file) return
+		const fileSchema = formSchema.shape.file
+		try {
+			await fileSchema.parseAsync(file)
+			setValue('file', file)
+			handleUploadFile(file)
+		} catch (error) {
+			if (error instanceof ZodError) {
+				setError('file', { message: error.issues[0].message })
+			}
+		}
+	}
+
+	const handleUploadFile = async (file: File | undefined) => {
+		if (!file) return
+		try {
+			setIsSendFile(true)
+			const formData = new FormData()
+			formData.append('image', file)
+			const response = await sendFile({
+				data: formData,
+			})
+			setFileData(response)
+		} catch (error) {
+			console.error(error)
+		} finally {
+			setIsSendFile(false)
+		}
+	}
+
+	const handleRemoveFile = async () => {
+		if (!fileData?.delete_url) return
+		try {
+			setIsSendFile(true)
+			await deleteFile({ data: { deleteUrl: fileData.delete_url } })
+			setValue('file', undefined)
+			setFileData(null)
+		} catch (error) {
+			console.error(error)
+		} finally {
+			setIsSendFile(false)
+		}
 	}
 
 	const file = watch('file')
@@ -78,7 +128,7 @@ export const Form = () => {
 								</div>
 								<button
 									className='cursor-pointer text-gray-500 transition-colors hover:text-red-500'
-									onClick={() => setValue('file', undefined)}
+									onClick={() => handleRemoveFile()}
 									type='button'
 								>
 									<X />
@@ -92,10 +142,10 @@ export const Form = () => {
 									<>
 										<input
 											accept='.pdf'
-											className='invisible'
+											className='hidden'
 											id='file'
 											multiple={false}
-											onChange={(e) => field.onChange(e.target.files?.[0] ?? null)}
+											onChange={(e) => verifyFile(e.target.files?.[0])}
 											ref={(e) => {
 												field.ref(e)
 												inputRef.current = e
@@ -117,8 +167,14 @@ export const Form = () => {
 						)}
 						{errors.file && <p className='text-red-500 text-xs'>{errors?.file?.message as string}</p>}
 					</div>
-					<Button className='w-full' type='submit'>
-						Enviar currículo <ArrowRight />
+					<Button className='w-full' disabled={isSendFile} type='submit'>
+						{isSendFile ? (
+							<Spinner className='text-white' />
+						) : (
+							<>
+								Enviar currículo <ArrowRight />
+							</>
+						)}
 					</Button>
 				</form>
 			</div>
