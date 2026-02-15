@@ -2,10 +2,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowRight, FileText, Upload, X } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
 import { ZodError } from 'zod'
 
 import { Button, Input, Label, MaskedInput, Spinner } from '@/components/core'
-import { deleteFile, sendFile } from '@/lib/sendFile'
+import { deleteFile, sendFile } from '@/lib/file'
+import { sendMail } from '@/lib/mail'
 
 import { type FileDataType, type FormSchemaType, formSchema } from './Form.schema'
 
@@ -19,6 +21,8 @@ export const Form = () => {
 		watch,
 		setValue,
 		setError,
+		clearErrors,
+		reset,
 		formState: { errors },
 	} = useForm<FormSchemaType>({
 		defaultValues: {
@@ -33,8 +37,27 @@ export const Form = () => {
 	})
 	const inputRef = useRef<HTMLInputElement>(null)
 
-	const onSubmit = (data: FormSchemaType) => {
-		console.log(data)
+	const onSubmit = async (data: FormSchemaType) => {
+		if (!fileData?.url) return
+
+		const { file, ...rest } = data
+		const values = {
+			...rest,
+			file: fileData?.url,
+		}
+		setIsSendFile(true)
+		try {
+			const response = await sendMail({ data: values })
+			if (response.message) {
+				toast.success(response.message)
+				reset({}, { keepDefaultValues: true })
+				setFileData(null)
+			}
+		} catch {
+			toast.error('Ocorreu um erro ao enviar o formulário')
+		} finally {
+			setIsSendFile(false)
+		}
 	}
 
 	const verifyFile = async (file: File | undefined) => {
@@ -61,10 +84,11 @@ export const Form = () => {
 				data: formData,
 			})
 			setFileData(response)
-		} catch (error) {
-			console.error(error)
+		} catch {
+			toast.error('Ocorreu um erro ao enviar o arquivo')
 		} finally {
 			setIsSendFile(false)
+			clearErrors('file')
 		}
 	}
 

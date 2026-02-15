@@ -1,4 +1,5 @@
 import { type AnyRouteMatch, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
+import { Toaster } from 'react-hot-toast'
 
 import '../styles.css'
 import 'swiper/css'
@@ -37,6 +38,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<body className='bg-off-white-2'>
 				{children}
 				<Scripts />
+				<Toaster position='top-right' toastOptions={{ duration: 3000 }} />
 			</body>
 		</html>
 	)

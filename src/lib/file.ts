@@ -10,7 +10,7 @@ export const sendFile = createServerFn({
 })
 	.inputValidator((data: unknown) => {
 		if (!(data instanceof FormData)) {
-			throw new Error('Invalid form data')
+			throw new Error('Ocorreu um erro ao enviar o arquivo')
 		}
 		return data
 	})
@@ -24,14 +24,14 @@ export const sendFile = createServerFn({
 
 			return json.data
 		} catch {
-			return { error: 'Ocorreu um erro ao enviar o arquivo' }
+			throw new Error('Ocorreu um erro ao enviar o arquivo')
 		}
 	})
 
 export const deleteFile = createServerFn({ method: 'POST' })
 	.inputValidator((data: { deleteUrl: string }) => {
 		if (!data?.deleteUrl) {
-			throw new Error('Url inválida')
+			throw new Error('Ocorreu um erro ao excluir o arquivo')
 		}
 		return data
 	})
@@ -46,6 +46,6 @@ export const deleteFile = createServerFn({ method: 'POST' })
 				success: response.ok,
 			}
 		} catch {
-			return { error: 'Ocorreu um erro ao excluir o arquivo' }
+			throw new Error('Ocorreu um erro ao excluir o arquivo')
 		}
 	})
