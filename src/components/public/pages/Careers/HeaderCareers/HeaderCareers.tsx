@@ -1,14 +1,19 @@
 import { Users } from 'lucide-react'
 
 import { HeaderInternalPages } from '@/components/core'
+import type { CareersPrismicType } from '@/routes/(public)/(layout)/_layout.trabalhe-conosco'
 
-export const HeaderCareers = () => {
+export const HeaderCareers = ({
+	'careers-badge': badge,
+	'careers-description': description,
+	'careers-title': title,
+}: Pick<CareersPrismicType, 'careers-badge' | 'careers-description' | 'careers-title'>) => {
 	return (
 		<HeaderInternalPages
-			badge={{ icon: <Users />, label: 'Faça parte do time' }}
-			description='Junte-se a uma equipe apaixonada por proteger famílias e construir um futuro melhor. Aqui, seu talento faz a diferença.'
+			badge={{ icon: <Users />, label: badge }}
+			description={description}
 			isSplitTitle
-			title='Trabalhe conosco'
+			title={title}
 		/>
 	)
 }

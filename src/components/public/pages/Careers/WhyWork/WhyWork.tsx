@@ -1,14 +1,20 @@
-import { benefits } from '@/__mocks__/careers'
 import { ExplanationSection } from '@/components/core'
+import { translateIcon } from '@/formatters'
+import type { CareersPrismicType } from '@/routes/(public)/(layout)/_layout.trabalhe-conosco'
 
-export const WhyWork = () => {
+export const WhyWork = ({ body }: { body: CareersPrismicType['body'][number] }) => {
+	const data = body.items.map((item) => ({
+		description: item['careers-why-work-card-description'],
+		icon: translateIcon[item['careers-why-work-card-icon']],
+		title: item['careers-why-work-card-title'],
+	}))
+
 	return (
 		<ExplanationSection
-			data={benefits}
+			data={data}
 			headerSectionProps={{
-				description:
-					'Na Flávio Seguros, acreditamos que nossos colaboradores são nosso maior ativo. Oferecemos um ambiente de trabalho dinâmico, colaborativo e inovador, onde cada pessoa tem a oportunidade de crescer e se desenvolver profissionalmente.',
-				title: 'Por que trabalhar na Flávio Seguros?',
+				description: body.primary['careers-why-work-description'],
+				title: body.primary['careers-why-work-title'],
 			}}
 		/>
 	)
