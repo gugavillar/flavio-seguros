@@ -5,6 +5,9 @@ import '../styles.css'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
+import { InsuranceProvider, type InsuranceType } from '@/contexts'
+import { client } from '@/lib/prismic'
+
 declare module '@tanstack/react-router' {
 	interface StaticDataRouteOption {
 		breadcrumb?: string | ((ctx: AnyRouteMatch) => string)
@@ -26,20 +29,33 @@ export const Route = createRootRoute({
 			},
 		],
 	}),
+	loader: async () => {
+		const response = await client.getAllByType('insurance')
+		const insuranceData = response.map(({ data, uid }) => ({
+			...data,
+			'insurance-path': `/${uid}`,
+		}))
+		return {
+			insurances: insuranceData,
+		}
+	},
 	shellComponent: RootDocument,
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+	const { insurances } = Route.useLoaderData()
 	return (
 		<html lang='pt-BR'>
 			<head>
 				<HeadContent />
 			</head>
-			<body className='bg-off-white-2'>
-				{children}
-				<Scripts />
-				<Toaster position='top-right' toastOptions={{ duration: 3000 }} />
-			</body>
+			<InsuranceProvider insurances={insurances as InsuranceType[]}>
+				<body className='bg-off-white-2'>
+					{children}
+					<Scripts />
+					<Toaster position='top-right' toastOptions={{ duration: 3000 }} />
+				</body>
+			</InsuranceProvider>
 		</html>
 	)
 }
