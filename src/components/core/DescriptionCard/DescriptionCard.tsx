@@ -11,7 +11,6 @@ export const DescriptionCard = ({
 	description: string
 	icon: LucideIcon
 }) => {
-	if (!Icon) return null
 	return (
 		<Card className='group'>
 			<div className='flex flex-col space-y-1.5 p-6'>

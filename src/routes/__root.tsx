@@ -43,13 +43,13 @@ export const Route = createRootRoute({
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-	const { insurances } = Route.useLoaderData()
+	const data = Route.useLoaderData()
 	return (
 		<html lang='pt-BR'>
 			<head>
 				<HeadContent />
 			</head>
-			<InsuranceProvider insurances={insurances as InsuranceType[]}>
+			<InsuranceProvider insurances={data?.insurances as InsuranceType[]}>
 				<body className='bg-off-white-2'>
 					{children}
 					<Scripts />

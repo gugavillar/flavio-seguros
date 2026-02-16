@@ -1,5 +1,6 @@
 import {
 	Activity,
+	Award,
 	BadgeCheck,
 	Banknote,
 	Briefcase,
@@ -42,6 +43,7 @@ import {
 
 export const translateIcon = {
 	Activity: Activity,
+	Award: Award,
 	BadgeCheck: BadgeCheck,
 	BankNote: Banknote,
 	Banknote: Banknote,

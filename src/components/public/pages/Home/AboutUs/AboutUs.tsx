@@ -1,8 +1,22 @@
 import { CheckCircle2, type LucideIcon } from 'lucide-react'
 
-import { features } from '@/__mocks__/aboutUs'
 import { FloatCard, HeaderSection, PageContainer } from '@/components/core'
+import { translateIcon } from '@/formatters'
 import { NAVIGATION_HASH } from '@/utils'
+
+export type AboutUsPrismicType = {
+	slice_type: string
+	primary: {
+		'about-us-badge': string
+		'about-us-description': string
+		'about-us-title': string
+	}
+	items: Array<{
+		'about-us-card-description': string
+		'about-us-card-icon': keyof typeof translateIcon
+		'about-us-card-title': string
+	}>
+}
 
 const AboutUsCard = ({ icon: Icon, title, description }: { icon: LucideIcon; title: string; description: string }) => {
 	return (
@@ -16,7 +30,7 @@ const AboutUsCard = ({ icon: Icon, title, description }: { icon: LucideIcon; tit
 	)
 }
 
-export const AboutUs = () => {
+export const AboutUs = ({ data: { primary, items } }: { data: AboutUsPrismicType }) => {
 	return (
 		<PageContainer id={NAVIGATION_HASH.ABOUT}>
 			<div className='grid items-center gap-16 lg:grid-cols-2'>
@@ -37,15 +51,23 @@ export const AboutUs = () => {
 				</div>
 				<div className='order-1 space-y-8 max-lg:text-center lg:order-2'>
 					<HeaderSection
-						badgeLabel='Por que nos escolher?'
+						badgeLabel={primary['about-us-badge']}
 						className='max-lg:mx-auto max-lg:max-w-2xl'
-						description='Com mais de 20 anos de experiência no mercado de seguros, nossa missão é proteger o que você mais ama. Oferecemos soluções completas com transparência e compromisso.'
-						title='Sua tranquilidade é nossa prioridade'
+						description={primary['about-us-description']}
+						title={primary['about-us-title']}
 					/>
 					<div className='grid gap-6 sm:grid-cols-2'>
-						{features.map((feature) => (
-							<AboutUsCard key={feature.title} {...feature} />
-						))}
+						{items.map((feature) => {
+							const icon = translateIcon[feature['about-us-card-icon']]
+							return (
+								<AboutUsCard
+									description={feature['about-us-card-description']}
+									icon={icon}
+									key={feature['about-us-card-title']}
+									title={feature['about-us-card-title']}
+								/>
+							)
+						})}
 					</div>
 				</div>
 			</div>

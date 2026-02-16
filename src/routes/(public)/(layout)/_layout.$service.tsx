@@ -1,18 +1,18 @@
 import { ClientOnly, createFileRoute, notFound, useLoaderData } from '@tanstack/react-router'
-import z from 'zod'
 
-import { servicePage } from '@/__mocks__/services'
 import { BenefitsService, DescriptionService, FaqService, HeroService } from '@/components/public'
 import type { InsuranceType } from '@/contexts'
 import { translateIcon } from '@/formatters'
 import { client } from '@/lib/prismic'
 
-const serviceSchema = z.object({ service: z.enum(Object.keys(servicePage)) })
-
 export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
-	beforeLoad: ({ params }) => {
+	beforeLoad: async ({ params }) => {
 		try {
-			serviceSchema.parse({ service: params.service })
+			const insurances = await client.getAllByType('insurance')
+			const allUID = insurances.map((insurance) => insurance.uid)
+			if (!allUID.includes(params.service)) {
+				throw notFound()
+			}
 		} catch {
 			throw notFound()
 		}

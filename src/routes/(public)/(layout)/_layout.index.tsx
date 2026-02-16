@@ -2,11 +2,13 @@ import { ClientOnly, createFileRoute } from '@tanstack/react-router'
 
 import {
 	AboutUs,
+	type AboutUsPrismicType,
 	type CtaPrismicType,
 	Faq,
 	type FaqPrismicType,
 	Hero,
 	HeroTop,
+	type HeroTopPrismicType,
 	InsuranceCarousel,
 	type ServicePrismicType,
 	Services,
@@ -34,12 +36,14 @@ function IndexPage() {
 	const faqs = data.body.find((item: FaqPrismicType) => item.slice_type === 'faq')
 	const cta = data.body.find((item: CtaPrismicType) => item.slice_type === 'cta')
 	const service = data.body.find((item: ServicePrismicType) => item.slice_type === 'services')
+	const aboutUs = data.body.find((item: AboutUsPrismicType) => item.slice_type === 'about-us')
+	const hero = data.body.find((item: HeroTopPrismicType) => item.slice_type === 'hero')
 
 	return (
 		<>
-			<HeroTop />
+			<HeroTop data={hero} />
 			<Services data={service} insurances={insurances} />
-			<AboutUs />
+			<AboutUs data={aboutUs} />
 			<ClientOnly>
 				<InsuranceCarousel />
 				<Testimonials data={testimonials} />
