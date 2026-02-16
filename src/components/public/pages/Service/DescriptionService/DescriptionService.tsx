@@ -1,22 +1,28 @@
 import { Fragment } from 'react'
 
 import { PageContainer } from '@/components/core'
+import type { InsuranceType } from '@/contexts'
 
-type DescriptionServiceProps = {
-	title: string
-	content: Array<string>
-	indications: Array<string>
-}
+type DescriptionServiceProps = Pick<
+	InsuranceType,
+	'insurance-content' | 'insurance-indication' | 'insurance-description'
+>
 
-export const DescriptionService = ({ title, content, indications }: DescriptionServiceProps) => {
+export const DescriptionService = ({
+	'insurance-content': content,
+	'insurance-indication': indications,
+	'insurance-description': description,
+}: DescriptionServiceProps) => {
 	return (
 		<PageContainer className='py-20'>
 			<div className='container mx-auto max-w-4xl'>
-				<h2 className='mb-8 text-center font-bold font-title text-3xl text-black/80 md:text-4xl'> {title}</h2>
+				<h2 className='mb-8 text-center font-bold font-title text-3xl text-black/80 md:text-4xl'> {description}</h2>
 				<div className='space-y-6'>
 					{content?.map((item, index) => (
 						<Fragment key={index}>
-							<p className='text-justify text-gray-500 text-lg leading-relaxed'>{item}</p>
+							<p className='text-justify text-gray-500 text-lg leading-relaxed'>
+								{item['insurance-description-content']}
+							</p>
 						</Fragment>
 					))}
 				</div>
@@ -27,7 +33,7 @@ export const DescriptionService = ({ title, content, indications }: DescriptionS
 							<Fragment key={index}>
 								<li className='flex items-start gap-3'>
 									<span className='mt-2 size-2 shrink-0 rounded-full bg-primary' />
-									<span className='text-gray-500'>{item}</span>
+									<span className='text-gray-500'>{item['insurance-indication-content']}</span>
 								</li>
 							</Fragment>
 						))}

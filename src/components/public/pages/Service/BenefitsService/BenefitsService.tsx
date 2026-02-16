@@ -1,16 +1,10 @@
-import type { LucideIcon } from 'lucide-react'
-
 import { DescriptionCard, PageContainer } from '@/components/core'
+import type { InsuranceType } from '@/contexts'
+import { translateIcon } from '@/formatters'
 
-type BenefitsServiceProps = {
-	benefits: Array<{
-		icon: LucideIcon
-		title: string
-		description: string
-	}>
-}
+type BenefitsServiceProps = Pick<InsuranceType, 'insurance-benefits'>
 
-export const BenefitsService = ({ benefits }: BenefitsServiceProps) => {
+export const BenefitsService = ({ 'insurance-benefits': benefits }: BenefitsServiceProps) => {
 	return (
 		<PageContainer className='py-20'>
 			<div className='container mx-auto'>
@@ -18,9 +12,17 @@ export const BenefitsService = ({ benefits }: BenefitsServiceProps) => {
 					Principais benefícios
 				</h2>
 				<div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
-					{benefits.map((benefit, index) => (
-						<DescriptionCard key={index} {...benefit} />
-					))}
+					{benefits.map((benefit, index) => {
+						const icon = translateIcon[benefit['insurance-benefit-icon']]
+						return (
+							<DescriptionCard
+								description={benefit['insurance-benefit-description']}
+								icon={icon}
+								key={index}
+								title={benefit['insurance-benefit-title']}
+							/>
+						)
+					})}
 				</div>
 			</div>
 		</PageContainer>

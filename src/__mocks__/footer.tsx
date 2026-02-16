@@ -1,9 +1,9 @@
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 
 import { NavLink } from '@/components/core'
+import type { InsuranceType } from '@/contexts'
 import { generateWhatsAppLink, NAVIGATION_HASH } from '@/utils'
 
-import { services } from './services'
 import { messages } from './whatsapp'
 
 export const social = [
@@ -25,16 +25,19 @@ export const social = [
 	},
 ]
 
-export const servicesFooter = {
-	links: services.map((service) => ({
+export const servicesFooter = (insurances: Pick<InsuranceType, 'insurance-path' | 'insurance-title'>[]) => ({
+	links: insurances.map((service) => ({
 		children: (
-			<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to={service.path}>
-				{service.title}
+			<NavLink
+				className='text-gray-400 underline-offset-8 hover:text-white hover:underline'
+				to={service['insurance-path']}
+			>
+				{service['insurance-title']}
 			</NavLink>
 		),
 	})),
 	title: 'Seguros',
-}
+})
 
 export const support = {
 	links: [

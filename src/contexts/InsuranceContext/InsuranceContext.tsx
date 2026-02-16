@@ -8,10 +8,11 @@ export type InsuranceType = {
 	'insurance-title': string
 	'insurance-icon': keyof typeof translateIcon
 	'insurance-path': string
+	'insurance-description': string
 	'insurance-benefits': Array<{
 		'insurance-benefit-title': string
 		'insurance-benefit-description': string
-		'insurance-benefit-icon': string
+		'insurance-benefit-icon': keyof typeof translateIcon
 	}>
 	'insurance-content': Array<{
 		'insurance-description-content': string
