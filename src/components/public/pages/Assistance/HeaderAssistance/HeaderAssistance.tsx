@@ -2,6 +2,12 @@ import { ClockIcon, type LucideIcon } from 'lucide-react'
 
 import { benefits } from '@/__mocks__/assistance'
 import { HeaderInternalPages } from '@/components/core'
+import type { AssistancePrismicType } from '@/routes/(public)/(layout)/_layout.assistencia'
+
+type HeaderAssistanceProps = Pick<
+	AssistancePrismicType,
+	'assistance-badge' | 'assistance-description' | 'assistance-title'
+>
 
 const Benefit = ({ icon: Icon, label }: { icon: LucideIcon; label: string }) => {
 	return (
@@ -12,13 +18,13 @@ const Benefit = ({ icon: Icon, label }: { icon: LucideIcon; label: string }) => 
 	)
 }
 
-export const HeaderAssistance = () => {
+export const HeaderAssistance = ({
+	'assistance-badge': badge,
+	'assistance-description': description,
+	'assistance-title': title,
+}: HeaderAssistanceProps) => {
 	return (
-		<HeaderInternalPages
-			badge={{ icon: <ClockIcon />, label: 'Disponível 24 horas' }}
-			description='Estamos aqui para você a qualquer momento. Nossa rede de assistência 24 horas oferece suporte completo em situações de emergência, garantindo sua tranquilidade e segurança onde quer que você esteja.'
-			title='Assistência 24h'
-		>
+		<HeaderInternalPages badge={{ icon: <ClockIcon />, label: badge }} description={description} title={title}>
 			<div className='mt-8 flex flex-wrap justify-center gap-4'>
 				{benefits.map((item) => (
 					<Benefit key={item.label} {...item} />

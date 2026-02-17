@@ -21,14 +21,14 @@ export const HeaderInternalPages = ({
 	endSplitIndex = 1,
 	...props
 }: HeaderInternalPagesProps) => {
-	const splitTitle = isSplitTitle ? title.split(' ') : title
-	const newTitle = Array.isArray(splitTitle) ? (
+	const words = isSplitTitle ? title?.trim().split(/\s+/) : title
+	const newTitle = Array.isArray(words) ? (
 		<>
-			{splitTitle.slice(0, endSplitIndex).join(' ')}{' '}
-			<span className='text-primary'>{splitTitle.slice(endSplitIndex).join(' ')}</span>
+			{words.slice(0, endSplitIndex).join(' ')}{' '}
+			<span className='text-primary'>{words.slice(endSplitIndex).join(' ')}</span>
 		</>
 	) : (
-		splitTitle
+		words
 	)
 	return (
 		<PageContainer className={twMerge('pt-44 pb-20 text-center', className)} {...props}>

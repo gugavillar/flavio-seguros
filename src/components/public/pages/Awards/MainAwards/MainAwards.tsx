@@ -1,7 +1,18 @@
 import type { LucideIcon } from 'lucide-react'
 
-import { mainAwards } from '@/__mocks__/awards'
 import { Badge, PageContainer } from '@/components/core'
+import { translateIcon } from '@/formatters'
+
+export type MainAwardsPrismicType = {
+	slice_type: string
+	items: Array<{
+		'award-main-title': string
+		'award-main-award-name': string
+		'award-main-year': number
+		'award-main-description': string
+		'award-main-icon': keyof typeof translateIcon
+	}>
+}
 
 const AwardCard = ({
 	icon: Icon,
@@ -32,20 +43,23 @@ const AwardCard = ({
 	)
 }
 
-export const MainAwards = () => {
+export const MainAwards = ({ data: { items } }: { data: MainAwardsPrismicType }) => {
 	return (
 		<PageContainer>
 			<div className='mx-auto grid max-w-5xl gap-8 md:grid-cols-3'>
-				{mainAwards.map((item) => (
-					<AwardCard
-						award={item.organization}
-						badgeLabel={item.year}
-						description={item.description}
-						icon={item.icon}
-						key={item.title}
-						title={item.title}
-					/>
-				))}
+				{items.map((item) => {
+					const icon = translateIcon[item['award-main-icon']]
+					return (
+						<AwardCard
+							award={item['award-main-award-name']}
+							badgeLabel={String(item['award-main-year'])}
+							description={item['award-main-description']}
+							icon={icon}
+							key={item['award-main-title']}
+							title={item['award-main-title']}
+						/>
+					)
+				})}
 			</div>
 		</PageContainer>
 	)

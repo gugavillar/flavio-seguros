@@ -2,8 +2,8 @@ import { AccordionContentText, PageContainer } from '@/components/core'
 
 type FaqServiceProps = {
 	faqs: Array<{
-		question: string
-		answer: string
+		'faq-question': string
+		'faq-answer': string
 	}>
 }
 

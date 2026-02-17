@@ -1,9 +1,28 @@
 import { Medal } from 'lucide-react'
 
-import { timelineAwards } from '@/__mocks__/awards'
 import { HeaderSection, PageContainer } from '@/components/core'
+import type { AwardsPrismicType } from '@/routes/(public)/(layout)/_layout.premiacoes'
 
-const CardAward = ({ title, description }: { title: string; description: string }) => {
+export type TimelineAwardsPrismicType = Pick<AwardsPrismicType, 'timeline-award-title' | 'timeline-award-description'>
+
+export type TimelineAwardsSlicePrismicType = {
+	slice_type: string
+	primary: {
+		'timeline-award-year': number
+	}
+	items: Array<{
+		'timeline-award-title-award': string
+		'timeline-award-description-award': string
+	}>
+}
+
+const CardAward = ({
+	'timeline-award-title-award': title,
+	'timeline-award-description-award': description,
+}: {
+	'timeline-award-title-award': string
+	'timeline-award-description-award': string
+}) => {
 	return (
 		<div className='rounded-lg border border-gray-200 bg-white text-gray-500 shadow-sm transition-all duration-300 hover:shadow-soft-white'>
 			<div className='p-5'>
@@ -25,7 +44,7 @@ const Timeline = ({
 	isLast,
 }: {
 	year: string
-	awards: { title: string; description: string }[]
+	awards: { 'timeline-award-title-award': string; 'timeline-award-description-award': string }[]
 	isLast?: boolean
 }) => {
 	return (
@@ -39,7 +58,7 @@ const Timeline = ({
 			<div className='flex-1 pt-2'>
 				<div className='grid gap-4 md:grid-cols-2'>
 					{awards.map((award) => (
-						<CardAward key={award.title} {...award} />
+						<CardAward key={award['timeline-award-title-award']} {...award} />
 					))}
 				</div>
 			</div>
@@ -47,18 +66,24 @@ const Timeline = ({
 	)
 }
 
-export const TimelineAwards = () => {
+export const TimelineAwards = ({
+	'timeline-award-description': description,
+	'timeline-award-title': title,
+	data,
+}: TimelineAwardsPrismicType & { data: Array<TimelineAwardsSlicePrismicType> }) => {
 	return (
 		<PageContainer>
 			<div className='mb-16 text-center'>
-				<HeaderSection
-					description='Uma história construída com dedicação e reconhecimento'
-					title='Nossa trajetória de conquistas'
-				/>
+				<HeaderSection description={description} title={title} />
 			</div>
 			<div className='mx-auto max-w-4xl'>
-				{timelineAwards.map((item, index) => (
-					<Timeline key={item.year} {...item} isLast={index === timelineAwards.length - 1} />
+				{data.map((item, index) => (
+					<Timeline
+						awards={item.items}
+						isLast={index === data.length - 1}
+						key={item.primary['timeline-award-year']}
+						year={item.primary['timeline-award-year'].toString()}
+					/>
 				))}
 			</div>
 		</PageContainer>

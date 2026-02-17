@@ -3,10 +3,19 @@ import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { info } from '@/__mocks__/hero'
-import { services } from '@/__mocks__/services'
 import { messages } from '@/__mocks__/whatsapp'
 import { Button, PageContainer, Select } from '@/components/core'
+import type { InsuranceType } from '@/contexts'
 import { generateWhatsAppLink } from '@/utils'
+
+export type CtaPrismicType = {
+	slice_type: 'cta'
+	primary: {
+		'cta-title': string
+		'cta-description': string
+	}
+	insurances: Pick<InsuranceType, 'insurance-title' | 'insurance-subtitle'>[]
+}
 
 export const HeroInfo = ({
 	icon: Icon,
@@ -33,24 +42,30 @@ export const HeroInfo = ({
 	)
 }
 
-export const Hero = () => {
+export const Hero = ({
+	data: { primary },
+	insurances,
+}: {
+	data: CtaPrismicType
+	insurances: CtaPrismicType['insurances']
+}) => {
 	const [service, setService] = useState('')
 	return (
 		<PageContainer className='bg-primary-gradient'>
 			<div className='mx-auto max-w-4xl text-center'>
 				<h2 className='mb-6 font-bold font-title text-2xl text-white md:text-3xl lg:text-4xl'>
-					Pronto para proteger o que importa?
+					{primary['cta-title']}
 				</h2>
-				<p className='mx-auto mb-8 max-w-2xl text-gray-300 text-lg'>
-					Solicite uma cotação gratuita e sem compromisso. Nossa equipe entrará em contato em até 24 horas com as
-					melhores opções para você.
-				</p>
+				<p className='mx-auto mb-8 max-w-2xl text-gray-300 text-lg'>{primary['cta-description']}</p>
 				<div className='mx-auto mb-12 flex max-w-xl flex-col gap-4 sm:flex-row'>
 					<div className='relative w-full'>
 						<Select
 							name='services'
 							onChange={(e) => setService(e.target.value)}
-							options={services.map((services) => ({ label: services.title, value: services.title }))}
+							options={insurances.map((services) => ({
+								label: services['insurance-title'],
+								value: services['insurance-title'],
+							}))}
 							value={service}
 						/>
 						<ChevronDown className='absolute top-1/2 right-2 -translate-y-1/2 text-white' />

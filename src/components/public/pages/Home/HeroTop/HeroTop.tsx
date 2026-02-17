@@ -3,29 +3,40 @@ import { Fragment } from 'react'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { images, listItems, stats } from '@/__mocks__/heroTop'
+import { images, stats } from '@/__mocks__/heroTop'
 import { messages } from '@/__mocks__/whatsapp'
 import { Button, FloatCard, PageContainer } from '@/components/core'
 import { generateWhatsAppLink, goToHash, NAVIGATION_HASH } from '@/utils'
 
-export const HeroTop = () => {
+export type HeroTopPrismicType = {
+	slice_type: string
+	primary: {
+		'hero-title': string
+		'hero-description': string
+	}
+	items: Array<{
+		'hero-info-list': string
+	}>
+}
+
+export const HeroTop = ({ data: { primary, items } }: { data: HeroTopPrismicType }) => {
+	const words = primary['hero-title']?.trim().split(/\s+/) ?? []
+	const firstPart = words.slice(0, 3).join(' ')
+	const secondPart = words.slice(3).join(' ')
 	return (
 		<PageContainer className='relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-24'>
 			<div className='grid items-center gap-12 lg:grid-cols-2 lg:gap-16'>
 				<div className='animate-fade-up space-y-8'>
 					<h1 className='font-bold font-title text-4xl text-black/80 leading-tight md:text-5xl lg:text-[3.65rem]'>
-						Proteja o que <span className='text-primary'>realmente importa</span>
+						{firstPart} <span className='text-primary'>{secondPart}</span>
 					</h1>
-					<p className='text-gray-500 text-lg leading-relaxed lg:max-w-xl'>
-						Há mais de 20 anos ajudando famílias brasileiras a encontrar o seguro ideal. Oferecemos soluções
-						personalizadas com as melhores seguradoras do mercado.
-					</p>
+					<p className='text-gray-500 text-lg leading-relaxed lg:max-w-xl'>{primary['hero-description']}</p>
 
 					<ul className='space-y-3'>
-						{listItems.map((item, index) => (
+						{items.map((item, index) => (
 							<li className='flex items-center gap-3 text-gray-700' key={index}>
 								<CheckCircle2 className='text-primary' />
-								<span className='text-lg'>{item}</span>
+								<span className='text-lg'>{item['hero-info-list']}</span>
 							</li>
 						))}
 					</ul>

@@ -1,23 +1,43 @@
-import { services } from '@/__mocks__/services'
 import { DescriptionCard, HeaderSection, NavLink, PageContainer } from '@/components/core'
+import type { InsuranceType } from '@/contexts'
+import { translateIcon } from '@/formatters'
 import { NAVIGATION_HASH } from '@/utils'
 
-export const Services = () => {
+export type ServicePrismicType = {
+	slice_type: string
+	primary: {
+		'service-badge': string
+		'service-description': string
+		'service-title': string
+	}
+	insurances: Pick<InsuranceType, 'insurance-icon' | 'insurance-title' | 'insurance-subtitle' | 'insurance-path'>[]
+}
+
+export const Services = ({
+	data: { primary },
+	insurances,
+}: {
+	data: ServicePrismicType
+	insurances: ServicePrismicType['insurances']
+}) => {
 	return (
 		<PageContainer id={NAVIGATION_HASH.SERVICES}>
 			<div className='mx-auto mb-16 max-w-2xl text-center'>
 				<HeaderSection
-					badgeLabel='Nossos Seguros'
-					description='Trabalhamos com as melhores seguradoras do mercado para oferecer as melhores condições e coberturas para você.'
-					title='Seguros para todas as suas necessidades'
+					badgeLabel={primary['service-badge']}
+					description={primary['service-description']}
+					title={primary['service-title']}
 				/>
 			</div>
 			<div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
-				{services.map((item) => (
-					<NavLink className='flex' key={item.title} to={item.path}>
-						<DescriptionCard {...item} />
-					</NavLink>
-				))}
+				{insurances.map((item) => {
+					const icon = translateIcon[item['insurance-icon']]
+					return (
+						<NavLink className='flex' key={item['insurance-title']} to={item['insurance-path']}>
+							<DescriptionCard description={item['insurance-subtitle']} icon={icon} title={item['insurance-title']} />
+						</NavLink>
+					)
+				})}
 			</div>
 		</PageContainer>
 	)

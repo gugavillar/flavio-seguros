@@ -2,8 +2,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 type AccordionContentTextProps = {
 	faqs: Array<{
-		question: string
-		answer: string
+		'faq-question': string
+		'faq-answer': string
 	}>
 }
 
@@ -17,9 +17,11 @@ export const AccordionContentText = ({ faqs }: AccordionContentTextProps) => {
 					value={`item-${index}`}
 				>
 					<AccordionTrigger className='cursor-pointer py-6 text-left font-semibold text-black/80 hover:text-primary hover:no-underline data-[state=open]:text-primary'>
-						{faq.question}
+						{faq['faq-question']}
 					</AccordionTrigger>
-					<AccordionContent className='pb-6 text-left text-gray-500 leading-relaxed'>{faq.answer}</AccordionContent>
+					<AccordionContent className='pb-6 text-left text-gray-500 leading-relaxed'>
+						{faq['faq-answer']}
+					</AccordionContent>
 				</AccordionItem>
 			))}
 		</Accordion>

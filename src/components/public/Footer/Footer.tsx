@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 
 import { company, servicesFooter, social, support } from '@/__mocks__/footer'
 import { AvatarLogo, SusepNumber } from '@/components/core'
+import { useInsuranceContext } from '@/contexts'
 
 const SocialLink = ({ href, icon }: { href: string; icon: ReactNode }) => {
 	return (
@@ -28,6 +29,7 @@ const LinkList = ({ title, links }: { title: string; links: Array<{ children: Re
 }
 
 export const Footer = () => {
+	const contextData = useInsuranceContext()
 	return (
 		<footer className='bg-black/70 py-16 text-white'>
 			<div className='container mx-auto px-4'>
@@ -43,7 +45,7 @@ export const Footer = () => {
 							))}
 						</div>
 					</div>
-					<LinkList {...servicesFooter} />
+					<LinkList {...servicesFooter(contextData.insurances)} />
 					<LinkList {...company} />
 					<LinkList {...support} />
 				</div>
