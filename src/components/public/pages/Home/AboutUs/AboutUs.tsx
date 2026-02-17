@@ -45,7 +45,7 @@ export const AboutUs = ({
 						<img
 							alt='Ilustração de proteção'
 							className='mx-auto w-full max-w-lg animate-float rounded-xl'
-							src='/logos/Illustration.webp'
+							src='/images/Illustration.webp'
 						/>
 					</div>
 					<FloatCard
