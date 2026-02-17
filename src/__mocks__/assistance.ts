@@ -1,7 +1,5 @@
 import { Clock, Headphones, LucideShield } from 'lucide-react'
 
-import { insurances } from './insurances'
-
 export const benefits = [
 	{
 		icon: LucideShield,
@@ -16,11 +14,3 @@ export const benefits = [
 		label: 'Resposta rápida',
 	},
 ]
-
-export const emergencePhones = insurances.map((insurance) => ({
-	assistancePhone: insurance.assistancePhone,
-	title: insurance.name,
-	types: ['Auto', 'Residencial', 'Saúde'],
-	url: insurance.image,
-	whatsappPhone: insurance.whatsappPhone,
-}))

@@ -8,12 +8,16 @@ import {
 	WhatIsAssistance,
 	type WhatIsAssistancePrismicType,
 } from '@/components/public'
+import { TEN_MINUTES } from '@/constants'
 import { client } from '@/lib/prismic'
 
 export type AssistancePrismicType = {
 	'assistance-badge': string
 	'assistance-description': string
 	'assistance-title': string
+	'assistance-partner-badge': string
+	'assistance-partner-title': string
+	'assistance-partner-description': string
 	body: Array<{
 		slice_type: string
 	}>
@@ -25,6 +29,7 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/assistencia')({
 		const response = await client.getByUID('assistance', 'assistencia')
 		return response.data
 	},
+	staleTime: TEN_MINUTES,
 	staticData: {
 		breadcrumb: 'Assistência 24h',
 	},
@@ -42,7 +47,11 @@ function AssistancePage() {
 				assistance-title={response['assistance-title']}
 			/>
 			<WhatIsAssistance data={whatIsAssistance} />
-			<EmergencePhones />
+			<EmergencePhones
+				assistance-partner-badge={response['assistance-partner-badge']}
+				assistance-partner-description={response['assistance-partner-description']}
+				assistance-partner-title={response['assistance-partner-title']}
+			/>
 			<Tips data={tips} />
 		</>
 	)

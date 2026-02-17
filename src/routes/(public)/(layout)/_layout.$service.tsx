@@ -1,6 +1,7 @@
 import { ClientOnly, createFileRoute, notFound, useLoaderData } from '@tanstack/react-router'
 
 import { BenefitsService, DescriptionService, FaqService, HeroService } from '@/components/public'
+import { TEN_MINUTES } from '@/constants'
 import type { InsuranceType } from '@/contexts'
 import { translateIcon } from '@/formatters'
 import { client } from '@/lib/prismic'
@@ -22,6 +23,7 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
 		const response = await client.getByUID('insurance', params.service)
 		return response.data
 	},
+	staleTime: TEN_MINUTES,
 	staticData: {
 		breadcrumb: (ctx) => ctx.params?.service,
 	},

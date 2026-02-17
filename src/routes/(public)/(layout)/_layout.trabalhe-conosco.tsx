@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { Doubts, FormCareer, HeaderCareers, WhyWork } from '@/components/public'
+import { TEN_MINUTES } from '@/constants'
 import type { translateIcon } from '@/formatters'
 import { client } from '@/lib/prismic'
 
@@ -27,6 +28,7 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/trabalhe-conosc
 		const response = await client.getByUID('careers', 'trabalhe-conosco')
 		return response.data
 	},
+	staleTime: TEN_MINUTES,
 	staticData: {
 		breadcrumb: 'Trabalhe Conosco',
 	},

@@ -30,7 +30,13 @@ const AboutUsCard = ({ icon: Icon, title, description }: { icon: LucideIcon; tit
 	)
 }
 
-export const AboutUs = ({ data: { primary, items } }: { data: AboutUsPrismicType }) => {
+export const AboutUs = ({
+	data: { primary, items },
+	totalPartners,
+}: {
+	data: AboutUsPrismicType
+	totalPartners: string
+}) => {
 	return (
 		<PageContainer id={NAVIGATION_HASH.ABOUT}>
 			<div className='grid items-center gap-16 lg:grid-cols-2'>
@@ -46,7 +52,7 @@ export const AboutUs = ({ data: { primary, items } }: { data: AboutUsPrismicType
 						className='right-0 max-sm:bottom-0 sm:top-10'
 						description='Seguradoras parceiras'
 						icon={<CheckCircle2 className='text-white' />}
-						title='+15'
+						title={totalPartners}
 					/>
 				</div>
 				<div className='order-1 space-y-8 max-lg:text-center lg:order-2'>

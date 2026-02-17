@@ -1,37 +1,32 @@
+import { PrismicImage } from '@prismicio/react'
 import { Phone } from 'lucide-react'
 
-import { emergencePhones } from '@/__mocks__/assistance'
 import { Button, HeaderSection, PageContainer, WhatsAppIcon } from '@/components/core'
+import { type PartnerType, useInsuranceContext } from '@/contexts'
 import { formatPhone } from '@/formatters'
+import type { AssistancePrismicType } from '@/routes/(public)/(layout)/_layout.assistencia'
 import { generateWhatsAppLink } from '@/utils'
 
+type EmergencePhoneProps = Pick<
+	AssistancePrismicType,
+	'assistance-partner-badge' | 'assistance-partner-title' | 'assistance-partner-description'
+>
+
 const EmergencePhoneCard = ({
-	url,
-	title,
-	types,
-	assistancePhone,
-	whatsappPhone,
-}: {
-	url: string
-	title: string
-	types: Array<string>
-	assistancePhone: string
-	whatsappPhone: string
-}) => {
+	primary: {
+		'company-assistance-phone': assistancePhone,
+		'company-name': title,
+		'company-whatsapp': whatsappPhone,
+		'company-logo': url,
+	},
+}: PartnerType) => {
 	return (
 		<div className='rounded-lg bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-2xl'>
 			<div className='p-6'>
 				<div className='flex h-16 items-center justify-center rounded-lg p-3'>
-					<img alt={title} className='max-h-full max-w-full object-contain' src={url} />
+					<PrismicImage className='max-h-full max-w-40 object-contain' field={url} />
 				</div>
-				<h3 className='mb-2 text-center font-semibold text-black/80 text-lg'>{title}</h3>
-				<div className='mb-4 flex flex-wrap justify-center gap-1'>
-					{types.map((type, index) => (
-						<span className='rounded-full bg-primary/15 px-2 py-1 text-primary text-xs' key={index}>
-							{type}
-						</span>
-					))}
-				</div>
+				<h3 className='mb-6 text-center font-semibold text-black/80 text-lg'>{title}</h3>
 				<div className='flex items-center justify-center gap-6'>
 					<Button as='a' href={`tel:${assistancePhone}`}>
 						<Phone />
@@ -49,20 +44,21 @@ const EmergencePhoneCard = ({
 	)
 }
 
-export const EmergencePhones = () => {
+export const EmergencePhones = ({
+	'assistance-partner-badge': badgeLabel,
+	'assistance-partner-title': title,
+	'assistance-partner-description': description,
+}: EmergencePhoneProps) => {
+	const contextData = useInsuranceContext()
 	return (
 		<>
 			<PageContainer>
 				<div className='mx-auto max-w-3xl text-center'>
-					<HeaderSection
-						badgeLabel='Telefones de emergência'
-						description='Ligue diretamente para a central de atendimento da sua seguradora. Todas as ligações são gratuitas e o atendimento funciona 24 horas.'
-						title='Nossas seguradoras parceiras'
-					/>
+					<HeaderSection badgeLabel={badgeLabel} description={description} title={title} />
 				</div>
 				<div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
-					{emergencePhones.map((emergencePhone) => (
-						<EmergencePhoneCard key={emergencePhone.title} {...emergencePhone} />
+					{contextData.partners.map((partner) => (
+						<EmergencePhoneCard key={partner.primary['company-name']} {...partner} />
 					))}
 				</div>
 			</PageContainer>

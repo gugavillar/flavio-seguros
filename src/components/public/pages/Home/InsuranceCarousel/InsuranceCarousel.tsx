@@ -1,12 +1,14 @@
+import { PrismicImage } from '@prismicio/react'
 import { useMediaQuery } from '@uidotdev/usehooks'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { insurancesLogos } from '@/__mocks__/aboutUs'
 import { PageContainer } from '@/components/core'
+import { useInsuranceContext } from '@/contexts'
 
 export const InsuranceCarousel = () => {
 	const isSmallDevice = useMediaQuery('only screen and (max-width : 767px)')
+	const contextData = useInsuranceContext()
 	return (
 		<PageContainer className='bg-gray-200/50'>
 			<div className='mx-auto max-w-6xl'>
@@ -20,10 +22,10 @@ export const InsuranceCarousel = () => {
 					slidesPerView={isSmallDevice ? 2 : 4}
 					speed={4000}
 				>
-					{insurancesLogos.map((logo) => (
-						<SwiperSlide className='w-auto' key={logo.alt}>
+					{contextData.partners.map(({ primary }) => (
+						<SwiperSlide className='w-auto' key={primary['company-name']}>
 							<div className='mx-auto flex h-20 w-40 items-center justify-center'>
-								<img {...logo} className='max-h-full max-w-full object-contain' />
+								<PrismicImage className='max-h-full max-w-full object-contain' field={primary['company-logo']} />
 							</div>
 						</SwiperSlide>
 					))}

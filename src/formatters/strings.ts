@@ -5,3 +5,5 @@ export const formatPhone = (phone: string) => {
 	}
 	return `(${phone.slice(0, 2)}) ${phone.slice(2, 6)}-${phone.slice(6, 10)}`
 }
+
+export const nearestLowerMultipleOfFive = (value: number): number => Math.floor(value / 5) * 5

@@ -9,6 +9,7 @@ import {
 	type TimelineAwardsSlicePrismicType,
 	TrustedPartners,
 } from '@/components/public'
+import { TEN_MINUTES } from '@/constants'
 import { client } from '@/lib/prismic'
 
 export type AwardsPrismicType = {
@@ -17,6 +18,8 @@ export type AwardsPrismicType = {
 	'awards-title': string
 	'timeline-award-title': string
 	'timeline-award-description': string
+	'partners-award-title': string
+	'partners-award-description': string
 	body: Array<{
 		slice_type: string
 	}>
@@ -28,6 +31,7 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/premiacoes')({
 		const response = await client.getByUID('awards', 'premiacoes')
 		return response.data
 	},
+	staleTime: TEN_MINUTES,
 	staticData: {
 		breadcrumb: 'Premiações',
 	},
@@ -53,7 +57,10 @@ function AwardsPage() {
 				timeline-award-description={response['timeline-award-description']}
 				timeline-award-title={response['timeline-award-title']}
 			/>
-			<TrustedPartners />
+			<TrustedPartners
+				partners-award-description={response['partners-award-description']}
+				partners-award-title={response['partners-award-title']}
+			/>
 			<RecognizedQuality />
 		</>
 	)

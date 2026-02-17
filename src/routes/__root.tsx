@@ -1,11 +1,13 @@
 import { type AnyRouteMatch, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
-import { Toaster } from 'react-hot-toast'
 
 import '../styles.css'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-import { InsuranceProvider, type InsuranceType } from '@/contexts'
+import { Toaster } from 'react-hot-toast'
+
+import { TEN_MINUTES, THIRTY_MINUTES } from '@/constants'
+import { InsuranceProvider, type InsuranceType, type PartnerType } from '@/contexts'
 import { client } from '@/lib/prismic'
 
 declare module '@tanstack/react-router' {
@@ -15,6 +17,7 @@ declare module '@tanstack/react-router' {
 }
 
 export const Route = createRootRoute({
+	gcTime: THIRTY_MINUTES,
 	head: () => ({
 		meta: [
 			{
@@ -30,16 +33,24 @@ export const Route = createRootRoute({
 		],
 	}),
 	loader: async () => {
-		const response = await client.getAllByType('insurance')
-		const insuranceData = response.map(({ data, uid }) => ({
+		const insurances = await client.getAllByType('insurance')
+		const partners = await client.getByUID('companies', 'parceiros')
+
+		const insuranceData = insurances.map(({ data, uid }) => ({
 			...data,
 			'insurance-path': `/${uid}`,
 		}))
+
+		const partnersData = partners.data.body.map((items: PartnerType) => ({
+			...items,
+		}))
 		return {
 			insurances: insuranceData,
+			partners: partnersData,
 		}
 	},
 	shellComponent: RootDocument,
+	staleTime: TEN_MINUTES,
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -49,7 +60,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<InsuranceProvider insurances={data?.insurances as InsuranceType[]}>
+			<InsuranceProvider insurances={data?.insurances as InsuranceType[]} partners={data?.partners as PartnerType[]}>
 				<body className='bg-off-white-2'>
 					{children}
 					<Scripts />

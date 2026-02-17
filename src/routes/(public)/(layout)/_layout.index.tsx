@@ -15,7 +15,9 @@ import {
 	type TestimonialPrismicType,
 	Testimonials,
 } from '@/components/public'
+import { TEN_MINUTES } from '@/constants'
 import { useInsuranceContext } from '@/contexts'
+import { nearestLowerMultipleOfFive } from '@/formatters'
 import { client } from '@/lib/prismic'
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/')({
@@ -26,11 +28,12 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/')({
 			data: response.data,
 		}
 	},
+	staleTime: TEN_MINUTES,
 })
 
 function IndexPage() {
 	const { data } = Route.useLoaderData()
-	const insurances = useInsuranceContext()
+	const contextData = useInsuranceContext()
 
 	const testimonials = data.body.find((item: TestimonialPrismicType) => item.slice_type === 'testimonials')
 	const faqs = data.body.find((item: FaqPrismicType) => item.slice_type === 'faq')
@@ -39,17 +42,19 @@ function IndexPage() {
 	const aboutUs = data.body.find((item: AboutUsPrismicType) => item.slice_type === 'about-us')
 	const hero = data.body.find((item: HeroTopPrismicType) => item.slice_type === 'hero')
 
+	const totalPartners = `+${nearestLowerMultipleOfFive(contextData.partners.length)}`
+
 	return (
 		<>
 			<HeroTop data={hero} />
-			<Services data={service} insurances={insurances} />
-			<AboutUs data={aboutUs} />
+			<Services data={service} insurances={contextData.insurances} />
+			<AboutUs data={aboutUs} totalPartners={totalPartners} />
 			<ClientOnly>
 				<InsuranceCarousel />
 				<Testimonials data={testimonials} />
 			</ClientOnly>
 			<Faq data={faqs} />
-			<Hero data={cta} insurances={insurances} />
+			<Hero data={cta} insurances={contextData.insurances} />
 		</>
 	)
 }

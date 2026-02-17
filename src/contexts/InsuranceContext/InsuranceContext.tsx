@@ -26,16 +26,35 @@ export type InsuranceType = {
 	}>
 }
 
-const InsuranceContext = createContext<InsuranceType[] | null>(null)
+export type PartnerType = {
+	primary: {
+		'company-assistance-phone': string
+		'company-logo': Object
+		'company-name': string
+		'company-whatsapp': string
+	}
+	items: Array<{
+		'company-site': string
+	}>
+}
+
+type InsuranceContextType = {
+	insurances: InsuranceType[]
+	partners: PartnerType[]
+}
+
+const InsuranceContext = createContext<InsuranceContextType | null>(null)
 
 export const InsuranceProvider = ({
 	children,
 	insurances,
+	partners,
 }: {
 	children: React.ReactNode
 	insurances: InsuranceType[]
+	partners: PartnerType[]
 }) => {
-	return <InsuranceContext.Provider value={insurances}>{children}</InsuranceContext.Provider>
+	return <InsuranceContext.Provider value={{ insurances, partners }}>{children}</InsuranceContext.Provider>
 }
 
 export const useInsuranceContext = () => {

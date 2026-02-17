@@ -29,7 +29,7 @@ const LinkList = ({ title, links }: { title: string; links: Array<{ children: Re
 }
 
 export const Footer = () => {
-	const insurances = useInsuranceContext()
+	const contextData = useInsuranceContext()
 	return (
 		<footer className='bg-black/70 py-16 text-white'>
 			<div className='container mx-auto px-4'>
@@ -45,7 +45,7 @@ export const Footer = () => {
 							))}
 						</div>
 					</div>
-					<LinkList {...servicesFooter(insurances)} />
+					<LinkList {...servicesFooter(contextData.insurances)} />
 					<LinkList {...company} />
 					<LinkList {...support} />
 				</div>
