@@ -10,7 +10,7 @@ import {
 	TrustedPartners,
 } from '@/components/public'
 import { TEN_MINUTES } from '@/constants'
-import { client } from '@/lib/prismic'
+import { getPageData } from '@/lib/prismic'
 
 export type AwardsPrismicType = {
 	'awards-badge': string
@@ -28,7 +28,12 @@ export type AwardsPrismicType = {
 export const Route = createFileRoute('/(public)/(layout)/_layout/premiacoes')({
 	component: AwardsPage,
 	loader: async () => {
-		const response = await client.getByUID('awards', 'premiacoes')
+		const response = await getPageData({
+			data: {
+				args: ['awards', 'premiacoes'],
+				method: 'getByUID',
+			},
+		})
 		return response.data
 	},
 	staleTime: TEN_MINUTES,

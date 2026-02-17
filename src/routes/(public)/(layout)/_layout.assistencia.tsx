@@ -9,7 +9,7 @@ import {
 	type WhatIsAssistancePrismicType,
 } from '@/components/public'
 import { TEN_MINUTES } from '@/constants'
-import { client } from '@/lib/prismic'
+import { getPageData } from '@/lib/prismic'
 
 export type AssistancePrismicType = {
 	'assistance-badge': string
@@ -26,9 +26,15 @@ export type AssistancePrismicType = {
 export const Route = createFileRoute('/(public)/(layout)/_layout/assistencia')({
 	component: AssistancePage,
 	loader: async () => {
-		const response = await client.getByUID('assistance', 'assistencia')
+		const response = await getPageData({
+			data: {
+				args: ['assistance', 'assistencia'],
+				method: 'getByUID',
+			},
+		})
 		return response.data
 	},
+	ssr: true,
 	staleTime: TEN_MINUTES,
 	staticData: {
 		breadcrumb: 'Assistência 24h',

@@ -8,7 +8,7 @@ import { Toaster } from 'react-hot-toast'
 
 import { TEN_MINUTES, THIRTY_MINUTES } from '@/constants'
 import { InsuranceProvider, type InsuranceType, type PartnerType } from '@/contexts'
-import { client } from '@/lib/prismic'
+import { getPageData } from '@/lib/prismic'
 
 declare module '@tanstack/react-router' {
 	interface StaticDataRouteOption {
@@ -33,10 +33,20 @@ export const Route = createRootRoute({
 		],
 	}),
 	loader: async () => {
-		const insurances = await client.getAllByType('insurance')
-		const partners = await client.getByUID('companies', 'parceiros')
+		const insurances = await getPageData({
+			data: {
+				args: ['insurance'],
+				method: 'getAllByType',
+			},
+		})
+		const partners = await getPageData({
+			data: {
+				args: ['companies', 'parceiros'],
+				method: 'getByUID',
+			},
+		})
 
-		const insuranceData = insurances.map(({ data, uid }) => ({
+		const insuranceData = insurances.map(({ data, uid }: { data: InsuranceType; uid: string }) => ({
 			...data,
 			'insurance-path': `/${uid}`,
 		}))

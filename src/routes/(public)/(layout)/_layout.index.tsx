@@ -18,12 +18,17 @@ import {
 import { TEN_MINUTES } from '@/constants'
 import { useInsuranceContext } from '@/contexts'
 import { nearestLowerMultipleOfFive } from '@/formatters'
-import { client } from '@/lib/prismic'
+import { getPageData } from '@/lib/prismic'
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/')({
 	component: IndexPage,
 	loader: async () => {
-		const response = await client.getByUID('homepage', 'home')
+		const response = await getPageData({
+			data: {
+				args: ['homepage', 'home'],
+				method: 'getByUID',
+			},
+		})
 		return {
 			data: response.data,
 		}

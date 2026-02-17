@@ -4,13 +4,18 @@ import { BenefitsService, DescriptionService, FaqService, HeroService } from '@/
 import { TEN_MINUTES } from '@/constants'
 import type { InsuranceType } from '@/contexts'
 import { translateIcon } from '@/formatters'
-import { client } from '@/lib/prismic'
+import { getPageData } from '@/lib/prismic'
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
 	beforeLoad: async ({ params }) => {
 		try {
-			const insurances = await client.getAllByType('insurance')
-			const allUID = insurances.map((insurance) => insurance.uid)
+			const insurances = await getPageData({
+				data: {
+					args: ['insurance'],
+					method: 'getAllByType',
+				},
+			})
+			const allUID = insurances.map((insurance: { uid: string }) => insurance.uid)
 			if (!allUID.includes(params.service)) {
 				throw notFound()
 			}
@@ -20,9 +25,15 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
 	},
 	component: ServicePage,
 	loader: async ({ params }) => {
-		const response = await client.getByUID('insurance', params.service)
+		const response = await getPageData({
+			data: {
+				args: ['insurance', params.service],
+				method: 'getByUID',
+			},
+		})
 		return response.data
 	},
+	pendingComponent: () => <div className='flex h-screen w-screen items-center justify-center'>Loading...</div>,
 	staleTime: TEN_MINUTES,
 	staticData: {
 		breadcrumb: (ctx) => ctx.params?.service,

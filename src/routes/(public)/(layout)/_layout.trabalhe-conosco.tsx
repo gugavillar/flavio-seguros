@@ -3,7 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Doubts, FormCareer, HeaderCareers, WhyWork } from '@/components/public'
 import { TEN_MINUTES } from '@/constants'
 import type { translateIcon } from '@/formatters'
-import { client } from '@/lib/prismic'
+import { getPageData } from '@/lib/prismic'
 
 export type CareersPrismicType = {
 	'careers-badge': string
@@ -25,7 +25,12 @@ export type CareersPrismicType = {
 export const Route = createFileRoute('/(public)/(layout)/_layout/trabalhe-conosco')({
 	component: CareersPage,
 	loader: async () => {
-		const response = await client.getByUID('careers', 'trabalhe-conosco')
+		const response = await getPageData({
+			data: {
+				args: ['careers', 'trabalhe-conosco'],
+				method: 'getByUID',
+			},
+		})
 		return response.data
 	},
 	staleTime: TEN_MINUTES,

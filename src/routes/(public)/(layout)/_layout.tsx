@@ -1,6 +1,7 @@
 import { ClientOnly, createFileRoute, Outlet } from '@tanstack/react-router'
 import CookieConsent from 'react-cookie-consent'
 
+import { GlobalLoading } from '@/components/core'
 import { Footer, Navbar, ScriptChat } from '@/components/public'
 
 export const Route = createFileRoute('/(public)/(layout)/_layout')({
@@ -12,6 +13,7 @@ function PublicLayoutComponent() {
 		<>
 			<Navbar />
 			<main>
+				<GlobalLoading />
 				<Outlet />
 			</main>
 			<Footer />
