@@ -1,5 +1,6 @@
 import { ClientOnly, createFileRoute, notFound, useLoaderData } from '@tanstack/react-router'
 
+import { GlobalLoading } from '@/components/core'
 import { BenefitsService, DescriptionService, FaqService, HeroService } from '@/components/public'
 import { TEN_MINUTES } from '@/constants'
 import type { InsuranceType } from '@/contexts'
@@ -33,7 +34,7 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
 		})
 		return response.data
 	},
-	pendingComponent: () => <div className='flex h-screen w-screen items-center justify-center'>Loading...</div>,
+	pendingComponent: () => <GlobalLoading />,
 	staleTime: TEN_MINUTES,
 	staticData: {
 		breadcrumb: (ctx) => ctx.params?.service,

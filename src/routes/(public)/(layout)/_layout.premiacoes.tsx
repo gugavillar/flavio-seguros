@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
+import { GlobalLoading } from '@/components/core'
 import {
 	HeaderAwards,
 	MainAwards,
@@ -36,6 +37,7 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/premiacoes')({
 		})
 		return response.data
 	},
+	pendingComponent: () => <GlobalLoading />,
 	staleTime: TEN_MINUTES,
 	staticData: {
 		breadcrumb: 'Premiações',

@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
+import { GlobalLoading } from '@/components/core'
 import { Doubts, FormCareer, HeaderCareers, WhyWork } from '@/components/public'
 import { TEN_MINUTES } from '@/constants'
 import type { translateIcon } from '@/formatters'
@@ -33,6 +34,7 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/trabalhe-conosc
 		})
 		return response.data
 	},
+	pendingComponent: () => <GlobalLoading />,
 	staleTime: TEN_MINUTES,
 	staticData: {
 		breadcrumb: 'Trabalhe Conosco',

@@ -1,5 +1,6 @@
 import { ClientOnly, createFileRoute } from '@tanstack/react-router'
 
+import { GlobalLoading } from '@/components/core'
 import {
 	AboutUs,
 	type AboutUsPrismicType,
@@ -33,6 +34,7 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/')({
 			data: response.data,
 		}
 	},
+	pendingComponent: () => <GlobalLoading />,
 	staleTime: TEN_MINUTES,
 })
 

@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
+import { GlobalLoading } from '@/components/core'
 import {
 	EmergencePhones,
 	HeaderAssistance,
@@ -34,6 +35,7 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/assistencia')({
 		})
 		return response.data
 	},
+	pendingComponent: () => <GlobalLoading />,
 	ssr: true,
 	staleTime: TEN_MINUTES,
 	staticData: {
