@@ -36,7 +36,11 @@ function AssistancePage() {
 	const tips = response.body.find((slice: TipsPrismicType) => slice.slice_type === 'tips')
 	return (
 		<>
-			<HeaderAssistance />
+			<HeaderAssistance
+				assistance-badge={response['assistance-badge']}
+				assistance-description={response['assistance-description']}
+				assistance-title={response['assistance-title']}
+			/>
 			<WhatIsAssistance data={whatIsAssistance} />
 			<EmergencePhones />
 			<Tips data={tips} />
