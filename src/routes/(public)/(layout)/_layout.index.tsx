@@ -53,7 +53,7 @@ function IndexPage() {
 
 	return (
 		<>
-			<HeroTop data={hero} />
+			<HeroTop data={hero} images={data['homepage-top-images']} />
 			<Services data={service} insurances={contextData.insurances} />
 			<AboutUs data={aboutUs} totalPartners={totalPartners} />
 			<ClientOnly>

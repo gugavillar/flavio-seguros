@@ -46,7 +46,6 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/premiacoes')({
 
 function AwardsPage() {
 	const response = Route.useLoaderData()
-	console.log('response', response)
 	const mainAwards = response.body.find((slice: MainAwardsPrismicType) => slice.slice_type === 'main-awards')
 	const timelineAwards = response.body.filter(
 		(slice: TimelineAwardsSlicePrismicType) => slice.slice_type === 'timeline-award'

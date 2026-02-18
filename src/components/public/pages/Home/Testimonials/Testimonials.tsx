@@ -59,7 +59,7 @@ export const Testimonials = ({ data: { primary, items } }: { data: TestimonialPr
 			</div>
 			<Swiper
 				className='h-[320px]'
-				loop
+				{...(items.length > showSlides && { loop: true })}
 				modules={[Pagination]}
 				pagination={{ clickable: true }}
 				slidesPerView={showSlides}

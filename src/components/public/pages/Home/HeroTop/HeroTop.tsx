@@ -1,15 +1,19 @@
+import { PrismicImage } from '@prismicio/react'
 import { CheckCircle2, Shield } from 'lucide-react'
 import { Fragment } from 'react'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { images, stats } from '@/__mocks__/heroTop'
+import { stats } from '@/__mocks__/heroTop'
 import { messages } from '@/__mocks__/whatsapp'
 import { Button, FloatCard, PageContainer } from '@/components/core'
 import { generateWhatsAppLink, goToHash, NAVIGATION_HASH } from '@/utils'
 
 export type HeroTopPrismicType = {
 	slice_type: string
+	'homepage-top-images': Array<{
+		'homepage-top-image': Object
+	}>
 	primary: {
 		'hero-title': string
 		'hero-description': string
@@ -19,7 +23,13 @@ export type HeroTopPrismicType = {
 	}>
 }
 
-export const HeroTop = ({ data: { primary, items } }: { data: HeroTopPrismicType }) => {
+export const HeroTop = ({
+	data: { primary, items },
+	images,
+}: {
+	data: HeroTopPrismicType
+	images: HeroTopPrismicType['homepage-top-images']
+}) => {
 	const words = primary['hero-title']?.trim().split(/\s+/) ?? []
 	const firstPart = words.slice(0, 3).join(' ')
 	const secondPart = words.slice(3).join(' ')
@@ -79,7 +89,7 @@ export const HeroTop = ({ data: { primary, items } }: { data: HeroTopPrismicType
 							<SwiperSlide key={index}>
 								<div className='relative overflow-hidden rounded-2xl shadow-2xl'>
 									<div className='absolute inset-0 bg-linear-to-t from-black/40 to-transparent' />
-									<img alt={image.alt} src={image.src} />
+									<PrismicImage field={image['homepage-top-image']} />
 								</div>
 							</SwiperSlide>
 						))}

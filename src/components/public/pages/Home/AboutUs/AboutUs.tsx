@@ -1,3 +1,4 @@
+import { PrismicImage } from '@prismicio/react'
 import { CheckCircle2, type LucideIcon } from 'lucide-react'
 
 import { FloatCard, HeaderSection, PageContainer } from '@/components/core'
@@ -10,6 +11,7 @@ export type AboutUsPrismicType = {
 		'about-us-badge': string
 		'about-us-description': string
 		'about-us-title': string
+		'about-us-image': Object
 	}
 	items: Array<{
 		'about-us-card-description': string
@@ -42,10 +44,9 @@ export const AboutUs = ({
 			<div className='grid items-center gap-16 lg:grid-cols-2'>
 				<div className='relative order-2 lg:order-1'>
 					<div className='relative'>
-						<img
-							alt='Ilustração de proteção'
+						<PrismicImage
 							className='mx-auto w-full max-w-lg animate-float rounded-xl'
-							src='/images/Illustration.webp'
+							field={primary['about-us-image']}
 						/>
 					</div>
 					<FloatCard
