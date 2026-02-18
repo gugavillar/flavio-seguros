@@ -1,15 +1,22 @@
 import { Shield } from 'lucide-react'
 
 import { HeaderInternalPages } from '@/components/core'
+import type { TeamsPrismicType } from '@/routes/(public)/(layout)/_layout.nossa-equipe'
 
-export const HeaderTeams = () => {
+type HeaderTeamsProps = Pick<TeamsPrismicType, 'teams-badge' | 'teams-description' | 'teams-title'>
+
+export const HeaderTeams = ({
+	'teams-badge': teamsBadge,
+	'teams-description': teamsDescription,
+	'teams-title': teamsTitle,
+}: HeaderTeamsProps) => {
 	return (
 		<HeaderInternalPages
-			badge={{ icon: <Shield />, label: 'Gente de verdade cuidando de você' }}
-			description='Somos uma corretora familiar e acreditamos que seguro bom é aquele feito com atenção, carinho e dedicação. Cada membro da nossa equipe está aqui para cuidar de você.'
+			badge={{ icon: <Shield />, label: teamsBadge }}
+			description={teamsDescription}
 			endSplitIndex={2}
 			isSplitTitle
-			title='Conheça nossa equipe'
+			title={teamsTitle}
 		/>
 	)
 }

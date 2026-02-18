@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
+import { Facebook, Instagram } from 'lucide-react'
 
 import { NavLink } from '@/components/core'
 import type { InsuranceType } from '@/contexts'
@@ -14,14 +14,6 @@ export const social = [
 	{
 		href: '',
 		icon: <Instagram />,
-	},
-	{
-		href: '',
-		icon: <Linkedin />,
-	},
-	{
-		href: '',
-		icon: <Twitter />,
 	},
 ]
 
