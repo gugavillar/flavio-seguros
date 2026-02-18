@@ -35,7 +35,7 @@ export const Footer = () => {
 			<div className='container mx-auto px-4'>
 				<div className='mb-12 grid gap-12 md:grid-cols-4'>
 					<div className='space-y-4'>
-						<AvatarLogo />
+						<AvatarLogo src='https://images.prismic.io/flavio-seguros-ssr/aZYpKcFoBIGEgiV5_Logo-white.webp?auto=format,compress' />
 						<p className='text-gray-400 text-sm leading-relaxed'>
 							Há mais de 20 anos protegendo famílias brasileiras com as melhores soluções em seguros.
 						</p>

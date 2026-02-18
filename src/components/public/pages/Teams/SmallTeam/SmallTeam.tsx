@@ -28,10 +28,10 @@ export const SmallTeam = () => {
 		<PageContainer>
 			<div className='mb-16 text-center'>
 				<h2 className='mb-4 font-bold font-title text-3xl text-black/80 md:text-4xl'>
-					Por que uma equipe <span className='text-primary'>pequena</span> faz diferença?
+					Por que uma equipe faz diferença?
 				</h2>
 				<p className='mx-auto max-w-2xl text-gray-500'>
-					Em uma corretora grande, você é um número. Na Flávio Seguros, você é nosso vizinho, nosso amigo, alguém que
+					Em Flávio Seguros, você é o número um. Você é mais que um cliente, você é nosso amigo, nossa amiga. Alguém que
 					confiamos e cuidamos de verdade.
 				</p>
 			</div>

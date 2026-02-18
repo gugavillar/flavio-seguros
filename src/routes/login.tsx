@@ -22,10 +22,10 @@ function LoginPage() {
 	return (
 		<div className='h-dvh w-dvw'>
 			<div className='flex size-full items-center justify-center bg-[url(/images/Login.webp)] bg-cover px-4'>
-				<div className='container mx-auto max-w-lg rounded-lg border border-gray-200 bg-white/35 backdrop-blur-xs'>
+				<div className='container mx-auto max-w-lg rounded-lg border border-gray-200 backdrop-blur-sm'>
 					<div className='flex h-full flex-col items-center justify-between py-4'>
-						<AvatarLogo />
-						<div className='mt-8 space-y-6 px-4 text-center text-black/80 sm:px-10'>
+						<AvatarLogo src='https://images.prismic.io/flavio-seguros-ssr/aZYpKcFoBIGEgiV5_Logo-white.webp?auto=format,compress' />
+						<div className='mt-8 space-y-6 px-4 text-center text-white sm:px-10'>
 							<div>
 								<p className='text-xl'>Área administrativa</p>
 								<p className='text-sm'>O acesso é restrito a usuários autorizados</p>
@@ -36,7 +36,7 @@ function LoginPage() {
 								Entrar com Google
 							</Button>
 						</div>
-						<NavLink className='mt-8 flex items-center gap-2 text-black/80 text-sm underline underline-offset-3' to='/'>
+						<NavLink className='mt-8 flex items-center gap-2 text-sm text-white underline underline-offset-3' to='/'>
 							<ArrowLeft />
 							Voltar para o site
 						</NavLink>

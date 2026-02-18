@@ -13,7 +13,7 @@ export const Disclaimer = () => {
 	return (
 		<div className='bg-primary-gradient text-white shadow-sm'>
 			<div className='p-12'>
-				<div className='mx-auto grid max-w-7xl grid-cols-2 gap-8 text-center md:grid-cols-4'>
+				<div className='mx-auto flex max-w-7xl flex-col justify-around gap-8 text-center md:grid-cols-4 md:flex-row'>
 					{disclaimer.map((item) => (
 						<Informer key={item.title} {...item} />
 					))}

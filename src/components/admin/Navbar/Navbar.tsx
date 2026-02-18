@@ -10,7 +10,7 @@ export const Navbar = () => {
 			role='navigation'
 		>
 			<div className='mx-auto flex w-full max-w-6xl items-center justify-between gap-2'>
-				<AvatarLogo />
+				<AvatarLogo src='https://images.prismic.io/flavio-seguros-ssr/aZLk51WLo0XkEiE0_Logo.webp?auto=format,compress' />
 				<AvatarUser />
 			</div>
 		</nav>
