@@ -64,7 +64,7 @@ export const HeroTop = ({
 					<div className='flex items-center gap-8 pt-4 max-sm:justify-center'>
 						{stats.map((item, index) => (
 							<Fragment key={index}>
-								<div className='min-w-32 max-w-32 text-center'>
+								<div className='text-center md:min-w-32 md:max-w-32'>
 									<p className='font-bold text-2xl text-black/80'>{item.title}</p>
 									<p className='text-gray-500 text-sm'>{item.subtitle}</p>
 								</div>
