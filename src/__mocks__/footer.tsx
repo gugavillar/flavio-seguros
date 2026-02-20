@@ -8,11 +8,11 @@ import { messages } from './whatsapp'
 
 export const social = [
 	{
-		href: '',
+		href: 'https://www.facebook.com/FlavioSegurosGravataCorretoraDeSeguros/',
 		icon: <Facebook />,
 	},
 	{
-		href: '',
+		href: 'https://www.instagram.com/flavioseguros_oficial/',
 		icon: <Instagram />,
 	},
 ]
