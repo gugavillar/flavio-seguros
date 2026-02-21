@@ -26,6 +26,18 @@ export type AssistancePrismicType = {
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/assistencia')({
 	component: AssistancePage,
+	head: () => ({
+		meta: [
+			{
+				content:
+					'Precisa de assistência 24h? Atendimento rápido para sinistros, guincho e emergências. Fale conosco agora.',
+				name: 'description',
+			},
+			{
+				title: 'Flávio Seguros | Corretora de Seguros | Assistência 24h',
+			},
+		],
+	}),
 	loader: async () => {
 		const response = await getPageData({
 			data: {

@@ -25,6 +25,18 @@ export type CareersPrismicType = {
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/trabalhe-conosco')({
 	component: CareersPage,
+	head: () => ({
+		meta: [
+			{
+				content:
+					'Quer trabalhar em uma corretora de seguros sólida e em crescimento? Envie seu currículo e faça parte do nosso time.',
+				name: 'description',
+			},
+			{
+				title: 'Flávio Seguros | Corretora de Seguros | Trabalhe Conosco | Faça Parte da Nossa Equipe',
+			},
+		],
+	}),
 	loader: async () => {
 		const response = await getPageData({
 			data: {

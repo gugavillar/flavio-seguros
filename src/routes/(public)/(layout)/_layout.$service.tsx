@@ -7,6 +7,16 @@ import type { InsuranceType } from '@/contexts'
 import { translateIcon } from '@/formatters'
 import { getPageData } from '@/lib/prismic'
 
+const serviceLoader = async ({ params }: { params: { service: string } }) => {
+	const response = await getPageData({
+		data: {
+			args: ['insurance', params.service],
+			method: 'getByUID',
+		},
+	})
+	return response.data
+}
+
 export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
 	beforeLoad: async ({ params }) => {
 		try {
@@ -25,15 +35,18 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
 		}
 	},
 	component: ServicePage,
-	loader: async ({ params }) => {
-		const response = await getPageData({
-			data: {
-				args: ['insurance', params.service],
-				method: 'getByUID',
+	head: ({ loaderData }) => ({
+		meta: [
+			{
+				content: loaderData?.['insurance-subtitle'],
+				name: 'description',
 			},
-		})
-		return response.data
-	},
+			{
+				title: `Flávio Seguros | Corretora de Seguros | ${loaderData?.['insurance-title']}`,
+			},
+		],
+	}),
+	loader: serviceLoader,
 	pendingComponent: () => <GlobalLoading />,
 	staleTime: TEN_MINUTES,
 	staticData: {

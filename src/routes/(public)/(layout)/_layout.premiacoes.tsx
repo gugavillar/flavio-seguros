@@ -28,6 +28,18 @@ export type AwardsPrismicType = {
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/premiacoes')({
 	component: AwardsPage,
+	head: () => ({
+		meta: [
+			{
+				content:
+					'Conheça as premiações e reconhecimentos que comprovam a excelência do nosso trabalho no mercado de seguros.',
+				name: 'description',
+			},
+			{
+				title: 'Flávio Seguros | Corretora de Seguros | Premiações e Reconhecimentos',
+			},
+		],
+	}),
 	loader: async () => {
 		const response = await getPageData({
 			data: {

@@ -7,8 +7,11 @@ import { useInsuranceContext } from '@/contexts'
 const SocialLink = ({ href, icon }: { href: string; icon: ReactNode }) => {
 	return (
 		<a
+			aria-label='Social link'
 			className='flex h-10 w-10 items-center justify-center rounded-full bg-gray-200/10 transition-colors hover:bg-primary'
 			href={href}
+			rel='noopener noreferrer'
+			target='_blank'
 		>
 			{icon}
 		</a>

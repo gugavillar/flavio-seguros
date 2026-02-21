@@ -23,6 +23,15 @@ import { getPageData } from '@/lib/prismic'
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/')({
 	component: IndexPage,
+	head: () => ({
+		meta: [
+			{
+				content:
+					'Flávio Seguros: há mais de 20 anos protegendo famílias brasileiras com as melhores soluções em seguros.',
+				name: 'description',
+			},
+		],
+	}),
 	loader: async () => {
 		const response = await getPageData({
 			data: {

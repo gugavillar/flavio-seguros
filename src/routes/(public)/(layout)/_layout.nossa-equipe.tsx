@@ -16,6 +16,18 @@ export type TeamsPrismicType = {
 
 export const Route = createFileRoute('/(public)/(layout)/_layout/nossa-equipe')({
 	component: TeamsPage,
+	head: () => ({
+		meta: [
+			{
+				content:
+					'Conheça nossa equipe especializada em seguros. Profissionais preparados para oferecer as melhores soluções para você.',
+				name: 'description',
+			},
+			{
+				title: 'Flávio Seguros | Corretora de Seguros | Nossa Equipe | Especialistas em Seguros',
+			},
+		],
+	}),
 	loader: async () => {
 		const response = await getPageData({
 			data: {

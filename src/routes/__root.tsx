@@ -28,7 +28,7 @@ export const Route = createRootRoute({
 				name: 'viewport',
 			},
 			{
-				title: 'Flávio Seguros',
+				title: 'Flávio Seguros | Corretora de Seguros | Proteção completa para você e sua família',
 			},
 		],
 	}),
