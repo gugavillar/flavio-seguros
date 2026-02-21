@@ -22,7 +22,7 @@
 			}
 		},
 		"enabled": true,
-		"includes": ["src/**/*.{js,jsx,ts,tsx}"]
+		"includes": ["src/**/*.{js,jsx,ts,tsx}", "vitest.config.ts", "vitest.setup.ts", "tsconfig.json", "package.json"]
 	},
 	"css": {
 		"parser": {
@@ -34,8 +34,12 @@
 		"includes": [
 			"index.html",
 			"**/.vscode/**/*",
-			"**/vite.config.ts",
+			"vite.config.ts",
 			"**/src/**/*.{js,jsx,ts,tsx}",
+			"vitest.config.ts",
+			"vitest.setup.ts",
+			"tsconfig.json",
+			"package.json",
 			"!src/routeTree.gen.ts"
 		]
 	},
