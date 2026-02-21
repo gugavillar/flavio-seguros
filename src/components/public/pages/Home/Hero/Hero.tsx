@@ -59,7 +59,11 @@ export const Hero = ({
 				<p className='mx-auto mb-8 max-w-2xl text-gray-300 text-lg'>{primary['cta-description']}</p>
 				<div className='mx-auto mb-12 flex max-w-xl flex-col gap-4 sm:flex-row'>
 					<div className='relative w-full'>
+						<label className='hidden' htmlFor='services'>
+							Selecione um seguro
+						</label>
 						<Select
+							id='services'
 							name='services'
 							onChange={(e) => setService(e.target.value)}
 							options={insurances.map((services) => ({

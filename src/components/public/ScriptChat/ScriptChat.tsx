@@ -10,6 +10,7 @@ export const ScriptChat = () => {
 		script.id = SCRIPT_ID
 		script.src = 'https://wbot.chat/index.js'
 		script.setAttribute('token', import.meta.env.VITE_WBOT_TOKEN)
+		script.defer = true
 		document.body.appendChild(script)
 	}, [])
 

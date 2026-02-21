@@ -19,6 +19,21 @@ declare module '@tanstack/react-router' {
 export const Route = createRootRoute({
 	gcTime: THIRTY_MINUTES,
 	head: () => ({
+		links: [
+			{
+				crossOrigin: 'anonymous',
+				href: 'https://fonts.gstatic.com',
+				rel: 'preconnect',
+			},
+			{
+				href: 'https://fonts.googleapis.com',
+				rel: 'preconnect',
+			},
+			{
+				href: 'https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap',
+				rel: 'stylesheet',
+			},
+		],
 		meta: [
 			{
 				charSet: 'utf-8',

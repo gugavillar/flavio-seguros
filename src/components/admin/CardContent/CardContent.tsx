@@ -33,7 +33,7 @@ export const CardContent = <T extends ElementType = 'div'>({
 						<div className='min-w-0 flex-1'>
 							<h3
 								className={twMerge(
-									'truncate font-semibold text-black/80',
+									'truncate font-semibold font-title text-black/80',
 									isLink && 'transition-colors duration-300 group-hover:text-primary'
 								)}
 							>
