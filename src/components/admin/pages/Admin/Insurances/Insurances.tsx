@@ -28,7 +28,15 @@ export const Insurances = () => {
 			<div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
 				{filteredInsurances.map(({ primary, items }) => (
 					<CardContent
-						icon={<PrismicImage className='size-12 object-contain' field={primary['company-logo']} />}
+						icon={
+							<PrismicImage
+								className='size-12 object-contain'
+								fetchPriority='high'
+								field={primary['company-logo']}
+								imgixParams={{ auto: ['compress', 'format'], w: 48 }}
+								loading='eager'
+							/>
+						}
 						key={primary['company-name']}
 						title={primary['company-name']}
 					>

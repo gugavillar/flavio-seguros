@@ -24,7 +24,13 @@ const EmergencePhoneCard = ({
 		<div className='rounded-lg bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-2xl'>
 			<div className='p-6'>
 				<div className='flex h-16 items-center justify-center rounded-lg p-3'>
-					<PrismicImage className='max-h-full max-w-40 object-contain' field={url} />
+					<PrismicImage
+						className='max-h-full max-w-40 object-contain'
+						fetchPriority='high'
+						field={url}
+						imgixParams={{ auto: ['compress', 'format'], w: 160 }}
+						loading='eager'
+					/>
 				</div>
 				<h3 className='mb-6 text-center font-semibold text-black/80 text-lg'>{title}</h3>
 				<div className='flex items-center justify-center gap-6'>

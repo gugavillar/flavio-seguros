@@ -11,8 +11,12 @@ const PartnerCard = ({ name, image }: { name: string; image: Object }) => {
 		<div className='rounded-lg border border-gray-200 bg-white text-gray-500 shadow-sm transition-all duration-300 hover:border-primary hover:shadow-soft-white'>
 			<div className='flex aspect-square flex-col items-center justify-center p-6'>
 				<div className='mb-3 flex size-16 items-center justify-center rounded-xl'>
-					<PrismicImage field={image} />
-					{/* <img alt={name} src={image} /> */}
+					<PrismicImage
+						fetchPriority='high'
+						field={image}
+						imgixParams={{ auto: ['format', 'compress'], w: 64 }}
+						loading='eager'
+					/>
 				</div>
 				<p className='text-center text-gray-500 text-xs'>{name}</p>
 			</div>

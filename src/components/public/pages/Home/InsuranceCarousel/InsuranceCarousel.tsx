@@ -25,7 +25,16 @@ export const InsuranceCarousel = () => {
 					{contextData.partners.map(({ primary }) => (
 						<SwiperSlide className='w-auto' key={primary['company-name']}>
 							<div className='mx-auto flex h-20 w-40 items-center justify-center'>
-								<PrismicImage className='max-h-full max-w-full object-contain' field={primary['company-logo']} />
+								<PrismicImage
+									className='max-h-full max-w-full object-contain'
+									fetchPriority='high'
+									field={primary['company-logo']}
+									imgixParams={{
+										auto: ['compress', 'format'],
+										w: 160,
+									}}
+									loading='eager'
+								/>
 							</div>
 						</SwiperSlide>
 					))}

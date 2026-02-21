@@ -90,7 +90,12 @@ export const HeroTop = ({
 							<SwiperSlide key={index}>
 								<div className='relative overflow-hidden rounded-2xl shadow-2xl'>
 									<div className='absolute inset-0 bg-linear-to-t from-black/40 to-transparent' />
-									<PrismicImage field={image['homepage-top-image']} />
+									<PrismicImage
+										fetchPriority='high'
+										field={image['homepage-top-image']}
+										imgixParams={{ auto: ['compress', 'format'], w: 720 }}
+										loading='eager'
+									/>
 								</div>
 							</SwiperSlide>
 						))}

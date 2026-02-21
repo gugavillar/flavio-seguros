@@ -46,7 +46,10 @@ export const AboutUs = ({
 					<div className='relative'>
 						<PrismicImage
 							className='mx-auto w-full max-w-lg animate-float rounded-xl'
+							fetchPriority='high'
 							field={primary['about-us-image']}
+							imgixParams={{ auto: ['format', 'compress'], w: 512 }}
+							loading='eager'
 						/>
 					</div>
 					<FloatCard
