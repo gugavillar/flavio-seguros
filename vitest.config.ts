@@ -6,7 +6,14 @@ export default defineConfig({
 	plugins: [react(), tsconfigPaths()],
 	test: {
 		coverage: {
-			exclude: ['src/__mocks__/*', 'src/routeTree.gen.ts', 'src/**/index.ts', 'src/types/*', 'src/router.tsx'],
+			exclude: [
+				'src/__mocks__/*',
+				'src/routeTree.gen.ts',
+				'src/**/index.ts',
+				'src/types/*',
+				'src/router.tsx',
+				'src/formatters/icons.ts',
+			],
 			include: ['src/**/*.{ts,tsx}'],
 			provider: 'v8',
 		},

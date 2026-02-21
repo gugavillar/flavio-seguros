@@ -15,7 +15,7 @@ export const DescriptionCard = ({
 		<Card className='group'>
 			<div className='flex flex-col space-y-1.5 p-6'>
 				<div className='mb-4 flex size-14 items-center justify-center rounded-xl bg-primary-gradient text-white transition-transform duration-300 group-hover:scale-110'>
-					<Icon />
+					<Icon data-testid='description-card-icon' />
 				</div>
 				<h3 className='font-semibold font-title text-black/80 text-xl tracking-tight transition-colors group-hover:text-primary'>
 					{title}

@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import { Badge } from './Badge'
 
 describe('<Badge />', () => {
-	it('should renders correctly', () => {
+	it('should renders correctly label', () => {
 		const { getByText } = render(<Badge label='any-text' />)
 		expect(getByText('any-text')).toBeInTheDocument()
 	})
