@@ -23,6 +23,7 @@ O projeto utiliza uma stack moderna do ecossistema React, priorizando tipagem fo
 
 ### Autenticação
 - 🔐 **Better Auth** — Autenticação moderna, desacoplada e segura
+- 🔐 **Google OAuth** — Autenticação com Google
 
 ---
 
@@ -38,7 +39,6 @@ O projeto utiliza uma stack moderna do ecossistema React, priorizando tipagem fo
 
 ## 📌 Funcionalidades
 
-- Páginas institucionais da corretora
 - Apresentação de produtos de seguros (ex: vida, viagem, auto, residencial)
 - Layout responsivo (mobile-first)
 - Sliders e seções dinâmicas com Swiper
@@ -74,7 +74,13 @@ pnpm dev
 ```bash
 src/
  ├─ routes/        # Rotas e layouts (TanStack Router)
- ├─ components/    # Componentes reutilizáveis de UI
- ├─ lib/           # Helpers, configs e integrações
+ ├─ components/    
+ |   ├─ core/      # Componentes reutilizáveis de UI
+ |   ├─ public/    # Componentes da página pública
+ |   └─ admin/     # Componentes da página de admin
+ ├─ lib/           # Better Auth, Prismic, etc
+ ├─ contexts/      # Contextos globais
+ ├─ formatters/    # Funções de formatação
+ ├─ utils/         # Funções utilitárias
  └─ public/        # Imagens e arquivos estáticos
  ```
