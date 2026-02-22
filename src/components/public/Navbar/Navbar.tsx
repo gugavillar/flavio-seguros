@@ -40,7 +40,7 @@ const Links = ({ setIsOpen, isOpen }: { setIsOpen: Dispatch<SetStateAction<boole
 				aria-label='Menu'
 				className='p-2 text-gray-500 lg:hidden'
 				onClick={isOpen ? () => setIsOpen(false) : () => setIsOpen(true)}
-				role='navigation'
+				role='navigation-button'
 			>
 				{isOpen ? <X className='size-6' /> : <Menu className='size-6' />}
 			</button>
@@ -83,10 +83,10 @@ export const Navbar = ({ showLinks = true }: NavbarProps) => {
 					<div className='absolute top-full right-0 left-0 animate-fade-up border-border border-b bg-off-white-1 lg:hidden'>
 						<div className='flex flex-col gap-4 p-4 text-gray-500'>
 							<NavLink {...commonProps} hash={NAVIGATION_HASH.SERVICES} onClick={closeMenu} to='/'>
-								Serviços
+								Seguros
 							</NavLink>
 							<NavLink {...commonProps} hash={NAVIGATION_HASH.ABOUT} onClick={closeMenu} to='/'>
-								Sobre Nós
+								Sobre nós
 							</NavLink>
 							<NavLink {...commonProps} hash={NAVIGATION_HASH.TESTIMONIALS} onClick={closeMenu} to='/'>
 								Depoimentos
@@ -100,7 +100,7 @@ export const Navbar = ({ showLinks = true }: NavbarProps) => {
 								href={generateWhatsAppLink({ message: messages.talk })}
 								target='_blank'
 							>
-								Fale Conosco
+								Fale conosco
 							</Button>
 						</div>
 					</div>

@@ -1,4 +1,4 @@
-import { act, render } from '@testing-library/react'
+import { act, fireEvent, render } from '@testing-library/react'
 import type { Mock } from 'vitest'
 
 import { signOut, useSession } from '@/lib/authClient'
@@ -77,5 +77,25 @@ describe('<AvatarUser />', () => {
 			getByText('Sair').click()
 		})
 		expect(signOut).toHaveBeenCalled()
+	})
+
+	it('should close submenu when click away', () => {
+		vi.mocked(useSession as Mock).mockReturnValue({
+			data: {
+				user: {
+					email: 'any-email',
+					image: 'any-image',
+					name: 'any-name',
+				},
+			},
+		})
+		const { queryByText, getByText } = render(<AvatarUser />)
+		act(() => {
+			getByText('any-name').click()
+		})
+		act(() => {
+			fireEvent.mouseDown(document.body)
+		})
+		expect(queryByText('Sair')).not.toBeInTheDocument()
 	})
 })
