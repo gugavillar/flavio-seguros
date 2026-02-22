@@ -34,7 +34,7 @@ export const HeaderInternalPages = ({
 		<PageContainer className={twMerge('pt-44 pb-20 text-center', className)} {...props}>
 			<Badge {...badge} />
 			<h1 className='mb-6 font-bold font-title text-4xl text-black/80 md:text-5xl lg:text-6xl'>{newTitle}</h1>
-			<p className='mx-auto max-w-2xl text-gray-500 text-lg md:text-xl'> {description}</p>
+			<p className='mx-auto max-w-2xl text-gray-500 text-lg md:text-xl'>{description}</p>
 			{children}
 		</PageContainer>
 	)

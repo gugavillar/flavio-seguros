@@ -4,8 +4,11 @@ import { Header } from './Header'
 
 describe('<Header />', () => {
 	it('should render correctly', () => {
-		const { getByText } = render(<Header />)
+		const { getByText, getByRole } = render(<Header />)
 		expect(getByText('Portal de Serviços')).toBeInTheDocument()
-		expect(getByText(/soluções/gi)).toBeInTheDocument()
+		expect(getByRole('heading', { level: 1, name: 'Catálogo de Soluções' })).toBeInTheDocument()
+		expect(
+			getByText('Este é o portal de serviços da corretora onde reunimos todos os links para facilitar seu atendimento.')
+		).toBeInTheDocument()
 	})
 })

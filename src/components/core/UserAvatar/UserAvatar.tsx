@@ -17,11 +17,7 @@ export const UserAvatar = ({ name, description, image }: UserAvatarProps) => {
 	return (
 		<div className='flex items-center gap-2'>
 			{image ? (
-				<img
-					alt='User avatar'
-					className='inline-flex size-11 items-center justify-center rounded-full'
-					src={image ?? ''}
-				/>
+				<img alt='User avatar' className='inline-flex size-11 items-center justify-center rounded-full' src={image} />
 			) : (
 				<div className='inline-flex size-11 items-center justify-center rounded-full bg-primary-gradient font-semibold text-white'>
 					{firstLetter}
