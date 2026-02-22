@@ -19,6 +19,8 @@ export const Insurances = () => {
 			<SectionTitle icon={<Shield className='size-5' />} title='Seguradoras' />
 			<div className='space-y-3'>
 				<Input
+					id='search'
+					name='search'
 					onChange={(e) => setSearch(e.target.value)}
 					placeholder='Procurar seguradora'
 					type='search'
