@@ -1,1 +1,1 @@
-pnpm run check-types && pnpm lint-staged
+pnpm test && pnpm run check-types && pnpm lint-staged
