@@ -17,7 +17,7 @@ const serviceLoader = async ({ params }: { params: { service: string } }) => {
 	return response.data
 }
 
-export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
+export const Route = createFileRoute('/(public)/_layout/$service')({
 	beforeLoad: async ({ params }) => {
 		try {
 			const insurances = await getPageData({
@@ -55,7 +55,7 @@ export const Route = createFileRoute('/(public)/(layout)/_layout/$service')({
 })
 
 function ServicePage() {
-	const data: InsuranceType = useLoaderData({ from: '/(public)/(layout)/_layout/$service' })
+	const data: InsuranceType = useLoaderData({ from: '/(public)/_layout/$service' })
 	const transformFaqs = data['insurance-faq'].map((faq) => ({
 		'faq-answer': faq['insurance-faq-answer'],
 		'faq-question': faq['insurance-faq-question'],

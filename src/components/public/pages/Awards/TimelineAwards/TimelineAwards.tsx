@@ -1,7 +1,7 @@
 import { Medal } from 'lucide-react'
 
 import { HeaderSection, PageContainer } from '@/components/core'
-import type { AwardsPrismicType } from '@/routes/(public)/(layout)/_layout.premiacoes'
+import type { AwardsPrismicType } from '@/routes/(public)/_layout/premiacoes'
 
 export type TimelineAwardsPrismicType = Pick<AwardsPrismicType, 'timeline-award-title' | 'timeline-award-description'>
 

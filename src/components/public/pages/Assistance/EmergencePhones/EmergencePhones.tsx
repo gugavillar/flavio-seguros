@@ -4,7 +4,7 @@ import { Phone } from 'lucide-react'
 import { Button, HeaderSection, PageContainer, WhatsAppIcon } from '@/components/core'
 import { type PartnerType, useInsuranceContext } from '@/contexts'
 import { formatPhone } from '@/formatters'
-import type { AssistancePrismicType } from '@/routes/(public)/(layout)/_layout.assistencia'
+import type { AssistancePrismicType } from '@/routes/(public)/_layout/assistencia'
 import { generateWhatsAppLink } from '@/utils'
 
 type EmergencePhoneProps = Pick<

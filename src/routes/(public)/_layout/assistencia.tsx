@@ -24,7 +24,7 @@ export type AssistancePrismicType = {
 	}>
 }
 
-export const Route = createFileRoute('/(public)/(layout)/_layout/assistencia')({
+export const Route = createFileRoute('/(public)/_layout/assistencia')({
 	component: AssistancePage,
 	head: () => ({
 		meta: [

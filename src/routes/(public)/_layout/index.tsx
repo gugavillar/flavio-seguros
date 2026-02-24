@@ -21,7 +21,7 @@ import { useInsuranceContext } from '@/contexts'
 import { nearestLowerMultipleOfFive } from '@/formatters'
 import { getPageData } from '@/lib/prismic'
 
-export const Route = createFileRoute('/(public)/(layout)/_layout/')({
+export const Route = createFileRoute('/(public)/_layout/')({
 	component: IndexPage,
 	head: () => ({
 		meta: [

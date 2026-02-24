@@ -1,6 +1,6 @@
 import { ExplanationSection } from '@/components/core'
 import { translateIcon } from '@/formatters'
-import type { CareersPrismicType } from '@/routes/(public)/(layout)/_layout.trabalhe-conosco'
+import type { CareersPrismicType } from '@/routes/(public)/_layout/trabalhe-conosco'
 
 export const WhyWork = ({ body }: { body: CareersPrismicType['body'][number] }) => {
 	const data = body.items.map((item) => ({

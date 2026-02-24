@@ -23,7 +23,7 @@ export type CareersPrismicType = {
 	}>
 }
 
-export const Route = createFileRoute('/(public)/(layout)/_layout/trabalhe-conosco')({
+export const Route = createFileRoute('/(public)/_layout/trabalhe-conosco')({
 	component: CareersPage,
 	head: () => ({
 		meta: [

@@ -3,7 +3,7 @@ import CookieConsent from 'react-cookie-consent'
 
 import { Footer, Navbar, ScriptChat } from '@/components/public'
 
-export const Route = createFileRoute('/(public)/(layout)/_layout')({
+export const Route = createFileRoute('/(public)/_layout')({
 	component: PublicLayoutComponent,
 })
 

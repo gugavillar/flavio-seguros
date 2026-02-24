@@ -2,7 +2,7 @@ import { ClockIcon, type LucideIcon } from 'lucide-react'
 
 import { benefits } from '@/__mocks__/assistance'
 import { HeaderInternalPages } from '@/components/core'
-import type { AssistancePrismicType } from '@/routes/(public)/(layout)/_layout.assistencia'
+import type { AssistancePrismicType } from '@/routes/(public)/_layout/assistencia'
 
 type HeaderAssistanceProps = Pick<
 	AssistancePrismicType,

@@ -2,7 +2,7 @@ import { PrismicImage } from '@prismicio/react'
 
 import { HeaderSection, PageContainer } from '@/components/core'
 import { useInsuranceContext } from '@/contexts'
-import type { AwardsPrismicType } from '@/routes/(public)/(layout)/_layout.premiacoes'
+import type { AwardsPrismicType } from '@/routes/(public)/_layout/premiacoes'
 
 type TrustedPartnersProps = Pick<AwardsPrismicType, 'partners-award-title' | 'partners-award-description'>
 

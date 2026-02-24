@@ -1,7 +1,7 @@
 import { TrophyIcon } from 'lucide-react'
 
 import { HeaderInternalPages } from '@/components/core'
-import type { AwardsPrismicType } from '@/routes/(public)/(layout)/_layout.premiacoes'
+import type { AwardsPrismicType } from '@/routes/(public)/_layout/premiacoes'
 
 type HeaderAwardsProps = Pick<AwardsPrismicType, 'awards-badge' | 'awards-description' | 'awards-title'>
 

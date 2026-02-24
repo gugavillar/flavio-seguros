@@ -1,7 +1,7 @@
 import { Shield } from 'lucide-react'
 
 import { HeaderInternalPages } from '@/components/core'
-import type { TeamsPrismicType } from '@/routes/(public)/(layout)/_layout.nossa-equipe'
+import type { TeamsPrismicType } from '@/routes/(public)/_layout/nossa-equipe'
 
 type HeaderTeamsProps = Pick<TeamsPrismicType, 'teams-badge' | 'teams-description' | 'teams-title'>
 

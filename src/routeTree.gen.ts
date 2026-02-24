@@ -12,16 +12,16 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as publicLayoutRouteImport } from './routes/(public)/_layout'
+import { Route as adminLayoutRouteImport } from './routes/(admin)/_layout'
+import { Route as publicLayoutIndexRouteImport } from './routes/(public)/_layout/index'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
-import { Route as publiclayoutLayoutRouteImport } from './routes/(public)/(layout)/_layout'
-import { Route as adminlayoutLayoutRouteImport } from './routes/(admin)/(layout)/_layout'
-import { Route as publiclayoutLayoutIndexRouteImport } from './routes/(public)/(layout)/_layout.index'
-import { Route as publiclayoutLayoutTrabalheConoscoRouteImport } from './routes/(public)/(layout)/_layout.trabalhe-conosco'
-import { Route as publiclayoutLayoutPremiacoesRouteImport } from './routes/(public)/(layout)/_layout.premiacoes'
-import { Route as publiclayoutLayoutNossaEquipeRouteImport } from './routes/(public)/(layout)/_layout.nossa-equipe'
-import { Route as publiclayoutLayoutAssistenciaRouteImport } from './routes/(public)/(layout)/_layout.assistencia'
-import { Route as publiclayoutLayoutServiceRouteImport } from './routes/(public)/(layout)/_layout.$service'
-import { Route as adminlayoutLayoutAdminRouteImport } from './routes/(admin)/(layout)/_layout.admin'
+import { Route as publicLayoutTrabalheConoscoRouteImport } from './routes/(public)/_layout/trabalhe-conosco'
+import { Route as publicLayoutPremiacoesRouteImport } from './routes/(public)/_layout/premiacoes'
+import { Route as publicLayoutNossaEquipeRouteImport } from './routes/(public)/_layout/nossa-equipe'
+import { Route as publicLayoutAssistenciaRouteImport } from './routes/(public)/_layout/assistencia'
+import { Route as publicLayoutServiceRouteImport } from './routes/(public)/_layout/$service'
+import { Route as adminLayoutAdminRouteImport } from './routes/(admin)/_layout/admin'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -38,101 +38,97 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const publicLayoutRoute = publicLayoutRouteImport.update({
+  id: '/(public)/_layout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const adminLayoutRoute = adminLayoutRouteImport.update({
+  id: '/(admin)/_layout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const publicLayoutIndexRoute = publicLayoutIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => publicLayoutRoute,
+} as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
-const publiclayoutLayoutRoute = publiclayoutLayoutRouteImport.update({
-  id: '/(public)/(layout)/_layout',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const adminlayoutLayoutRoute = adminlayoutLayoutRouteImport.update({
-  id: '/(admin)/(layout)/_layout',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const publiclayoutLayoutIndexRoute = publiclayoutLayoutIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => publiclayoutLayoutRoute,
-} as any)
-const publiclayoutLayoutTrabalheConoscoRoute =
-  publiclayoutLayoutTrabalheConoscoRouteImport.update({
+const publicLayoutTrabalheConoscoRoute =
+  publicLayoutTrabalheConoscoRouteImport.update({
     id: '/trabalhe-conosco',
     path: '/trabalhe-conosco',
-    getParentRoute: () => publiclayoutLayoutRoute,
+    getParentRoute: () => publicLayoutRoute,
   } as any)
-const publiclayoutLayoutPremiacoesRoute =
-  publiclayoutLayoutPremiacoesRouteImport.update({
-    id: '/premiacoes',
-    path: '/premiacoes',
-    getParentRoute: () => publiclayoutLayoutRoute,
-  } as any)
-const publiclayoutLayoutNossaEquipeRoute =
-  publiclayoutLayoutNossaEquipeRouteImport.update({
-    id: '/nossa-equipe',
-    path: '/nossa-equipe',
-    getParentRoute: () => publiclayoutLayoutRoute,
-  } as any)
-const publiclayoutLayoutAssistenciaRoute =
-  publiclayoutLayoutAssistenciaRouteImport.update({
-    id: '/assistencia',
-    path: '/assistencia',
-    getParentRoute: () => publiclayoutLayoutRoute,
-  } as any)
-const publiclayoutLayoutServiceRoute =
-  publiclayoutLayoutServiceRouteImport.update({
-    id: '/$service',
-    path: '/$service',
-    getParentRoute: () => publiclayoutLayoutRoute,
-  } as any)
-const adminlayoutLayoutAdminRoute = adminlayoutLayoutAdminRouteImport.update({
+const publicLayoutPremiacoesRoute = publicLayoutPremiacoesRouteImport.update({
+  id: '/premiacoes',
+  path: '/premiacoes',
+  getParentRoute: () => publicLayoutRoute,
+} as any)
+const publicLayoutNossaEquipeRoute = publicLayoutNossaEquipeRouteImport.update({
+  id: '/nossa-equipe',
+  path: '/nossa-equipe',
+  getParentRoute: () => publicLayoutRoute,
+} as any)
+const publicLayoutAssistenciaRoute = publicLayoutAssistenciaRouteImport.update({
+  id: '/assistencia',
+  path: '/assistencia',
+  getParentRoute: () => publicLayoutRoute,
+} as any)
+const publicLayoutServiceRoute = publicLayoutServiceRouteImport.update({
+  id: '/$service',
+  path: '/$service',
+  getParentRoute: () => publicLayoutRoute,
+} as any)
+const adminLayoutAdminRoute = adminLayoutAdminRouteImport.update({
   id: '/admin',
   path: '/admin',
-  getParentRoute: () => adminlayoutLayoutRoute,
+  getParentRoute: () => adminLayoutRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin': typeof adminLayoutAdminRoute
+  '/$service': typeof publicLayoutServiceRoute
+  '/assistencia': typeof publicLayoutAssistenciaRoute
+  '/nossa-equipe': typeof publicLayoutNossaEquipeRoute
+  '/premiacoes': typeof publicLayoutPremiacoesRoute
+  '/trabalhe-conosco': typeof publicLayoutTrabalheConoscoRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
-  '/admin': typeof adminlayoutLayoutAdminRoute
-  '/$service': typeof publiclayoutLayoutServiceRoute
-  '/assistencia': typeof publiclayoutLayoutAssistenciaRoute
-  '/nossa-equipe': typeof publiclayoutLayoutNossaEquipeRoute
-  '/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
-  '/trabalhe-conosco': typeof publiclayoutLayoutTrabalheConoscoRoute
-  '/': typeof publiclayoutLayoutIndexRoute
+  '/': typeof publicLayoutIndexRoute
 }
 export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin': typeof adminLayoutAdminRoute
+  '/$service': typeof publicLayoutServiceRoute
+  '/assistencia': typeof publicLayoutAssistenciaRoute
+  '/nossa-equipe': typeof publicLayoutNossaEquipeRoute
+  '/premiacoes': typeof publicLayoutPremiacoesRoute
+  '/trabalhe-conosco': typeof publicLayoutTrabalheConoscoRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
-  '/admin': typeof adminlayoutLayoutAdminRoute
-  '/$service': typeof publiclayoutLayoutServiceRoute
-  '/assistencia': typeof publiclayoutLayoutAssistenciaRoute
-  '/nossa-equipe': typeof publiclayoutLayoutNossaEquipeRoute
-  '/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
-  '/trabalhe-conosco': typeof publiclayoutLayoutTrabalheConoscoRoute
-  '/': typeof publiclayoutLayoutIndexRoute
+  '/': typeof publicLayoutIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/login': typeof LoginRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/(admin)/(layout)/_layout': typeof adminlayoutLayoutRouteWithChildren
-  '/(public)/(layout)/_layout': typeof publiclayoutLayoutRouteWithChildren
+  '/(admin)/_layout': typeof adminLayoutRouteWithChildren
+  '/(public)/_layout': typeof publicLayoutRouteWithChildren
+  '/(admin)/_layout/admin': typeof adminLayoutAdminRoute
+  '/(public)/_layout/$service': typeof publicLayoutServiceRoute
+  '/(public)/_layout/assistencia': typeof publicLayoutAssistenciaRoute
+  '/(public)/_layout/nossa-equipe': typeof publicLayoutNossaEquipeRoute
+  '/(public)/_layout/premiacoes': typeof publicLayoutPremiacoesRoute
+  '/(public)/_layout/trabalhe-conosco': typeof publicLayoutTrabalheConoscoRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
-  '/(admin)/(layout)/_layout/admin': typeof adminlayoutLayoutAdminRoute
-  '/(public)/(layout)/_layout/$service': typeof publiclayoutLayoutServiceRoute
-  '/(public)/(layout)/_layout/assistencia': typeof publiclayoutLayoutAssistenciaRoute
-  '/(public)/(layout)/_layout/nossa-equipe': typeof publiclayoutLayoutNossaEquipeRoute
-  '/(public)/(layout)/_layout/premiacoes': typeof publiclayoutLayoutPremiacoesRoute
-  '/(public)/(layout)/_layout/trabalhe-conosco': typeof publiclayoutLayoutTrabalheConoscoRoute
-  '/(public)/(layout)/_layout/': typeof publiclayoutLayoutIndexRoute
+  '/(public)/_layout/': typeof publicLayoutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -140,50 +136,50 @@ export interface FileRouteTypes {
     | '/login'
     | '/robots.txt'
     | '/sitemap.xml'
-    | '/api/auth/$'
     | '/admin'
     | '/$service'
     | '/assistencia'
     | '/nossa-equipe'
     | '/premiacoes'
     | '/trabalhe-conosco'
+    | '/api/auth/$'
     | '/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/login'
     | '/robots.txt'
     | '/sitemap.xml'
-    | '/api/auth/$'
     | '/admin'
     | '/$service'
     | '/assistencia'
     | '/nossa-equipe'
     | '/premiacoes'
     | '/trabalhe-conosco'
+    | '/api/auth/$'
     | '/'
   id:
     | '__root__'
     | '/login'
     | '/robots.txt'
     | '/sitemap.xml'
-    | '/(admin)/(layout)/_layout'
-    | '/(public)/(layout)/_layout'
+    | '/(admin)/_layout'
+    | '/(public)/_layout'
+    | '/(admin)/_layout/admin'
+    | '/(public)/_layout/$service'
+    | '/(public)/_layout/assistencia'
+    | '/(public)/_layout/nossa-equipe'
+    | '/(public)/_layout/premiacoes'
+    | '/(public)/_layout/trabalhe-conosco'
     | '/api/auth/$'
-    | '/(admin)/(layout)/_layout/admin'
-    | '/(public)/(layout)/_layout/$service'
-    | '/(public)/(layout)/_layout/assistencia'
-    | '/(public)/(layout)/_layout/nossa-equipe'
-    | '/(public)/(layout)/_layout/premiacoes'
-    | '/(public)/(layout)/_layout/trabalhe-conosco'
-    | '/(public)/(layout)/_layout/'
+    | '/(public)/_layout/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  adminlayoutLayoutRoute: typeof adminlayoutLayoutRouteWithChildren
-  publiclayoutLayoutRoute: typeof publiclayoutLayoutRouteWithChildren
+  adminLayoutRoute: typeof adminLayoutRouteWithChildren
+  publicLayoutRoute: typeof publicLayoutRouteWithChildren
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
@@ -210,6 +206,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/(public)/_layout': {
+      id: '/(public)/_layout'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof publicLayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(admin)/_layout': {
+      id: '/(admin)/_layout'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof adminLayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(public)/_layout/': {
+      id: '/(public)/_layout/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof publicLayoutIndexRouteImport
+      parentRoute: typeof publicLayoutRoute
+    }
     '/api/auth/$': {
       id: '/api/auth/$'
       path: '/api/auth/$'
@@ -217,111 +234,91 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAuthSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/(public)/(layout)/_layout': {
-      id: '/(public)/(layout)/_layout'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof publiclayoutLayoutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(admin)/(layout)/_layout': {
-      id: '/(admin)/(layout)/_layout'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof adminlayoutLayoutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(public)/(layout)/_layout/': {
-      id: '/(public)/(layout)/_layout/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof publiclayoutLayoutIndexRouteImport
-      parentRoute: typeof publiclayoutLayoutRoute
-    }
-    '/(public)/(layout)/_layout/trabalhe-conosco': {
-      id: '/(public)/(layout)/_layout/trabalhe-conosco'
+    '/(public)/_layout/trabalhe-conosco': {
+      id: '/(public)/_layout/trabalhe-conosco'
       path: '/trabalhe-conosco'
       fullPath: '/trabalhe-conosco'
-      preLoaderRoute: typeof publiclayoutLayoutTrabalheConoscoRouteImport
-      parentRoute: typeof publiclayoutLayoutRoute
+      preLoaderRoute: typeof publicLayoutTrabalheConoscoRouteImport
+      parentRoute: typeof publicLayoutRoute
     }
-    '/(public)/(layout)/_layout/premiacoes': {
-      id: '/(public)/(layout)/_layout/premiacoes'
+    '/(public)/_layout/premiacoes': {
+      id: '/(public)/_layout/premiacoes'
       path: '/premiacoes'
       fullPath: '/premiacoes'
-      preLoaderRoute: typeof publiclayoutLayoutPremiacoesRouteImport
-      parentRoute: typeof publiclayoutLayoutRoute
+      preLoaderRoute: typeof publicLayoutPremiacoesRouteImport
+      parentRoute: typeof publicLayoutRoute
     }
-    '/(public)/(layout)/_layout/nossa-equipe': {
-      id: '/(public)/(layout)/_layout/nossa-equipe'
+    '/(public)/_layout/nossa-equipe': {
+      id: '/(public)/_layout/nossa-equipe'
       path: '/nossa-equipe'
       fullPath: '/nossa-equipe'
-      preLoaderRoute: typeof publiclayoutLayoutNossaEquipeRouteImport
-      parentRoute: typeof publiclayoutLayoutRoute
+      preLoaderRoute: typeof publicLayoutNossaEquipeRouteImport
+      parentRoute: typeof publicLayoutRoute
     }
-    '/(public)/(layout)/_layout/assistencia': {
-      id: '/(public)/(layout)/_layout/assistencia'
+    '/(public)/_layout/assistencia': {
+      id: '/(public)/_layout/assistencia'
       path: '/assistencia'
       fullPath: '/assistencia'
-      preLoaderRoute: typeof publiclayoutLayoutAssistenciaRouteImport
-      parentRoute: typeof publiclayoutLayoutRoute
+      preLoaderRoute: typeof publicLayoutAssistenciaRouteImport
+      parentRoute: typeof publicLayoutRoute
     }
-    '/(public)/(layout)/_layout/$service': {
-      id: '/(public)/(layout)/_layout/$service'
+    '/(public)/_layout/$service': {
+      id: '/(public)/_layout/$service'
       path: '/$service'
       fullPath: '/$service'
-      preLoaderRoute: typeof publiclayoutLayoutServiceRouteImport
-      parentRoute: typeof publiclayoutLayoutRoute
+      preLoaderRoute: typeof publicLayoutServiceRouteImport
+      parentRoute: typeof publicLayoutRoute
     }
-    '/(admin)/(layout)/_layout/admin': {
-      id: '/(admin)/(layout)/_layout/admin'
+    '/(admin)/_layout/admin': {
+      id: '/(admin)/_layout/admin'
       path: '/admin'
       fullPath: '/admin'
-      preLoaderRoute: typeof adminlayoutLayoutAdminRouteImport
-      parentRoute: typeof adminlayoutLayoutRoute
+      preLoaderRoute: typeof adminLayoutAdminRouteImport
+      parentRoute: typeof adminLayoutRoute
     }
   }
 }
 
-interface adminlayoutLayoutRouteChildren {
-  adminlayoutLayoutAdminRoute: typeof adminlayoutLayoutAdminRoute
+interface adminLayoutRouteChildren {
+  adminLayoutAdminRoute: typeof adminLayoutAdminRoute
 }
 
-const adminlayoutLayoutRouteChildren: adminlayoutLayoutRouteChildren = {
-  adminlayoutLayoutAdminRoute: adminlayoutLayoutAdminRoute,
+const adminLayoutRouteChildren: adminLayoutRouteChildren = {
+  adminLayoutAdminRoute: adminLayoutAdminRoute,
 }
 
-const adminlayoutLayoutRouteWithChildren =
-  adminlayoutLayoutRoute._addFileChildren(adminlayoutLayoutRouteChildren)
+const adminLayoutRouteWithChildren = adminLayoutRoute._addFileChildren(
+  adminLayoutRouteChildren,
+)
 
-interface publiclayoutLayoutRouteChildren {
-  publiclayoutLayoutServiceRoute: typeof publiclayoutLayoutServiceRoute
-  publiclayoutLayoutAssistenciaRoute: typeof publiclayoutLayoutAssistenciaRoute
-  publiclayoutLayoutNossaEquipeRoute: typeof publiclayoutLayoutNossaEquipeRoute
-  publiclayoutLayoutPremiacoesRoute: typeof publiclayoutLayoutPremiacoesRoute
-  publiclayoutLayoutTrabalheConoscoRoute: typeof publiclayoutLayoutTrabalheConoscoRoute
-  publiclayoutLayoutIndexRoute: typeof publiclayoutLayoutIndexRoute
+interface publicLayoutRouteChildren {
+  publicLayoutServiceRoute: typeof publicLayoutServiceRoute
+  publicLayoutAssistenciaRoute: typeof publicLayoutAssistenciaRoute
+  publicLayoutNossaEquipeRoute: typeof publicLayoutNossaEquipeRoute
+  publicLayoutPremiacoesRoute: typeof publicLayoutPremiacoesRoute
+  publicLayoutTrabalheConoscoRoute: typeof publicLayoutTrabalheConoscoRoute
+  publicLayoutIndexRoute: typeof publicLayoutIndexRoute
 }
 
-const publiclayoutLayoutRouteChildren: publiclayoutLayoutRouteChildren = {
-  publiclayoutLayoutServiceRoute: publiclayoutLayoutServiceRoute,
-  publiclayoutLayoutAssistenciaRoute: publiclayoutLayoutAssistenciaRoute,
-  publiclayoutLayoutNossaEquipeRoute: publiclayoutLayoutNossaEquipeRoute,
-  publiclayoutLayoutPremiacoesRoute: publiclayoutLayoutPremiacoesRoute,
-  publiclayoutLayoutTrabalheConoscoRoute:
-    publiclayoutLayoutTrabalheConoscoRoute,
-  publiclayoutLayoutIndexRoute: publiclayoutLayoutIndexRoute,
+const publicLayoutRouteChildren: publicLayoutRouteChildren = {
+  publicLayoutServiceRoute: publicLayoutServiceRoute,
+  publicLayoutAssistenciaRoute: publicLayoutAssistenciaRoute,
+  publicLayoutNossaEquipeRoute: publicLayoutNossaEquipeRoute,
+  publicLayoutPremiacoesRoute: publicLayoutPremiacoesRoute,
+  publicLayoutTrabalheConoscoRoute: publicLayoutTrabalheConoscoRoute,
+  publicLayoutIndexRoute: publicLayoutIndexRoute,
 }
 
-const publiclayoutLayoutRouteWithChildren =
-  publiclayoutLayoutRoute._addFileChildren(publiclayoutLayoutRouteChildren)
+const publicLayoutRouteWithChildren = publicLayoutRoute._addFileChildren(
+  publicLayoutRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  adminlayoutLayoutRoute: adminlayoutLayoutRouteWithChildren,
-  publiclayoutLayoutRoute: publiclayoutLayoutRouteWithChildren,
+  adminLayoutRoute: adminLayoutRouteWithChildren,
+  publicLayoutRoute: publicLayoutRouteWithChildren,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport

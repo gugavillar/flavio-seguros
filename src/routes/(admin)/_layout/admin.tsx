@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Footer, Header, Insurances, PrincipalServices, SupportAndResources } from '@/components/admin'
 
-export const Route = createFileRoute('/(admin)/(layout)/_layout/admin')({
+export const Route = createFileRoute('/(admin)/_layout/admin')({
 	component: AdminPage,
 })
 

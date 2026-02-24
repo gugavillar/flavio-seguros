@@ -14,7 +14,7 @@ export type TeamsPrismicType = {
 	}>
 }
 
-export const Route = createFileRoute('/(public)/(layout)/_layout/nossa-equipe')({
+export const Route = createFileRoute('/(public)/_layout/nossa-equipe')({
 	component: TeamsPage,
 	head: () => ({
 		meta: [

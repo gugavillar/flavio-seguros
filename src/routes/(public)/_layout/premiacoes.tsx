@@ -26,7 +26,7 @@ export type AwardsPrismicType = {
 	}>
 }
 
-export const Route = createFileRoute('/(public)/(layout)/_layout/premiacoes')({
+export const Route = createFileRoute('/(public)/_layout/premiacoes')({
 	component: AwardsPage,
 	head: () => ({
 		meta: [

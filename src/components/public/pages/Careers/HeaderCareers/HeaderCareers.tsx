@@ -1,7 +1,7 @@
 import { Users } from 'lucide-react'
 
 import { HeaderInternalPages } from '@/components/core'
-import type { CareersPrismicType } from '@/routes/(public)/(layout)/_layout.trabalhe-conosco'
+import type { CareersPrismicType } from '@/routes/(public)/_layout/trabalhe-conosco'
 
 export const HeaderCareers = ({
 	'careers-badge': badge,

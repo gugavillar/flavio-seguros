@@ -3,7 +3,7 @@ import { createFileRoute, Outlet, redirect } from '@tanstack/react-router'
 import { Navbar } from '@/components/admin'
 import { getUser } from '@/lib/authServer'
 
-export const Route = createFileRoute('/(admin)/(layout)/_layout')({
+export const Route = createFileRoute('/(admin)/_layout')({
 	beforeLoad: async () => {
 		const user = await getUser()
 		return {
