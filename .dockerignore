@@ -1,7 +1,9 @@
 node_modules
-.pnpm-store
-.env*
 .git
-.vscode
-.output
+.gitignore
+Dockerfile
+.dockerignore
 dist
+coverage
+*.log
+.env
