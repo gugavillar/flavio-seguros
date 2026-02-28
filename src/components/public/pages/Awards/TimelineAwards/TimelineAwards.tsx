@@ -53,7 +53,7 @@ const Timeline = ({
 				<div className='flex size-16 items-center justify-center rounded-full bg-primary-gradient font-bold text-lg text-white shadow-soft-white'>
 					{year}
 				</div>
-				{!isLast && <div className='mt-4 w-0.5 grow bg-primary/60' />}
+				{!isLast && <div className='mt-4 w-0.5 grow bg-primary/60' data-testid='timeline-line' />}
 			</div>
 			<div className='flex-1 pt-2'>
 				<div className='grid gap-4 md:grid-cols-2'>

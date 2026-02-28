@@ -16,7 +16,7 @@ export const DescriptionService = ({
 	return (
 		<PageContainer className='py-20'>
 			<div className='container mx-auto max-w-4xl'>
-				<h2 className='mb-8 text-center font-bold font-title text-3xl text-black/80 md:text-4xl'> {description}</h2>
+				<h2 className='mb-8 text-center font-bold font-title text-3xl text-black/80 md:text-4xl'>{description}</h2>
 				<div className='space-y-6'>
 					{content?.map((item, index) => (
 						<Fragment key={index}>
