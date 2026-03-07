@@ -48,11 +48,11 @@ export const sendMail = createServerFn({ method: 'POST' })
 				from: `"${data.name}" <${data.email}>`,
 				subject: 'Currículo',
 				text: `
-      Nome: ${data.name}
-      Email: ${data.email}
-      Telefone: ${data.phone}
-      Arquivo: ${data.file}
-      Mensagem: ${data.message}
+      		Nome: ${data.name}
+      		Email: ${data.email}
+      		Telefone: ${data.phone}
+      		Arquivo: ${data.file}
+      		Mensagem: ${data.message}
       `,
 				to: process.env.SEND_MAIL_TO,
 			})

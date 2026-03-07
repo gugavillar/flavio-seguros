@@ -13,6 +13,8 @@
 		"@tanstack/router-plugin": "^1.161.1",
 		"@uidotdev/usehooks": "^2.4.1",
 		"better-auth": "^1.4.18",
+		"date-fns": "^4.1.0",
+		"imgbb-image-uploader": "^1.0.6",
 		"lint-staged": "^16.2.7",
 		"lucide-react": "^0.575.0",
 		"nitro": "npm:nitro-nightly@3.0.1-20260128-211656-ae83c97e",

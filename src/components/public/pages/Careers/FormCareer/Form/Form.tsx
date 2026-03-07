@@ -1,19 +1,17 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowRight, FileText, Upload, X } from 'lucide-react'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { ZodError } from 'zod'
 
 import { Button, Input, Label, MaskedInput, Spinner } from '@/components/core'
-import { deleteFile, sendFile } from '@/lib/file'
+import { sendFile } from '@/lib/file'
 import { sendMail } from '@/lib/mail'
 
-import { type FileDataType, type FormSchemaType, formSchema } from './Form.schema'
+import { type FormSchemaType, formSchema } from './Form.schema'
 
 export const Form = () => {
-	const [fileData, setFileData] = useState<null | FileDataType>(null)
-	const [isSendFile, setIsSendFile] = useState(false)
 	const {
 		register,
 		handleSubmit,
@@ -23,7 +21,7 @@ export const Form = () => {
 		setError,
 		clearErrors,
 		reset,
-		formState: { errors },
+		formState: { errors, isSubmitting },
 	} = useForm<FormSchemaType>({
 		defaultValues: {
 			email: '',
@@ -36,27 +34,46 @@ export const Form = () => {
 		resolver: zodResolver(formSchema),
 	})
 	const inputRef = useRef<HTMLInputElement>(null)
+	const file = watch('file')
+
+	const handleUploadFile = async (file: File | undefined, fileName: string) => {
+		if (!file) return
+		try {
+			const formData = new FormData()
+			formData.append('image', file)
+			formData.append('name', fileName)
+			const response = await sendFile({
+				data: formData,
+			})
+			return response
+		} catch {
+			toast.error('Ocorreu um erro ao enviar o arquivo')
+		} finally {
+			clearErrors('file')
+		}
+	}
 
 	const onSubmit = async (data: FormSchemaType) => {
-		if (!fileData?.url) return
+		if (!file) return
+		const fileUrl = await handleUploadFile(file, data.name)
 
-		const { file, ...rest } = data
+		if (!fileUrl) {
+			return toast.error('Ocorreu um erro ao enviar o formulário')
+		}
+
+		const { file: fileData, ...rest } = data
 		const values = {
 			...rest,
-			file: fileData?.url,
+			file: fileUrl,
 		}
-		setIsSendFile(true)
 		try {
 			const response = await sendMail({ data: values })
 			if (response.message) {
 				toast.success(response.message)
 				reset({}, { keepDefaultValues: true })
-				setFileData(null)
 			}
 		} catch {
 			toast.error('Ocorreu um erro ao enviar o formulário')
-		} finally {
-			setIsSendFile(false)
 		}
 	}
 
@@ -66,7 +83,6 @@ export const Form = () => {
 		try {
 			await fileSchema.parseAsync(file)
 			setValue('file', file)
-			handleUploadFile(file)
 		} catch (error) {
 			if (error instanceof ZodError) {
 				setError('file', { message: error.issues[0].message })
@@ -74,39 +90,10 @@ export const Form = () => {
 		}
 	}
 
-	const handleUploadFile = async (file: File | undefined) => {
-		if (!file) return
-		try {
-			setIsSendFile(true)
-			const formData = new FormData()
-			formData.append('image', file)
-			const response = await sendFile({
-				data: formData,
-			})
-			setFileData(response)
-		} catch {
-			toast.error('Ocorreu um erro ao enviar o arquivo')
-		} finally {
-			setIsSendFile(false)
-			clearErrors('file')
-		}
-	}
-
 	const handleRemoveFile = async () => {
-		if (!fileData?.delete_url) return
-		try {
-			setIsSendFile(true)
-			await deleteFile({ data: { deleteUrl: fileData.delete_url } })
-			setValue('file', undefined)
-			setFileData(null)
-		} catch (error) {
-			console.error(error)
-		} finally {
-			setIsSendFile(false)
-		}
+		if (!file) return
+		setValue('file', undefined)
 	}
-
-	const file = watch('file')
 
 	return (
 		<div className='mx-auto max-w-2xl rounded-lg border border-gray-200 bg-white shadow-sm shadow-soft-white'>
@@ -191,8 +178,8 @@ export const Form = () => {
 						)}
 						{errors.file && <p className='text-red-500 text-xs'>{errors?.file?.message as string}</p>}
 					</div>
-					<Button className='w-full' disabled={isSendFile} type='submit'>
-						{isSendFile ? (
+					<Button className='w-full' disabled={isSubmitting} type='submit'>
+						{isSubmitting ? (
 							<Spinner className='text-white' />
 						) : (
 							<>
