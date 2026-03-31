@@ -1,6 +1,4 @@
-import { Facebook, Instagram } from 'lucide-react'
-
-import { NavLink } from '@/components/core'
+import { FacebookAppIcon, InstagramAppIcon, NavLink } from '@/components/core'
 import type { InsuranceType } from '@/contexts'
 import { generateWhatsAppLink, NAVIGATION_HASH } from '@/utils'
 
@@ -9,11 +7,11 @@ import { messages } from './whatsapp'
 export const social = [
 	{
 		href: 'https://www.facebook.com/FlavioSegurosGravataCorretoraDeSeguros/',
-		icon: <Facebook />,
+		icon: <FacebookAppIcon className='size-6 text-white' />,
 	},
 	{
 		href: 'https://www.instagram.com/flavioseguros_oficial/',
-		icon: <Instagram />,
+		icon: <InstagramAppIcon className='size-6 text-white' />,
 	},
 ]
 
