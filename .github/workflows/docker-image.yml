@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - "main"
-    paths:
-      - "src/**"
-      - "public/**"
-      - "Dockerfile"
-      - "package.json"
 
 jobs:
   build-and-push-dockerfile-image:

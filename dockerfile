@@ -18,7 +18,7 @@ COPY . .
 
 RUN pnpm build
 
-FROM gcr.io/distroless/nodejs20-debian12
+FROM gcr.io/distroless/nodejs24-debian12
 WORKDIR /app
 ENV NODE_ENV=production
 
