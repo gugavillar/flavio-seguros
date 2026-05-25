@@ -26,14 +26,14 @@ const EmergencePhoneCard = ({
 				<div className='flex h-16 items-center justify-center rounded-lg p-3'>
 					<PrismicImage
 						className='max-h-full max-w-40 object-contain'
-						fetchPriority='high'
 						field={url}
-						imgixParams={{ auto: ['compress', 'format'], w: 160 }}
+						imgixParams={{ auto: ['compress', 'format'], fit: 'max', q: 75, w: 160 }}
 						loading='eager'
+						width={160}
 					/>
 				</div>
 				<h3 className='mb-6 text-center font-semibold text-black/80 text-lg'>{title}</h3>
-				<div className='flex items-center justify-center gap-6'>
+				<div className='flex flex-col items-center justify-center gap-4'>
 					<Button as='a' href={`tel:${assistancePhone}`}>
 						<Phone />
 						{formatPhone(assistancePhone)}

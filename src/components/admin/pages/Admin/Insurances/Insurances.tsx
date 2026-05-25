@@ -33,10 +33,11 @@ export const Insurances = () => {
 						icon={
 							<PrismicImage
 								className='size-12 object-contain'
-								fetchPriority='high'
 								field={primary['company-logo']}
-								imgixParams={{ auto: ['compress', 'format'], w: 48 }}
+								height={48}
+								imgixParams={{ auto: ['compress', 'format'], fit: 'max', q: 75, w: 96 }}
 								loading='eager'
+								width={48}
 							/>
 						}
 						key={primary['company-name']}

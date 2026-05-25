@@ -27,13 +27,15 @@ export const InsuranceCarousel = () => {
 							<div className='mx-auto flex h-20 w-40 items-center justify-center'>
 								<PrismicImage
 									className='max-h-full max-w-full object-contain'
-									fetchPriority='high'
 									field={primary['company-logo']}
 									imgixParams={{
 										auto: ['compress', 'format'],
+										fit: 'max',
+										q: 75,
 										w: 160,
 									}}
 									loading='eager'
+									width={160}
 								/>
 							</div>
 						</SwiperSlide>
