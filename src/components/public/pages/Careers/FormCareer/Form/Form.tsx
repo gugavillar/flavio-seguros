@@ -40,7 +40,7 @@ export const Form = () => {
 		if (!file) return
 		try {
 			const formData = new FormData()
-			formData.append('image', file)
+			formData.append('file', file)
 			formData.append('name', fileName)
 			const response = await sendFile({
 				data: formData,

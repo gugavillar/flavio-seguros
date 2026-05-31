@@ -13,7 +13,7 @@ type Data = {
 
 const dataSchema = z.object({
 	email: z.email().refine((email) => validateEmail(email)),
-	file: z.url(),
+	file: z.string(),
 	message: z.string().optional(),
 	name: z.string(),
 	phone: z.string().refine((phone) => validatePhone(phone)),
@@ -34,14 +34,17 @@ export const sendMail = createServerFn({ method: 'POST' })
 		if (!data) {
 			throw new Error('Ocorreu um erro ao enviar o formulário')
 		}
+
+		const filePath = data.file
+		const url = new URL('https://gravatacorretora.com.br/api/file')
+		url.searchParams.set('file', filePath)
+
 		const transporter = nodemailer.createTransport({
 			auth: {
 				pass: process.env.SEND_MAIL_PASSWORD,
 				user: process.env.SEND_MAIL_USER,
 			},
-			host: process.env.SEND_MAIL_HOST,
-			port: Number(process.env.SEND_MAIL_PORT),
-			secure: false,
+			service: 'gmail',
 		})
 		try {
 			await transporter.sendMail({
@@ -51,7 +54,7 @@ export const sendMail = createServerFn({ method: 'POST' })
       		Nome: ${data.name}
       		Email: ${data.email}
       		Telefone: ${data.phone}
-      		Arquivo: ${data.file}
+      		Arquivo: ${url}
       		Mensagem: ${data.message}
       `,
 				to: process.env.SEND_MAIL_TO,

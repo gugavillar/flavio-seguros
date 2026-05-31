@@ -1,12 +1,30 @@
+import { PutObjectCommand } from '@aws-sdk/client-s3'
+import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
 import { createServerFn } from '@tanstack/react-start'
-import { addYears, differenceInSeconds } from 'date-fns'
-import { imgbbUpload } from 'imgbb-image-uploader'
+import { randomUUID } from 'crypto'
+import z from 'zod'
 
-const expiration = () => {
-	const today = new Date()
-	const oneYearLater = addYears(today, 1)
-	return differenceInSeconds(oneYearLater, today)
-}
+import { s3 } from './s3'
+
+const MAX_FILE_SIZE = 2 * 1024 * 1024 // 2 MB
+
+const saveFileSchema = z.object({
+	file: z
+		.any()
+		.refine((file) => file !== null, {
+			message: 'Arquivo é obrigatório',
+		})
+		.refine((file) => file instanceof File, {
+			message: 'Arquivo inválido',
+		})
+		.refine((file) => file?.size <= MAX_FILE_SIZE, {
+			message: `O arquivo deve ter no máximo ${MAX_FILE_SIZE}KB`,
+		})
+		.refine((file) => ['application/pdf'].includes(file?.type), {
+			message: 'O arquivo deve ser uma imagem',
+		}),
+	name: z.string(),
+})
 
 export const sendFile = createServerFn({
 	method: 'POST',
@@ -19,13 +37,37 @@ export const sendFile = createServerFn({
 	})
 	.handler(async ({ data }) => {
 		try {
-			const responseData = await imgbbUpload({
-				expiration: expiration(),
-				image: data.get('image') as File,
-				key: process.env.IMG_BB_API_KEY!,
-				name: data.get('name') as string,
+			const rawData = Object.fromEntries(data.entries())
+			const file = data.get('file')
+			const parsed = saveFileSchema.parse({ ...rawData, file })
+
+			const sanitizedName = parsed.name
+				.toLowerCase()
+				.replace(/\s+/g, '-')
+				.normalize('NFD')
+				.replace(/[\u0300-\u036f]/g, '')
+
+			const key = `curriculo/${sanitizedName}-${randomUUID()}`
+
+			const command = new PutObjectCommand({
+				Bucket: process.env.AWS_BUCKET!,
+				ContentType: 'application/pdf',
+				Key: key,
 			})
-			return responseData.data.url
+
+			const url = await getSignedUrl(s3, command, {
+				expiresIn: 60,
+			})
+
+			await fetch(url, {
+				body: file,
+				headers: {
+					'Content-Type': 'application/pdf',
+				},
+				method: 'PUT',
+			})
+
+			return key
 		} catch {
 			throw new Error('Ocorreu um erro ao enviar o arquivo')
 		}
