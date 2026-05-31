@@ -16,7 +16,6 @@
 		"@uidotdev/usehooks": "^2.4.1",
 		"better-auth": "^1.6.11",
 		"date-fns": "^4.3.0",
-		"imgbb-image-uploader": "^1.0.6",
 		"lint-staged": "^17.0.5",
 		"lucide-react": "^1.16.0",
 		"nitro": "npm:nitro-nightly@3.0.1-20260128-211656-ae83c97e",

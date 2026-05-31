@@ -56,9 +56,6 @@ importers:
       date-fns:
         specifier: ^4.3.0
         version: 4.3.0
-      imgbb-image-uploader:
-        specifier: ^1.0.6
-        version: 1.0.6(react@19.2.6)
       lint-staged:
         specifier: ^17.0.5
         version: 17.0.5
@@ -2176,11 +2173,6 @@ packages:
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
-
-  imgbb-image-uploader@1.0.6:
-    resolution: {integrity: sha512-pZfStfqCNiBkSwq+AZN2lspIc8CZejbXkurHZEq9CXZUV9WAUpGMdvpxILTI7xB3BiQvU7ozL6tuuSkezgHNvA==}
-    peerDependencies:
-      react: ^18.0.0
 
   imgix-url-builder@0.0.6:
     resolution: {integrity: sha512-lFVbvaE9vMck8qz9j+y6o7vsyc1vZhdqzWu+Wp/nlnOCi9zAErc31QMkZKYUGMNLLzxOO4YIBAUPndTPah8HFg==}
@@ -4927,10 +4919,6 @@ snapshots:
   iconv-lite@0.6.3:
     dependencies:
       safer-buffer: 2.1.2
-
-  imgbb-image-uploader@1.0.6(react@19.2.6):
-    dependencies:
-      react: 19.2.6
 
   imgix-url-builder@0.0.6: {}
 
