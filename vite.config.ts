@@ -14,6 +14,9 @@ const config = defineConfig({
 			'@': fileURLToPath(new URL('./src', import.meta.url)),
 		},
 	},
+	ssr: {
+		noExternal: ['@aws-crypto/crc32', /^@aws-sdk\//],
+	},
 	plugins: [
 		devtools(),
 		nitro(),
