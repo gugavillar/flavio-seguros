@@ -1,5 +1,5 @@
 import { createServerFn } from '@tanstack/react-start'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
 import { validateEmail, validatePhone } from 'validations-br'
 import z, { ZodError } from 'zod'
 
@@ -18,6 +18,8 @@ const dataSchema = z.object({
 	name: z.string(),
 	phone: z.string().refine((phone) => validatePhone(phone)),
 })
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export const sendMail = createServerFn({ method: 'POST' })
 	.inputValidator(async (data: Data) => {
@@ -39,26 +41,38 @@ export const sendMail = createServerFn({ method: 'POST' })
 		const url = new URL('https://gravatacorretora.com.br/api/file')
 		url.searchParams.set('file', filePath)
 
-		const transporter = nodemailer.createTransport({
-			auth: {
-				pass: process.env.SEND_MAIL_PASSWORD,
-				user: process.env.SEND_MAIL_USER,
-			},
-			service: 'gmail',
-		})
 		try {
-			await transporter.sendMail({
-				from: `"${data.name}" <${data.email}>`,
-				subject: 'Currículo',
-				text: `
-      		Nome: ${data.name}
-      		Email: ${data.email}
-      		Telefone: ${data.phone}
-      		Arquivo: ${url}
-      		Mensagem: ${data.message}
-      `,
-				to: process.env.SEND_MAIL_TO,
+			const { error } = await resend.emails.send({
+				from: 'Não responda <naoresponda@naoresponda.helpmydesk.com.br>',
+				html: `
+        <div className='flex flex-col text-lg'>
+        <p>
+          Nome: <strong>${data.name}</strong>
+        </p>
+        <p>
+          Email: <strong>${data.email}</strong>
+        </p>
+        <p>
+          Telefone: <strong>${data.phone}</strong>
+        </p>
+        <p>
+          Currículo: <strong>${url}</strong>
+        </p>
+        ${
+					data?.message &&
+					`<p>
+            Mensagem: <strong>${data.message}</strong>
+          </p>`
+				}
+        </div>
+        `,
+				subject: `Currículo - ${data.name}`,
+				to: [process.env.SEND_MAIL_TO!],
 			})
+
+			if (error) {
+				throw new Error('Ocorreu um erro ao enviar o formulário')
+			}
 			return { message: 'Formulário enviado com sucesso!' }
 		} catch {
 			throw new Error('Ocorreu um erro ao enviar o formulário')
