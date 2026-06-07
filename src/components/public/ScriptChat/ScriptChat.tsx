@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
 
+import { IS_DEVELOPMENT } from '@/constants'
+
 const SCRIPT_ID = 'wbot-chat-script'
 
 export const ScriptChat = () => {
 	useEffect(() => {
-		if (document.getElementById(SCRIPT_ID)) return
+		if (document.getElementById(SCRIPT_ID) || IS_DEVELOPMENT) return
 
 		const script = document.createElement('script')
 		script.id = SCRIPT_ID

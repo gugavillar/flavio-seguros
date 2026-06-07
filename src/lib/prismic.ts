@@ -10,7 +10,7 @@ type Data = {
 }
 
 export const getPageData = createServerFn()
-	.inputValidator((data: Data) => {
+	.validator((data: Data) => {
 		return z
 			.object({
 				args: z.array(z.string()),

@@ -15,7 +15,7 @@ const config = defineConfig({
 		},
 	},
 	ssr: {
-		noExternal: ['@aws-crypto/crc32', /^@aws-sdk\//],
+		noExternal: ['@aws-sdk/*'],
 	},
 	plugins: [
 		devtools(),
