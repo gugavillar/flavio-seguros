@@ -48,18 +48,20 @@ export const Route = createRootRoute({
 		],
 	}),
 	loader: async () => {
-		const insurances = await getPageData({
-			data: {
-				args: ['insurance'],
-				method: 'getAllByType',
-			},
-		})
-		const partners = await getPageData({
-			data: {
-				args: ['companies', 'parceiros'],
-				method: 'getByUID',
-			},
-		})
+		const [insurances, partners] = await Promise.all([
+			getPageData({
+				data: {
+					args: ['insurance'],
+					method: 'getAllByType',
+				},
+			}),
+			getPageData({
+				data: {
+					args: ['companies', 'parceiros'],
+					method: 'getByUID',
+				},
+			}),
+		])
 
 		const insuranceData = insurances.map(({ data, uid }: { data: InsuranceType; uid: string }) => ({
 			...data,
