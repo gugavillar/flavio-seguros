@@ -5,6 +5,7 @@ import { afterEach } from 'vitest'
 
 vi.stubEnv('GOOGLE_CLIENT_ID', 'any-google-client-id')
 vi.stubEnv('GOOGLE_CLIENT_SECRET', 'any-google-client-secret')
+vi.stubEnv('RESEND_API_KEY', 'any-resend-api-key')
 
 afterEach(() => {
 	cleanup()
