@@ -25,6 +25,7 @@ export const HeroService = ({ title, subtitle, icon: Icon, badgeLabel }: HeroSer
 						<a
 							className='inline-flex items-center gap-2 rounded-xl border border-white/80 py-1.5 pr-2 pl-4 text-white transition-all duration-300 hover:scale-105'
 							href={generateWhatsAppLink({ message: messages.price(title) })}
+							rel='noopener'
 							target='_blank'
 						>
 							Solicitar cotação grátis

@@ -29,7 +29,7 @@ export type InsuranceType = {
 export type PartnerType = {
 	primary: {
 		'company-assistance-phone': string
-		'company-logo': Object
+		'company-logo': object
 		'company-name': string
 		'company-whatsapp': string
 	}

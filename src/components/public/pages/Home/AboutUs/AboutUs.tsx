@@ -11,7 +11,7 @@ export type AboutUsPrismicType = {
 		'about-us-badge': string
 		'about-us-description': string
 		'about-us-title': string
-		'about-us-image': Object
+		'about-us-image': object
 	}
 	items: Array<{
 		'about-us-card-description': string

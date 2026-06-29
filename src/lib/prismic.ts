@@ -19,13 +19,13 @@ export const getPageData = createServerFn()
 			.parse(data)
 	})
 	.handler(async ({ data }) => {
-		const client = createClient(process.env.PRISMIC_ENDPOINT!, {
+		const client = createClient(process.env.PRISMIC_ENDPOINT as string, {
 			accessToken: process.env.PRISMIC_ACCESS_TOKEN,
 		})
 
 		const { args, method } = data
 
-		let result
+		let result: unknown
 
 		if (method === 'getByUID') {
 			result = await client.getByUID(args[0], args[1])

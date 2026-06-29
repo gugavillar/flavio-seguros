@@ -27,7 +27,7 @@ const partners: PartnerType[] = [
 		items: [{ 'company-site': 'any-site' }],
 		primary: {
 			'company-assistance-phone': 'any-phone',
-			'company-logo': 'any-logo',
+			'company-logo': {},
 			'company-name': 'any-name',
 			'company-whatsapp': 'any-whatsapp',
 		},
@@ -36,7 +36,7 @@ const partners: PartnerType[] = [
 		items: [{ 'company-site': 'any-site' }, { 'company-site': 'any-site-2' }],
 		primary: {
 			'company-assistance-phone': 'any-phone',
-			'company-logo': 'any-logo',
+			'company-logo': {},
 			'company-name': 'filter-name',
 			'company-whatsapp': 'any-whatsapp',
 		},

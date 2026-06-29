@@ -41,6 +41,7 @@ const Links = ({ setIsOpen, isOpen }: { setIsOpen: Dispatch<SetStateAction<boole
 				className='p-2 text-gray-500 lg:hidden'
 				onClick={isOpen ? () => setIsOpen(false) : () => setIsOpen(true)}
 				role='navigation-button'
+				type='button'
 			>
 				{isOpen ? <X className='size-6' /> : <Menu className='size-6' />}
 			</button>
@@ -75,7 +76,7 @@ export const Navbar = ({ showLinks = true }: NavbarProps) => {
 	return (
 		<header className='fixed top-0 right-0 left-0 z-50 border-gray-200 border-b bg-off-white-1'>
 			<div className='container mx-auto p-4' ref={ref}>
-				<nav aria-label='Navbar' className='flex items-center justify-between' role='navigation'>
+				<nav aria-label='Navbar' className='flex items-center justify-between'>
 					<AvatarLogo src='https://images.prismic.io/flavio-seguros-ssr/aZLk51WLo0XkEiE0_Logo.webp?auto=format,compress' />
 					{showLinks && <Links isOpen={isOpen} setIsOpen={setIsOpen} />}
 				</nav>

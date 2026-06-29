@@ -32,6 +32,7 @@ export const NotFound = () => {
 							<a
 								className='inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-md border border-gray-300 bg-transparent px-8 font-medium text-black/80 text-sm transition-colors hover:bg-primary/50 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0'
 								href={generateWhatsAppLink({ message: messages.lost })}
+								rel='noopener'
 								target='_blank'
 							>
 								<Phone className='size-5' />

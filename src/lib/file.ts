@@ -1,8 +1,9 @@
 import { PutObjectCommand } from '@aws-sdk/client-s3'
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
 import { createServerFn } from '@tanstack/react-start'
-import { randomUUID } from 'crypto'
 import z from 'zod'
+
+import { randomUUID } from 'node:crypto'
 
 import { s3 } from './s3'
 
@@ -50,7 +51,7 @@ export const sendFile = createServerFn({
 			const key = `curriculo/${sanitizedName}-${randomUUID()}`
 
 			const command = new PutObjectCommand({
-				Bucket: process.env.AWS_BUCKET!,
+				Bucket: process.env.AWS_BUCKET as string,
 				ContentType: 'application/pdf',
 				Key: key,
 			})

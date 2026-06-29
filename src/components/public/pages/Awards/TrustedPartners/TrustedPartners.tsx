@@ -6,7 +6,7 @@ import type { AwardsPrismicType } from '@/routes/(public)/_layout/premiacoes'
 
 type TrustedPartnersProps = Pick<AwardsPrismicType, 'partners-award-title' | 'partners-award-description'>
 
-const PartnerCard = ({ name, image }: { name: string; image: Object }) => {
+const PartnerCard = ({ name, image }: { name: string; image: object }) => {
 	return (
 		<div className='rounded-lg border border-gray-200 bg-white text-gray-500 shadow-sm transition-all duration-300 hover:border-primary hover:shadow-soft-white'>
 			<div className='flex aspect-square flex-col items-center justify-center p-6'>

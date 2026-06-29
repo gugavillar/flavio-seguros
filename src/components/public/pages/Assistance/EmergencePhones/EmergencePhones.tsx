@@ -57,17 +57,15 @@ export const EmergencePhones = ({
 }: EmergencePhoneProps) => {
 	const contextData = useInsuranceContext()
 	return (
-		<>
-			<PageContainer>
-				<div className='mx-auto max-w-3xl text-center'>
-					<HeaderSection badgeLabel={badgeLabel} description={description} title={title} />
-				</div>
-				<div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
-					{contextData.partners.map((partner) => (
-						<EmergencePhoneCard key={partner.primary['company-name']} {...partner} />
-					))}
-				</div>
-			</PageContainer>
-		</>
+		<PageContainer>
+			<div className='mx-auto max-w-3xl text-center'>
+				<HeaderSection badgeLabel={badgeLabel} description={description} title={title} />
+			</div>
+			<div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
+				{contextData.partners.map((partner) => (
+					<EmergencePhoneCard key={partner.primary['company-name']} {...partner} />
+				))}
+			</div>
+		</PageContainer>
 	)
 }

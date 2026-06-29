@@ -25,6 +25,7 @@ export const AvatarUser = () => {
 					<button
 						className='inline-flex w-full cursor-pointer px-4 py-2 text-gray-700 text-sm hover:bg-gray-100'
 						onClick={() => signOut({}, { onSuccess: () => navigate({ to: '/' }) })}
+						type='button'
 					>
 						Sair
 					</button>

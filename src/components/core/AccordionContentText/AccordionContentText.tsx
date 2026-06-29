@@ -13,7 +13,7 @@ export const AccordionContentText = ({ faqs }: AccordionContentTextProps) => {
 			{faqs.map((faq, index) => (
 				<AccordionItem
 					className='rounded-xl border border-gray-300 bg-white px-6 transition-shadow data-[state=open]:shadow-card'
-					key={index}
+					key={faq['faq-question']}
 					value={`item-${index}`}
 				>
 					<AccordionTrigger className='cursor-pointer py-6 text-left font-semibold text-black/80 hover:text-primary hover:no-underline data-[state=open]:text-primary'>

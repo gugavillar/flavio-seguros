@@ -43,8 +43,8 @@ export const Footer = () => {
 							Há mais de 20 anos protegendo famílias brasileiras com as melhores soluções em seguros.
 						</p>
 						<div className='flex gap-4'>
-							{social.map((item, index) => (
-								<SocialLink {...item} key={index} />
+							{social.map((item) => (
+								<SocialLink {...item} key={item.href} />
 							))}
 						</div>
 					</div>

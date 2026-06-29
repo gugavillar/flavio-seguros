@@ -12,7 +12,7 @@ import { generateWhatsAppLink, goToHash, NAVIGATION_HASH } from '@/utils'
 export type HeroTopPrismicType = {
 	slice_type: string
 	'homepage-top-images': Array<{
-		'homepage-top-image': Object
+		'homepage-top-image': object
 	}>
 	primary: {
 		'hero-title': string

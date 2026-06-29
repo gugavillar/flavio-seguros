@@ -19,8 +19,8 @@ export const Route = createFileRoute('/api/file')({
 				}
 
 				const command = new GetObjectCommand({
-					Bucket: process.env.AWS_BUCKET!,
-					Key: file!,
+					Bucket: process.env.AWS_BUCKET as string,
+					Key: file as string,
 				})
 
 				const url = await getSignedUrl(s3, command, {

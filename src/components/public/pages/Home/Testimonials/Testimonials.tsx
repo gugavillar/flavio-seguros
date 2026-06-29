@@ -65,9 +65,9 @@ export const Testimonials = ({ data: { primary, items } }: { data: TestimonialPr
 				slidesPerView={showSlides}
 				spaceBetween={24}
 			>
-				{items.map((item, index) => (
-					<SwiperSlide>
-						<TestimonialCard {...item} key={index} />
+				{items.map((item) => (
+					<SwiperSlide key={item.comment}>
+						<TestimonialCard {...item} />
 					</SwiperSlide>
 				))}
 			</Swiper>

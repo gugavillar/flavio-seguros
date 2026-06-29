@@ -65,11 +65,11 @@ export const sendMail = createServerFn({ method: 'POST' })
 							`<p>
 			         Mensagem: <strong>${data.message}</strong>
 			       </p>`
-						}
+}
 			     </div>
 			     `,
 				subject: `Currículo - ${data.name}`,
-				to: [process.env.SEND_MAIL_TO!],
+				to: [process.env.SEND_MAIL_TO as string],
 			})
 
 			if (error) {

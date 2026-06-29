@@ -3,6 +3,7 @@ import type * as React from 'react'
 export const InstagramAppIcon = (props: React.ComponentProps<'svg'>) => {
 	return (
 		<svg fill='none' height='800px' viewBox='0 0 24 24' width='800px' xmlns='http://www.w3.org/2000/svg' {...props}>
+			<title>Instagram icon</title>
 			<path
 				clipRule='evenodd'
 				d='M12 18a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 100-8 4 4 0 000 8z'

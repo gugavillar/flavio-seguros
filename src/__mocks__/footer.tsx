@@ -43,6 +43,7 @@ export const support = {
 				<a
 					className='font-medium text-gray-400 underline-offset-8 transition-colors hover:text-white hover:underline'
 					href={generateWhatsAppLink({ message: messages.talk })}
+					rel='noopener'
 					target='_blank'
 				>
 					Fale conosco
