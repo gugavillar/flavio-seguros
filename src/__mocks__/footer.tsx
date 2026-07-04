@@ -20,6 +20,7 @@ export const servicesFooter = (insurances: Pick<InsuranceType, 'insurance-path' 
 		children: (
 			<NavLink
 				className='text-gray-400 underline-offset-8 hover:text-white hover:underline'
+				preload='intent'
 				to={service['insurance-path']}
 			>
 				{service['insurance-title']}
@@ -33,7 +34,11 @@ export const support = {
 	links: [
 		{
 			children: (
-				<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to='/assistencia'>
+				<NavLink
+					className='text-gray-400 underline-offset-8 hover:text-white hover:underline'
+					preload='intent'
+					to='/assistencia'
+				>
 					Assistência 24h
 				</NavLink>
 			),
@@ -93,21 +98,33 @@ export const company = {
 		},
 		{
 			children: (
-				<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to='/nossa-equipe'>
+				<NavLink
+					className='text-gray-400 underline-offset-8 hover:text-white hover:underline'
+					preload='intent'
+					to='/nossa-equipe'
+				>
 					Nossa equipe
 				</NavLink>
 			),
 		},
 		{
 			children: (
-				<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to='/trabalhe-conosco'>
+				<NavLink
+					className='text-gray-400 underline-offset-8 hover:text-white hover:underline'
+					preload='intent'
+					to='/trabalhe-conosco'
+				>
 					Trabalhe conosco
 				</NavLink>
 			),
 		},
 		{
 			children: (
-				<NavLink className='text-gray-400 underline-offset-8 hover:text-white hover:underline' to='/premiacoes'>
+				<NavLink
+					className='text-gray-400 underline-offset-8 hover:text-white hover:underline'
+					preload='intent'
+					to='/premiacoes'
+				>
 					Premiações
 				</NavLink>
 			),

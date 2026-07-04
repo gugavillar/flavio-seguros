@@ -33,7 +33,7 @@ export const Services = ({
 				{insurances.map((item) => {
 					const icon = translateIcon[item['insurance-icon']]
 					return (
-						<NavLink className='flex' key={item['insurance-title']} to={item['insurance-path']}>
+						<NavLink className='flex' key={item['insurance-title']} preload='intent' to={item['insurance-path']}>
 							<DescriptionCard description={item['insurance-subtitle']} icon={icon} title={item['insurance-title']} />
 						</NavLink>
 					)
