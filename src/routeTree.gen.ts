@@ -9,24 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as ApiFileRouteImport } from './routes/api/file'
-import { Route as publicLayoutRouteImport } from './routes/(public)/_layout'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as adminLayoutRouteImport } from './routes/(admin)/_layout'
-import { Route as publicLayoutIndexRouteImport } from './routes/(public)/_layout/index'
-import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
-import { Route as publicLayoutTrabalheConoscoRouteImport } from './routes/(public)/_layout/trabalhe-conosco'
-import { Route as publicLayoutPremiacoesRouteImport } from './routes/(public)/_layout/premiacoes'
-import { Route as publicLayoutNossaEquipeRouteImport } from './routes/(public)/_layout/nossa-equipe'
-import { Route as publicLayoutAssistenciaRouteImport } from './routes/(public)/_layout/assistencia'
-import { Route as publicLayoutServiceRouteImport } from './routes/(public)/_layout/$service'
+import { Route as publicLayoutRouteImport } from './routes/(public)/_layout'
+import { Route as ApiFileRouteImport } from './routes/api/file'
 import { Route as adminLayoutAdminRouteImport } from './routes/(admin)/_layout/admin'
+import { Route as publicLayoutIndexRouteImport } from './routes/(public)/_layout/index'
+import { Route as publicLayoutServiceRouteImport } from './routes/(public)/_layout/$service'
+import { Route as publicLayoutAssistenciaRouteImport } from './routes/(public)/_layout/assistencia'
+import { Route as publicLayoutNossaEquipeRouteImport } from './routes/(public)/_layout/nossa-equipe'
+import { Route as publicLayoutPremiacoesRouteImport } from './routes/(public)/_layout/premiacoes'
+import { Route as publicLayoutTrabalheConoscoRouteImport } from './routes/(public)/_layout/trabalhe-conosco'
+import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
@@ -34,9 +34,17 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const adminLayoutRoute = adminLayoutRouteImport.update({
+  id: '/(admin)/_layout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const publicLayoutRoute = publicLayoutRouteImport.update({
+  id: '/(public)/_layout',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiFileRoute = ApiFileRouteImport.update({
@@ -44,43 +52,14 @@ const ApiFileRoute = ApiFileRouteImport.update({
   path: '/api/file',
   getParentRoute: () => rootRouteImport,
 } as any)
-const publicLayoutRoute = publicLayoutRouteImport.update({
-  id: '/(public)/_layout',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const adminLayoutRoute = adminLayoutRouteImport.update({
-  id: '/(admin)/_layout',
-  getParentRoute: () => rootRouteImport,
+const adminLayoutAdminRoute = adminLayoutAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => adminLayoutRoute,
 } as any)
 const publicLayoutIndexRoute = publicLayoutIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => publicLayoutRoute,
-} as any)
-const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
-  id: '/api/auth/$',
-  path: '/api/auth/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const publicLayoutTrabalheConoscoRoute =
-  publicLayoutTrabalheConoscoRouteImport.update({
-    id: '/trabalhe-conosco',
-    path: '/trabalhe-conosco',
-    getParentRoute: () => publicLayoutRoute,
-  } as any)
-const publicLayoutPremiacoesRoute = publicLayoutPremiacoesRouteImport.update({
-  id: '/premiacoes',
-  path: '/premiacoes',
-  getParentRoute: () => publicLayoutRoute,
-} as any)
-const publicLayoutNossaEquipeRoute = publicLayoutNossaEquipeRouteImport.update({
-  id: '/nossa-equipe',
-  path: '/nossa-equipe',
-  getParentRoute: () => publicLayoutRoute,
-} as any)
-const publicLayoutAssistenciaRoute = publicLayoutAssistenciaRouteImport.update({
-  id: '/assistencia',
-  path: '/assistencia',
   getParentRoute: () => publicLayoutRoute,
 } as any)
 const publicLayoutServiceRoute = publicLayoutServiceRouteImport.update({
@@ -88,10 +67,31 @@ const publicLayoutServiceRoute = publicLayoutServiceRouteImport.update({
   path: '/$service',
   getParentRoute: () => publicLayoutRoute,
 } as any)
-const adminLayoutAdminRoute = adminLayoutAdminRouteImport.update({
-  id: '/admin',
-  path: '/admin',
-  getParentRoute: () => adminLayoutRoute,
+const publicLayoutAssistenciaRoute = publicLayoutAssistenciaRouteImport.update({
+  id: '/assistencia',
+  path: '/assistencia',
+  getParentRoute: () => publicLayoutRoute,
+} as any)
+const publicLayoutNossaEquipeRoute = publicLayoutNossaEquipeRouteImport.update({
+  id: '/nossa-equipe',
+  path: '/nossa-equipe',
+  getParentRoute: () => publicLayoutRoute,
+} as any)
+const publicLayoutPremiacoesRoute = publicLayoutPremiacoesRouteImport.update({
+  id: '/premiacoes',
+  path: '/premiacoes',
+  getParentRoute: () => publicLayoutRoute,
+} as any)
+const publicLayoutTrabalheConoscoRoute =
+  publicLayoutTrabalheConoscoRouteImport.update({
+    id: '/trabalhe-conosco',
+    path: '/trabalhe-conosco',
+    getParentRoute: () => publicLayoutRoute,
+  } as any)
+const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -198,11 +198,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/robots.txt': {
@@ -212,25 +212,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/file': {
-      id: '/api/file'
-      path: '/api/file'
-      fullPath: '/api/file'
-      preLoaderRoute: typeof ApiFileRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(public)/_layout': {
-      id: '/(public)/_layout'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof publicLayoutRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/(admin)/_layout': {
@@ -240,46 +226,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof adminLayoutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/(public)/_layout': {
+      id: '/(public)/_layout'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof publicLayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/file': {
+      id: '/api/file'
+      path: '/api/file'
+      fullPath: '/api/file'
+      preLoaderRoute: typeof ApiFileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(admin)/_layout/admin': {
+      id: '/(admin)/_layout/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof adminLayoutAdminRouteImport
+      parentRoute: typeof adminLayoutRoute
+    }
     '/(public)/_layout/': {
       id: '/(public)/_layout/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof publicLayoutIndexRouteImport
-      parentRoute: typeof publicLayoutRoute
-    }
-    '/api/auth/$': {
-      id: '/api/auth/$'
-      path: '/api/auth/$'
-      fullPath: '/api/auth/$'
-      preLoaderRoute: typeof ApiAuthSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(public)/_layout/trabalhe-conosco': {
-      id: '/(public)/_layout/trabalhe-conosco'
-      path: '/trabalhe-conosco'
-      fullPath: '/trabalhe-conosco'
-      preLoaderRoute: typeof publicLayoutTrabalheConoscoRouteImport
-      parentRoute: typeof publicLayoutRoute
-    }
-    '/(public)/_layout/premiacoes': {
-      id: '/(public)/_layout/premiacoes'
-      path: '/premiacoes'
-      fullPath: '/premiacoes'
-      preLoaderRoute: typeof publicLayoutPremiacoesRouteImport
-      parentRoute: typeof publicLayoutRoute
-    }
-    '/(public)/_layout/nossa-equipe': {
-      id: '/(public)/_layout/nossa-equipe'
-      path: '/nossa-equipe'
-      fullPath: '/nossa-equipe'
-      preLoaderRoute: typeof publicLayoutNossaEquipeRouteImport
-      parentRoute: typeof publicLayoutRoute
-    }
-    '/(public)/_layout/assistencia': {
-      id: '/(public)/_layout/assistencia'
-      path: '/assistencia'
-      fullPath: '/assistencia'
-      preLoaderRoute: typeof publicLayoutAssistenciaRouteImport
       parentRoute: typeof publicLayoutRoute
     }
     '/(public)/_layout/$service': {
@@ -289,12 +261,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof publicLayoutServiceRouteImport
       parentRoute: typeof publicLayoutRoute
     }
-    '/(admin)/_layout/admin': {
-      id: '/(admin)/_layout/admin'
-      path: '/admin'
-      fullPath: '/admin'
-      preLoaderRoute: typeof adminLayoutAdminRouteImport
-      parentRoute: typeof adminLayoutRoute
+    '/(public)/_layout/assistencia': {
+      id: '/(public)/_layout/assistencia'
+      path: '/assistencia'
+      fullPath: '/assistencia'
+      preLoaderRoute: typeof publicLayoutAssistenciaRouteImport
+      parentRoute: typeof publicLayoutRoute
+    }
+    '/(public)/_layout/nossa-equipe': {
+      id: '/(public)/_layout/nossa-equipe'
+      path: '/nossa-equipe'
+      fullPath: '/nossa-equipe'
+      preLoaderRoute: typeof publicLayoutNossaEquipeRouteImport
+      parentRoute: typeof publicLayoutRoute
+    }
+    '/(public)/_layout/premiacoes': {
+      id: '/(public)/_layout/premiacoes'
+      path: '/premiacoes'
+      fullPath: '/premiacoes'
+      preLoaderRoute: typeof publicLayoutPremiacoesRouteImport
+      parentRoute: typeof publicLayoutRoute
+    }
+    '/(public)/_layout/trabalhe-conosco': {
+      id: '/(public)/_layout/trabalhe-conosco'
+      path: '/trabalhe-conosco'
+      fullPath: '/trabalhe-conosco'
+      preLoaderRoute: typeof publicLayoutTrabalheConoscoRouteImport
+      parentRoute: typeof publicLayoutRoute
+    }
+    '/api/auth/$': {
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
