@@ -2,12 +2,14 @@ import { redirect } from '@tanstack/react-router'
 import { createMiddleware } from '@tanstack/react-start'
 import { getRequestHeaders } from '@tanstack/react-start/server'
 
+import { TEN_SECONDS } from '@/constants'
 import { getSession } from '@/lib/authClient'
 
 export const authMiddleware = createMiddleware().server(async ({ next }) => {
 	const { data: session } = await getSession({
 		fetchOptions: {
 			headers: getRequestHeaders(),
+			timeout: TEN_SECONDS,
 		},
 	})
 

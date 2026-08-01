@@ -2,6 +2,8 @@ import { createClient } from '@prismicio/client'
 import { createServerFn } from '@tanstack/react-start'
 import z from 'zod'
 
+import { TEN_SECONDS } from '@/constants'
+
 type Method = 'getByUID' | 'getAllByType'
 
 type Data = {
@@ -21,6 +23,9 @@ export const getPageData = createServerFn()
 	.handler(async ({ data }) => {
 		const client = createClient(process.env.PRISMIC_ENDPOINT as string, {
 			accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+			fetchOptions: {
+				signal: AbortSignal.timeout(TEN_SECONDS),
+			},
 		})
 
 		const { args, method } = data
