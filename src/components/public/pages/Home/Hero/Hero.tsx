@@ -17,7 +17,7 @@ export type CtaPrismicType = {
 	insurances: Pick<InsuranceType, 'insurance-title' | 'insurance-subtitle'>[]
 }
 
-export const HeroInfo = ({
+const HeroInfo = ({
 	icon: Icon,
 	text,
 	href,
