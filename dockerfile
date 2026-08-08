@@ -18,11 +18,11 @@ COPY . .
 
 RUN pnpm build
 
-FROM gcr.io/distroless/nodejs24-debian12
+FROM gcr.io/distroless/nodejs24-debian12:nonroot
 WORKDIR /app
 ENV NODE_ENV=production
 
-COPY --from=build /app/.output ./.output
+COPY --from=build --chown=nonroot:nonroot /app/.output ./.output
 
 EXPOSE 3000
 CMD ["./.output/server/index.mjs"]
