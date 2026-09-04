@@ -1,9 +1,18 @@
-import { RouterContextProvider } from '@tanstack/react-router'
+import { RouterContextProvider, useMatches } from '@tanstack/react-router'
 import { act, fireEvent, render } from '@testing-library/react'
+import type { Mock } from 'vitest'
 
 import { getRouter } from '@/router'
 
 import { Navbar } from './Navbar'
+
+vi.mock('@tanstack/react-router', async (importOriginal) => {
+	const actual = await importOriginal()
+	return {
+		...(actual as any),
+		useMatches: vi.fn(() => []),
+	}
+})
 
 const Component = (showLinks = true) =>
 	render(<Navbar showLinks={showLinks} />, {
@@ -59,37 +68,25 @@ describe('<Navbar />', () => {
 	})
 
 	it('should renders breadcrumbs when have breadcrumbs', () => {
-		vi.mock('@tanstack/react-router', async (importOriginal) => {
-			const actual = await importOriginal()
-			return {
-				...(actual as any),
-				useMatches: () => [
-					{
-						staticData: {
-							breadcrumb: 'Home',
-						},
-					},
-				],
-			}
-		})
+		vi.mocked(useMatches as Mock).mockReturnValueOnce([
+			{
+				staticData: {
+					breadcrumb: 'Home',
+				},
+			},
+		])
 		const { getByText } = Component()
 		expect(getByText('Home')).toBeInTheDocument()
 	})
 
 	it('should renders breadcrumbs when have breadcrumbs and is function', () => {
-		vi.mock('@tanstack/react-router', async (importOriginal) => {
-			const actual = await importOriginal()
-			return {
-				...(actual as any),
-				useMatches: () => [
-					{
-						staticData: {
-							breadcrumb: () => 'Home',
-						},
-					},
-				],
-			}
-		})
+		vi.mocked(useMatches as Mock).mockReturnValueOnce([
+			{
+				staticData: {
+					breadcrumb: () => 'Home',
+				},
+			},
+		])
 		const { getByText } = Component()
 		expect(getByText('Home')).toBeInTheDocument()
 	})
