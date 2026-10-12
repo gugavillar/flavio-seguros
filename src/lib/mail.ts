@@ -65,7 +65,7 @@ export const sendMail = createServerFn({ method: 'POST' })
 							`<p>
 			         Mensagem: <strong>${data.message}</strong>
 			       </p>`
-}
+						}
 			     </div>
 			     `,
 				subject: `Currículo - ${data.name}`,
